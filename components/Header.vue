@@ -73,8 +73,8 @@
 
 <script>
 import HomeIcon from '~/components/svg/HomeIcon.vue'
-import ChatIcon from '~/components/svg/ChatIcon.vue'
 import AboutIcon from '~/components/svg/AboutIcon.vue'
+import ChatIcon from '~/components/svg/ChatIcon.vue'
 import DonateIcon from '~/components/svg/DonateIcon.vue'
 import JoinusIcon from '~/components/svg/JoinusIcon.vue'
 
@@ -85,11 +85,6 @@ export default {
     AboutIcon,
     DonateIcon,
     JoinusIcon
-  },
-  data() {
-    return {
-      isOpen: false
-    }
   }
 }
 </script>
