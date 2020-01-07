@@ -1,46 +1,44 @@
 <template>
-  <header
-    class="bg-green-stu sm:flex sm:justify-center sm:items-center sm:py-2"
-  >
+  <header class="bg-green-stu sm:flex sm:justify-center sm:items-end sm:py-2">
     <!-- Default logo -->
-    <div class="items-center justify-center hidden sm:flex sm:py-0 sm:pr-2">
-      <div>
+    <div class="hidden sm:flex sm:pb-1 sm:pr-8">
+      <a @click.prevent="$router.push('/')" href="/">
         <img
           src="~/static/logo-long.png"
           alt="Speak To Us organization logo."
           class="h-20"
         />
-      </div>
+      </a>
     </div>
 
     <!-- Default screen navigation -->
-    <nav class="hidden px-2 pt-2 pb-4 sm:flex">
-      <nuxt-link class="link-default hover:text-green-600" to="/">
+    <nav class="hidden sm:flex">
+      <nuxt-link class="link-default" to="/">
         Home
       </nuxt-link>
-      <nuxt-link class="link-default hover:text-green-600" to="/chat">
+      <nuxt-link class="link-default" to="/chat">
         Chat
       </nuxt-link>
-      <nuxt-link class="link-default hover:text-green-600" to="/about">
+      <nuxt-link class="link-default" to="/about">
         About
       </nuxt-link>
-      <nuxt-link class="link-default hover:text-green-600" to="/donate">
+      <nuxt-link class="link-default" to="/donate">
         Donate
       </nuxt-link>
-      <nuxt-link class="link-default hover:text-green-600" to="/joinus">
+      <nuxt-link class="link-default" to="/joinus">
         Join us!
       </nuxt-link>
     </nav>
 
     <!-- Mobile logo -->
     <div class="flex items-center justify-center px-4 py-3 sm:hidden">
-      <div>
+      <a @click.prevent="$router.push('/')" href="/">
         <img
           src="~/static/logo-short.png"
           alt="Speak To Us organization logo."
           class="h-20"
         />
-      </div>
+      </a>
     </div>
 
     <!-- Mobile-screen navigation -->
@@ -98,11 +96,15 @@ export default {
 
 <style scoped>
 .link-default {
-  @apply block text-gray-300 px-3 text-xl;
+  @apply text-gray-300 px-3 text-xl;
+}
+
+.link-default:hover {
+  @apply text-green-900;
 }
 
 .link-mobile {
-  @apply block text-gray-700 rounded px-2;
+  @apply text-gray-700 rounded px-2;
 }
 
 .nav-icon {
@@ -116,5 +118,11 @@ export default {
 /* highlight nav when on each page */
 .nuxt-link-exact-active {
   @apply text-green-500 fill-current;
+}
+
+@screen sm {
+  .nuxt-link-exact-active {
+    @apply text-green-700;
+  }
 }
 </style>
