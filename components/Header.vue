@@ -32,12 +32,12 @@
       </nav>
 
       <!-- Mobile logo -->
-      <div class="flex items-center justify-center px-4 py-3 sm:hidden">
+      <div class="flex items-center justify-center px-4 py-2 sm:hidden">
         <a @click.prevent="$router.push('/')" href="/">
           <img
-            src="~/static/logo-short.png"
+            src="~/static/logo-long.png"
             alt="Speak To Us organization logo."
-            class="h-20"
+            class="h-16"
           />
         </a>
       </div>
