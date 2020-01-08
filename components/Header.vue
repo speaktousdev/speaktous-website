@@ -1,49 +1,51 @@
 <template>
-  <header class="bg-green-stu sm:flex sm:justify-center sm:items-end sm:py-2">
-    <!-- Default logo -->
-    <div class="hidden sm:flex sm:pb-1 sm:pr-8">
-      <a @click.prevent="$router.push('/')" href="/">
-        <img
-          src="~/static/logo-long.png"
-          alt="Speak To Us organization logo."
-          class="h-20"
-        />
-      </a>
-    </div>
+  <div>
+    <header class="bg-green-stu sm:flex sm:justify-center sm:items-end sm:py-2">
+      <!-- Default logo -->
+      <div class="hidden sm:flex sm:pb-1 sm:pr-8">
+        <a @click.prevent="$router.push('/')" href="/">
+          <img
+            src="~/static/logo-long.png"
+            alt="Speak To Us organization logo."
+            class="h-20"
+          />
+        </a>
+      </div>
 
-    <!-- Default screen navigation -->
-    <nav class="hidden sm:flex">
-      <nuxt-link class="link-default" to="/">
-        Home
-      </nuxt-link>
-      <nuxt-link class="link-default" to="/chat">
-        Chat
-      </nuxt-link>
-      <nuxt-link class="link-default" to="/about">
-        About
-      </nuxt-link>
-      <nuxt-link class="link-default" to="/donate">
-        Donate
-      </nuxt-link>
-      <nuxt-link class="link-default" to="/joinus">
-        Join us!
-      </nuxt-link>
-    </nav>
+      <!-- Default screen navigation -->
+      <nav class="hidden sm:flex">
+        <nuxt-link class="link-default" to="/">
+          Home
+        </nuxt-link>
+        <nuxt-link class="link-default" to="/chat">
+          Chat
+        </nuxt-link>
+        <nuxt-link class="link-default" to="/about">
+          About
+        </nuxt-link>
+        <nuxt-link class="link-default" to="/donate">
+          Donate
+        </nuxt-link>
+        <nuxt-link class="link-default" to="/joinus">
+          Join us!
+        </nuxt-link>
+      </nav>
 
-    <!-- Mobile logo -->
-    <div class="flex items-center justify-center px-4 py-3 sm:hidden">
-      <a @click.prevent="$router.push('/')" href="/">
-        <img
-          src="~/static/logo-short.png"
-          alt="Speak To Us organization logo."
-          class="h-20"
-        />
-      </a>
-    </div>
+      <!-- Mobile logo -->
+      <div class="flex items-center justify-center px-4 py-3 sm:hidden">
+        <a @click.prevent="$router.push('/')" href="/">
+          <img
+            src="~/static/logo-short.png"
+            alt="Speak To Us organization logo."
+            class="h-20"
+          />
+        </a>
+      </div>
+    </header>
 
     <!-- Mobile-screen navigation -->
     <nav
-      class="fixed bottom-0 left-0 right-0 z-30 block px-2 pt-3 pb-2 border-t border-gray-300 sm:hidden"
+      class="fixed bottom-0 left-0 right-0 z-30 block px-2 pt-3 pb-2 bg-white border-t border-gray-300 sm:hidden"
     >
       <div class="flex justify-between">
         <nuxt-link class="link-mobile" to="/">
@@ -68,7 +70,7 @@
         </nuxt-link>
       </div>
     </nav>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -91,7 +93,7 @@ export default {
 
 <style scoped>
 .link-default {
-  @apply text-gray-300 px-3 text-xl;
+  @apply text-gray-100 px-3 text-xl uppercase;
 }
 
 .link-default:hover {
@@ -99,7 +101,7 @@ export default {
 }
 
 .link-mobile {
-  @apply text-gray-700 rounded px-2;
+  @apply text-gray-700 px-2;
 }
 
 .nav-icon {
