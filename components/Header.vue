@@ -32,7 +32,7 @@
       </nav>
 
       <!-- Mobile logo -->
-      <div class="flex items-center justify-center px-4 py-2 sm:hidden">
+      <div class="flex items-center justify-center px-4 py-4 sm:hidden">
         <a @click.prevent="$router.push('/')" href="/">
           <img
             src="~/static/logo-long.png"
@@ -110,6 +110,7 @@ export default {
 
 .bg-green-stu {
   background-color: rgb(116, 183, 87);
+  /* @apply border-b border-green-200; */
 }
 
 /* highlight nav when on each page */
