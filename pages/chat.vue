@@ -1,9 +1,17 @@
 <template>
-  <div>Chat</div>
+  <div>
+    <h1>CHAT WITH US</h1>
+    <!-- <client-only> -->
+    <TawkChat />
+    <!-- </client-only> -->
+  </div>
 </template>
 
 <script>
-export default {}
+import TawkChat from '~/components/TawkChat.vue'
+export default {
+  components: { TawkChat }
+}
 </script>
 
 <style></style>
