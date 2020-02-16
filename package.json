@@ -13,8 +13,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "@nuxtjs/pwa": "^3.0.0-0",
     "nuxt": "^2.0.0",
-    "@nuxtjs/pwa": "^3.0.0-0"
+    "vue-tawk": "^1.0.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0",

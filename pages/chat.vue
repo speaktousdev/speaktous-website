@@ -2,15 +2,19 @@
   <div>
     <h1>CHAT WITH US</h1>
     <!-- <client-only> -->
-    <TawkChat />
+    <!-- <Tawk /> -->
+    <!-- <TawkChat /> -->
     <!-- </client-only> -->
   </div>
 </template>
 
 <script>
-import TawkChat from '~/components/TawkChat.vue'
+// import TawkChat from '~/components/TawkChat.vue'
 export default {
-  components: { TawkChat }
+  // components: { TawkChat }
+  // destroyed() {
+  //   this.$el.remove()
+  // }
 }
 </script>
 

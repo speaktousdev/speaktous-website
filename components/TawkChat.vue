@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <button v-on:click="removeTawk">Kill Tawk</button>
+  </div>
 </template>
 
 <script>
@@ -8,18 +10,29 @@
 
 export default {
   name: 'TawkChat',
+  data() {
+    return {
+      s1: document.createElement('script'),
+      s0: document.getElementsByTagName('script')[0]
+    }
+  },
   mounted() {
     // eslint-disable-next-line no-unused-vars
     const TawkLoadStart = new Date()
 
-    const s1 = document.createElement('script')
-    const s0 = document.getElementsByTagName('script')[0]
+    // const s1 = document.createElement('script')
+    // const s0 = document.getElementsByTagName('script')[0]
 
-    s1.async = true
-    s1.src = 'https://embed.tawk.to/5e287565daaca76c6fcf56e6/default'
-    s1.charset = 'UTF-8'
-    s1.setAttribute('crossorigin', '*')
-    s0.parentNode.insertBefore(s1, s0)
+    this.s1.async = true
+    this.s1.src = 'https://embed.tawk.to/5e287565daaca76c6fcf56e6/default'
+    this.s1.charset = 'UTF-8'
+    this.s1.setAttribute('crossorigin', '*')
+    this.s0.parentNode.insertBefore(this.s1, this.s0)
+  },
+  methods: {
+    removeTawk() {
+      this.s1.parentNode.removeChild(this.s1)
+    }
   }
 }
 </script>
