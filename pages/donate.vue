@@ -1,5 +1,5 @@
 <template>
-  <main class="p-4 lg:px-16">
+  <main class="max-w-screen-xl p-4 mx-auto lg:px-16">
     <!-- This is for mobile screens -->
     <div class="text-center lg:hidden">
       <h1 class="text-4xl text-gray-800">
