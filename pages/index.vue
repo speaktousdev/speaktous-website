@@ -15,14 +15,14 @@
       </h2>
       <div class="flex flex-col px-12 mt-8">
         <button
-          @click.prevent="$router.push('/chat')"
           class="justify-center px-4 py-2 mb-2 text-center text-white bg-green-400 rounded hover:bg-green-700"
+          @click.prevent="$router.push('/chat')"
         >
           Get started
         </button>
         <button
-          @click.prevent="$router.push('/about')"
           class="justify-center px-4 py-2 text-center text-white bg-gray-400 rounded hover:bg-gray-700"
+          @click.prevent="$router.push('/about')"
         >
           Learn more
         </button>
@@ -60,8 +60,8 @@
       </h2>
       <div class="flex flex-col px-12 mt-8">
         <button
-          @click.prevent="$router.push('/joinus')"
           class="justify-center px-4 py-2 mb-2 text-center text-white bg-green-400 rounded hover:bg-green-700"
+          @click.prevent="$router.push('/joinus')"
         >
           Join us!
         </button>

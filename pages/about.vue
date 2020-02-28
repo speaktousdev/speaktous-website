@@ -13,9 +13,9 @@
       that provides a peer-to-peer support platform for Malaysian students in
       the US. Through our
       <a
-        @click.prevent="$router.push('/chat')"
         class="text-green-500 hover:underline"
         href="/chat"
+        @click.prevent="$router.push('/chat')"
         >chat</a
       >
       feature, we are providing an online medium for students to speak up and

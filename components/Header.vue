@@ -3,7 +3,7 @@
     <header class="bg-green-stu sm:flex sm:justify-center sm:items-end sm:py-2">
       <!-- Default logo -->
       <div class="hidden sm:flex sm:pb-1 sm:pr-8">
-        <a @click.prevent="$router.push('/')" href="/">
+        <a href="/" @click.prevent="$router.push('/')">
           <img
             src="~/static/logo-long.png"
             alt="Speak To Us organization logo."
@@ -33,7 +33,7 @@
 
       <!-- Mobile logo -->
       <div class="flex items-center justify-center px-4 py-4 sm:hidden">
-        <a @click.prevent="$router.push('/')" href="/">
+        <a href="/" @click.prevent="$router.push('/')">
           <img
             src="~/static/logo-long.png"
             alt="Speak To Us organization logo."

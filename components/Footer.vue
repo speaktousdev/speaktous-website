@@ -6,9 +6,9 @@
     <p>© 2019 by SpeakToUs Organization.</p>
     <div class="flex">
       <a
-        @click.prevent="$router.push('/disclaimer')"
         class="mr-4"
         href="/disclaimer"
+        @click.prevent="$router.push('/disclaimer')"
       >
         Terms & Privacy Policy
       </a>
