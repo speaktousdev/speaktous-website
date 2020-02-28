@@ -45,7 +45,7 @@
 
     <!-- Mobile-screen navigation -->
     <nav
-      class="fixed bottom-0 left-0 right-0 z-30 block px-6 py-2 bg-white border-t border-gray-300 sm:hidden"
+      class="fixed bottom-0 left-0 right-0 z-30 block px-6 pt-2 pb-1 bg-white border-t border-gray-400 sm:hidden"
     >
       <div class="flex justify-between">
         <nuxt-link class="link-mobile" to="/">
