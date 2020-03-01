@@ -27,7 +27,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/vuelidate' },
+    { src: '~/plugins/vue-kinesis' },
+    { src: '~/plugins/vue-scroll' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -35,7 +39,8 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/vuetify'
   ],
   /*
    ** Nuxt.js modules
