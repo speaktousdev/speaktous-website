@@ -50,7 +50,7 @@
         <h1 class="inline-block ml-2 tracking-widest text-left lg:ml-4 xl:ml-6">
           More About
         </h1>
-        <v-expansion-panels class="mt-4" popout="true" focusable="true">
+        <v-expansion-panels class="mt-4" :popout="true" :focusable="true">
           <v-expansion-panel v-for="item in faqlist" :key="item.header">
             <v-expansion-panel-header>
               {{ item.header }}
@@ -82,7 +82,7 @@
           class="inline-block w-10/12 mb-8 lg:ml-10 xl:ml-40 md:w-1/2 lg:w-1/2 xl:w-1/2"
         >
           <v-card
-            raised="true"
+            :raised="true"
             elevation="24"
             class="mt-12 "
             min-width="300"
