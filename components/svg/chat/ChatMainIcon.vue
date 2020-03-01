@@ -82,7 +82,7 @@
       data-name="&lt;Path&gt;"
       d="M678.43,153a28.38,28.38,0,0,1-27.91,24.21l-120.93.29a28.38,28.38,0,0,1-28-24.07l-64.05.16a13.3,13.3,0,0,0-13.27,13.33l1.39,573.67A13.3,13.3,0,0,0,439,753.86l306-.74a13.3,13.3,0,0,0,13.27-13.33l-1.39-573.67a13.3,13.3,0,0,0-13.33-13.27Z"
       transform="translate(-205 -84.5)"
-      fill="#de9b4c"
+      fill="#74b757"
       opacity="0.4"
     />
     <rect
@@ -139,7 +139,7 @@
     <path
       d="M570.72,628.57H496.58l-6.92,29.66s-4.06,13.73,1,19.77,52.28,19.77,87,1a38.68,38.68,0,0,0,1-24.71c-4-13.84-1-1-1-1Z"
       transform="translate(-205 -84.5)"
-      fill="#de9b4c"
+      fill="#74b757"
     />
     <path
       d="M314.32,519.46H344a0,0,0,0,1,0,0v28.7a9.85,9.85,0,0,1-9.85,9.85h-10a9.85,9.85,0,0,1-9.85-9.85v-28.7A0,0,0,0,1,314.32,519.46Z"
@@ -244,9 +244,9 @@
       transform="translate(-205 -84.5)"
       fill="#fff"
     />
-    <rect x="41" y="190" width="180" height="18" fill="#de9b4c" />
-    <rect x="41" y="217" width="243" height="18" fill="#de9b4c" />
-    <rect x="41" y="244" width="216" height="18" fill="#de9b4c" />
+    <rect x="41" y="190" width="180" height="18" fill="#74b757" />
+    <rect x="41" y="217" width="243" height="18" fill="#74b757" />
+    <rect x="41" y="244" width="216" height="18" fill="#74b757" />
     <g opacity="0.5">
       <path
         d="M975,517.61V660.33H750.15S733.55,693,705,702.5c0,0,9.11-23.14-.4-42.17H642V517.61Z"
@@ -259,9 +259,9 @@
       transform="translate(-205 -84.5)"
       fill="#fff"
     />
-    <rect x="483" y="465" width="180" height="18" fill="#de9b4c" />
-    <rect x="483" y="492" width="243" height="18" fill="#de9b4c" />
-    <rect x="483" y="519" width="216" height="18" fill="#de9b4c" />
+    <rect x="483" y="465" width="180" height="18" fill="#74b757" />
+    <rect x="483" y="492" width="243" height="18" fill="#74b757" />
+    <rect x="483" y="519" width="216" height="18" fill="#74b757" />
     <g opacity="0.5">
       <rect x="84" y="714" width="3" height="17" fill="#47e6b1" />
       <rect
@@ -333,6 +333,5 @@
     <circle cx="6" cy="659" r="6" fill="#f55f44" opacity="0.5" />
     <circle cx="683" cy="64" r="6" fill="#4d8af0" opacity="0.5" />
     <circle cx="104" cy="76" r="6" fill="#47e6b1" opacity="0.5" />
-    <circle cx="689" cy="346" r="6" fill="#f55f44" opacity="0.5" />
-  </svg>
-</template>
+    <circle cx="689" cy="346" r="6" fill="#f55f44" opacity="0.5" /></svg
+></template>

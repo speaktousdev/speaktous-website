@@ -74,11 +74,11 @@
 </template>
 
 <script>
-import HomeIcon from '~/components/svg/HomeIcon.vue'
-import AboutIcon from '~/components/svg/AboutIcon.vue'
-import ChatIcon from '~/components/svg/ChatIcon.vue'
-import DonateIcon from '~/components/svg/DonateIcon.vue'
-import JoinusIcon from '~/components/svg/JoinusIcon.vue'
+import HomeIcon from '~/components/svg/nav/HomeIcon.vue'
+import AboutIcon from '~/components/svg/nav/AboutIcon.vue'
+import ChatIcon from '~/components/svg/nav/ChatIcon.vue'
+import DonateIcon from '~/components/svg/nav/DonateIcon.vue'
+import JoinusIcon from '~/components/svg/nav/JoinusIcon.vue'
 
 export default {
   components: {
