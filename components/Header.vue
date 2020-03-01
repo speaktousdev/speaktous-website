@@ -49,23 +49,23 @@
     >
       <div class="flex justify-between">
         <nuxt-link class="link-mobile" to="/">
-          <HomeIcon class="ml-1 nav-icon" />
+          <HomeIcon class="ml-2 nav-icon" />
           home
         </nuxt-link>
         <nuxt-link class="link-mobile" to="/about">
-          <AboutIcon class="ml-1 nav-icon" />
+          <AboutIcon class="ml-2 nav-icon" />
           about
         </nuxt-link>
         <nuxt-link class="link-mobile" to="/chat">
-          <ChatIcon class="nav-icon" />
+          <ChatIcon class="ml-1 nav-icon" />
           chat
         </nuxt-link>
         <nuxt-link class="link-mobile" to="/donate">
-          <DonateIcon class="ml-2 nav-icon" />
+          <DonateIcon class="ml-3 nav-icon" />
           donate
         </nuxt-link>
         <nuxt-link class="link-mobile" to="/joinus">
-          <JoinusIcon class="ml-3 nav-icon" />
+          <JoinusIcon class="ml-4 nav-icon" />
           Join us!
         </nuxt-link>
       </div>
