@@ -2,9 +2,14 @@
   <main class="max-w-screen-xl p-4 mx-auto lg:px-16">
     <!-- This is for mobile screens -->
     <div class="text-center lg:hidden">
-      <h1 class="font-serif text-4xl text-gray-800">
+      <h1 class="font-serif text-4xl font-extrabold">
         Make a donation, today!
       </h1>
+      <div class="text-center">
+        <svg class="inline-block w-24 h-2">
+          <rect class="w-24 h-2" style="fill:green;" />
+        </svg>
+      </div>
       <div class="mt-4 mb-8 text-center">
         <div class="inline-block w-48 h-48 bg-green-700 rounded-full">
           <img src="~/static/donate/hand.png" alt="A donating hand." />
@@ -47,9 +52,12 @@
     <!-- This is for large (desktop) screens -->
     <div class="flex flex-wrap hidden px-12 mt-10 lg:flex lg:text-left">
       <div class="w-3/5 pr-12">
-        <h1 class="mb-10 font-serif text-5xl text-gray-800">
+        <h1 class="font-serif text-5xl font-extrabold text-gray-800 ">
           Make a donation, <br />today!
         </h1>
+        <svg class="w-24 h-2 mb-10">
+          <rect class="w-24 h-2" style="fill:green;" />
+        </svg>
         <div class="p-6 text-xl text-gray-800 bg-gray-300 rounded-lg shadow-xl">
           <p class="mb-4">
             SpeakToUs is a nonprofit, student-led organization based in Madison,
