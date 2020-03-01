@@ -17,6 +17,7 @@
       <div class="flex flex-row-reverse">
         <input
           type="submit"
+          value="Submit"
           class="px-8 py-2 mt-4 text-xl text-gray-200 bg-green-400 rounded-full shadow-xl hover:bg-green-800"
         />
       </div>
