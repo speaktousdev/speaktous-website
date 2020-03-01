@@ -3,7 +3,7 @@
     <!-- This is for mobile screens -->
     <div class="text-center lg:hidden">
       <h1 class="font-serif text-4xl font-extrabold">
-        Make a donation, today! bla
+        Make a donation, today!
       </h1>
       <div class="text-center">
         <svg class="inline-block w-24 h-2">
