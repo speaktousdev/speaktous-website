@@ -1,5 +1,5 @@
 <template>
-  <main class=" text-center">
+  <main class="text-center ">
     <div
       v-scroll-to="'#second'"
       class="mt-18 lg:w-screen xl:w-screen lg:h-screen xl:h-screen"
@@ -7,18 +7,18 @@
       <div class=" md:flex lg:flex xl:flex md:flex-row lg:flex-row xl:flex-row">
         <div>
           <p
-            class="mt-4 md:mt-16 lg:mt-18 xl:mt-24 md:px-12 lg:pl-24 text-4xl md:text-4xl md:text-left lg:text-left xl:text-left  font-bold tracking-widest"
+            class="mt-4 text-4xl font-bold tracking-widest md:mt-16 lg:mt-18 xl:mt-24 md:px-12 lg:pl-24 md:text-4xl md:text-left lg:text-left xl:text-left"
           >
             About Us
           </p>
           <p
-            class="mt-4 lg:mt-6 xl:mt-6 md:px-8 lg:pl-24 md:pl-12  md:text-left lg:text-left xl:text-left text-lg lg:text-xl xl:text-2xl"
+            class="mt-4 text-lg lg:mt-6 xl:mt-6 md:px-8 lg:pl-24 md:pl-12 md:text-left lg:text-left xl:text-left lg:text-xl xl:text-2xl"
           >
             We are a group of Malaysian students<br />who are passionate about
             <b />mental health.
           </p>
           <p
-            class="mt-4 lg:mt-4 xl:mt-8 md:px-8 md:pl-12 lg:pl-24  md:text-left lg:text-left xl:text-left text-lg lg:text-xl xl:text-2xl"
+            class="mt-4 text-lg lg:mt-4 xl:mt-8 md:px-8 md:pl-12 lg:pl-24 md:text-left lg:text-left xl:text-left lg:text-xl xl:text-2xl"
           >
             We provide an <b>online chat system</b> for <br />Malaysian students
             abroad to share<br />and express their feelings to a fellow<br />Malaysian.
@@ -26,11 +26,11 @@
         </div>
 
         <HeaderIcon
-          class=" hidden md:block lg:block xl:block py-2 w-2/4 h-auto"
+          class="hidden w-2/4 h-auto py-2 md:block lg:block xl:block"
         />
       </div>
     </div>
-    <div id="second" class=" mt-8 md:mt-32  text-center">
+    <div id="second" class="mt-8 text-center md:mt-32">
       <div class="relative inline-block">
         <img
           src="~/static/about/group-photo.png"
@@ -39,17 +39,15 @@
         />
       </div>
       <p
-        class="tracking-wide text-base xl:mt-4 md:text-xl lg:text-2xl xl:text-3xl"
+        class="text-base tracking-wide xl:mt-4 md:text-xl lg:text-2xl xl:text-3xl"
       >
         We bring SpeakToUs to you
       </p>
     </div>
 
-    <div class="text-center mt-16 md:mt-24" max-width:100>
+    <div class="mt-16 text-center md:mt-24" max-width:100>
       <div class="inline-block w-11/12 lg:w-1/2 xl:w-1/2">
-        <h1
-          class="tracking-widest inline-block text-left ml-2  lg:ml-4 xl:ml-6"
-        >
+        <h1 class="inline-block ml-2 tracking-widest text-left lg:ml-4 xl:ml-6">
           More About
         </h1>
         <v-expansion-panels class="mt-4" popout="true" focusable="true">
@@ -65,28 +63,28 @@
       </div>
     </div>
 
-    <div class="text-center flex-col mt-16 mb-8">
+    <div class="flex-col mt-16 mb-8 text-center">
       <div id="contact-form" class="w-full">
         <h1 class="tracking-wide">Contact Us</h1>
         <p>
           We are reachable through email:
         </p>
-        <button v-on:click="isVisible = true" class="text-green-500">
+        <button class="text-green-500" @click="isVisible = true">
           speaktousofficial@gmail.com
         </button>
       </div>
       <div
-        id="contact-form-card"
         v-if="isVisible"
+        id="contact-form-card"
         class="lg:text-center xl:text-center"
       >
         <div
-          class="inline-block mb-8 lg:ml-10 xl:ml-40 w-10/12 md:w-1/2 lg:w-1/2 xl:w-1/2"
+          class="inline-block w-10/12 mb-8 lg:ml-10 xl:ml-40 md:w-1/2 lg:w-1/2 xl:w-1/2"
         >
           <v-card
             raised="true"
             elevation="24"
-            class="  mt-12"
+            class="mt-12 "
             min-width="300"
             max-width="500"
             min-height="70"
@@ -95,30 +93,30 @@
               <div>Send us a message</div>
               <form>
                 <v-text-field
-                  @input="$v.name.$touch()"
-                  @blur="$v.name.$touch()"
                   v-model="name"
                   :error-messages="nameErrors"
                   label="Name"
                   required
+                  @input="$v.name.$touch()"
+                  @blur="$v.name.$touch()"
                 ></v-text-field>
                 <v-text-field
-                  @input="$v.email.$touch()"
-                  @blur="$v.email.$touch()"
                   v-model="email"
                   :error-messages="emailErrors"
                   label="E-mail"
                   required
+                  @input="$v.email.$touch()"
+                  @blur="$v.email.$touch()"
                 ></v-text-field>
                 <v-text-field
-                  @input="$v.message.$touch()"
                   v-model="message"
                   :error-messages="messageErrors"
                   label="Your Message"
                   required
+                  @input="$v.message.$touch()"
                 ></v-text-field>
 
-                <v-btn @click="submit" class="mr-4">submit</v-btn>
+                <v-btn class="mr-4" @click="submit">submit</v-btn>
                 <v-btn @click="clear, (isVisible = false)">cancel</v-btn>
               </form>
             </v-card-text>
