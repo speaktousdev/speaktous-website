@@ -1,21 +1,21 @@
 <template>
   <main>
-    <div class="intro-section flex flex-wrap px-8 py-6 sm:px-12">
+    <div class="flex flex-wrap px-8 py-6 intro-section sm:px-12">
       <div class="w-full sm:pt-10 sm:w-3/5">
         <div class="sm:w-64">
           <h1
-            class="text-center sm:text-left font-heading font-extrabold text-4xl"
+            class="font-serif text-4xl font-extrabold text-center sm:text-left"
           >
             You Share
           </h1>
           <h1
-            class="text-center sm:text-left font-heading font-extrabold text-4xl -mt-2 mb-6 sm:mb-4"
+            class="mb-6 -mt-2 font-serif text-4xl font-extrabold text-center sm:text-left sm:mb-4"
           >
             We Care
           </h1>
         </div>
-        <div class="section-desc sm:pr-12 text-left">
-          <p class="text-lg font-body">
+        <div class="text-left section-desc sm:pr-12">
+          <p class="text-lg">
             Speak To Us is an
             <strong class>online chat platform</strong>
             for Malaysian students in the United States to share and express
@@ -26,22 +26,22 @@
             >
           </p>
         </div>
-        <div class="buttons flex flex-wrap w-full mt-8 p-0 sm:w-full">
+        <div class="flex flex-wrap w-full p-0 mt-8 buttons sm:w-full">
           <button
-            class="justify-center font-heading font-bold text-center text-white bg-green-400 rounded hover:bg-green-700 w-full sm:w-1/3 py-3 px-3 mr-0 sm:mr-2"
+            class="justify-center w-full px-3 py-3 mr-0 font-serif font-bold text-center text-white bg-green-400 rounded hover:bg-green-700 sm:w-1/3 sm:mr-2"
             @click.prevent="$router.push('/chat')"
           >
             Chat Now
           </button>
           <button
-            class="justify-center font-heading font-bold text-center text-white bg-gray-400 rounded hover:bg-gray-700 w-full sm:w-1/3 py-3 px-3 mt-3 sm:mt-0"
+            class="justify-center w-full px-3 py-3 mt-3 font-serif font-bold text-center text-white bg-gray-400 rounded hover:bg-gray-700 sm:w-1/3 sm:mt-0"
             @click.prevent="$router.push('/about')"
           >
             Learn more
           </button>
         </div>
       </div>
-      <div class="logo-placeholder w-full sm:pt-8 sm:w-2/5">
+      <div class="w-full logo-placeholder sm:pt-8 sm:w-2/5">
         <img
           class="w-full"
           src="../static/index/STU-logo.jpg"
@@ -51,39 +51,33 @@
       </div>
     </div>
 
-    <div class="share-section bg-gray-200 px-6 sm:px-12 py-6 sm:py-10">
-      <div class="title-with-underline items-center text-center">
+    <div class="px-6 py-6 bg-gray-200 share-section sm:px-12 sm:py-10">
+      <div class="items-center text-center title-with-underline">
         <h1
-          class="font-heading font-extrabold text-center sm:text-left text-3xl sm:text-4xl"
+          class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl"
         >
           Why Share With Us?
         </h1>
         <div
-          class="inline-block sm:block sm:left-0 relative w-1/2 border-b-2 border-green-500"
+          class="relative inline-block w-1/2 border-b-2 border-green-500 sm:block sm:left-0"
         ></div>
       </div>
       <div class="flex flex-wrap p-8">
         <div class="share-item">
           <img class="w-40 mb-4" src="../static/index/login.png" />
-          <h1
-            class="font-body text-center sm:text-left text-xl ml-0 sm:ml-4 mb-8"
-          >
+          <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             No registration needed
           </h1>
         </div>
         <div class="share-item">
           <img class="w-40 mb-4" src="../static/index/anon.png" />
-          <h1
-            class="font-body text-center sm:text-left text-xl ml-0 sm:ml-4 mb-8"
-          >
+          <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             You are 100% anonymous on our online chat
           </h1>
         </div>
         <div class="share-item">
           <img class="w-40 mb-4" src="../static/index/Listener.png" />
-          <h1
-            class="font-body text-center sm:text-left text-xl ml-0 sm:ml-4 mb-8"
-          >
+          <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             Supported by passionate listeners who have signed
             <a
               class="text-green-800 underline"
@@ -95,29 +89,27 @@
         </div>
         <div class="share-item">
           <img class="w-40 mb-4" src="../static/index/file.png" />
-          <h1
-            class="font-body text-center sm:text-left text-xl ml-0 sm:ml-4 mb-8"
-          >
+          <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             Your confidentiality is guaranteed
           </h1>
         </div>
       </div>
     </div>
 
-    <div class="join-us-section px-8 sm:px-12 py-6 sm:py-10">
-      <div class="title-with-underline items-center text-center">
+    <div class="px-8 py-6 join-us-section sm:px-12 sm:py-10">
+      <div class="items-center text-center title-with-underline">
         <h1
-          class="font-heading font-extrabold text-center sm:text-left text-3xl sm:text-4xl"
+          class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl"
         >
           Be Part of Us!
         </h1>
         <div
-          class="inline-block sm:block sm:left-0 relative w-1/2 border-b-2 border-green-500"
+          class="relative inline-block w-1/2 border-b-2 border-green-500 sm:block sm:left-0"
         ></div>
       </div>
-      <div class="flex-wrap flex">
+      <div class="flex flex-wrap">
         <div class="w-full sm:w-1/2">
-          <h2 class="section-desc mt-5 text-lg font-body">
+          <h2 class="mt-5 text-lg section-desc ">
             In the SpeakToUs Family, we consist of inspiring individuals with
             passion to care for others and dedication to destigmatize mental
             health.
@@ -129,7 +121,7 @@
           </h2>
           <div class="mt-8 text-center sm:text-left">
             <button
-              class="font-heading font-bold justify-center px-4 py-2 mb-2 w-40 text-center text-white bg-green-400 rounded hover:bg-green-700"
+              class="justify-center w-40 px-4 py-2 mb-2 font-serif font-bold text-center text-white bg-green-400 rounded hover:bg-green-700"
               @click.prevent="$router.push('/joinus')"
             >
               Join us!
@@ -137,7 +129,7 @@
           </div>
         </div>
         <div class="hidden sm:block sm:w-1/2">
-          <img class="ml-12 w-4/5" src="../static/index/meeting.png" />
+          <img class="w-4/5 ml-12" src="../static/index/meeting.png" />
         </div>
       </div>
     </div>
