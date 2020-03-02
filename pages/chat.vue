@@ -1,5 +1,5 @@
 <template>
-  <main class="max-w-screen-xl p-4 mx-auto">
+  <main class="max-w-screen-xl p-4 lg:mx-auto sm:mx-20">
     <div class="flex flex-row items-center mt-4">
       <span
         v-if="isOnline"

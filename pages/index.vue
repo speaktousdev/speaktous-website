@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="max-w-screen-xl mx-auto">
     <div class="flex flex-wrap px-8 py-6 intro-section sm:px-12">
       <div class="w-full sm:pt-10 sm:w-3/5">
         <div class="sm:w-64">
