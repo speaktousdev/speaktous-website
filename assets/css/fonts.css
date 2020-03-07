@@ -15,6 +15,7 @@
       format('truetype'),
     /* Safari, Android, iOS */
       url('./../fonts/comfortaa-v28-latin-regular.svg#Comfortaa') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 
 /* montserrat-regular - latin */
@@ -35,4 +36,5 @@
     /* Safari, Android, iOS */
       url('./../fonts/montserrat-v14-latin-regular.svg#Montserrat')
       format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
