@@ -33,6 +33,8 @@ module.exports = {
       }
     }
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['responsive', 'active', 'hover', 'focus']
+  },
   plugins: []
 }
