@@ -1,13 +1,10 @@
 <template>
   <main class="text-center ">
-    <div
-      v-scroll-to="'#second'"
-      class="mt-18 lg:w-screen xl:w-screen lg:h-screen xl:h-screen"
-    >
+    <div class="mt-18 lg:w-screen xl:w-screen lg:h-screen xl:h-screen">
       <div class=" md:flex lg:flex xl:flex md:flex-row lg:flex-row xl:flex-row">
         <div>
           <p
-            class="mt-4 text-4xl font-bold tracking-widest md:mt-16 lg:mt-18 xl:mt-24 md:px-12 lg:pl-24 md:text-4xl md:text-left lg:text-left xl:text-left"
+            class="font-serif mt-4 text-4xl lg:text-6xl font-bold tracking-wide\https://drive.google.com/open?id=1T-98IWXNDT1QdZS55lfuWJvDvOiCAPfT md:mt-16 lg:mt-18 xl:mt-24 md:px-12 lg:pl-24 md:text-4xl md:text-left lg:text-left xl:text-left"
           >
             About Us
           </p>
@@ -47,25 +44,20 @@
 
     <div class="mt-16 text-center md:mt-24" max-width:100>
       <div class="inline-block w-11/12 lg:w-1/2 xl:w-1/2">
-        <h1 class="inline-block ml-2 tracking-widest text-left lg:ml-4 xl:ml-6">
+        <h1
+          class="font-serif text-4xl font-semibold inline-block ml-2 tracking-widest text-left lg:ml-4 xl:ml-6"
+        >
           More About
         </h1>
-        <v-expansion-panels class="mt-4" :popout="true" :focusable="true">
-          <v-expansion-panel v-for="item in faqlist" :key="item.header">
-            <v-expansion-panel-header>
-              {{ item.header }}
-            </v-expansion-panel-header>
-            <v-expansion-panel-content :key="item.content">
-              {{ item.content }}
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
+        <Accordion :faqlist="faqlist" />
       </div>
     </div>
 
     <div class="flex-col mt-16 mb-8 text-center">
       <div id="contact-form" class="w-full">
-        <h1 class="tracking-wide">Contact Us</h1>
+        <h1 class="font-serif text-4xl font-semibold tracking-wide">
+          Contact Us
+        </h1>
         <p>
           We are reachable through email:
         </p>
@@ -81,47 +73,7 @@
         <div
           class="inline-block w-10/12 mb-8 lg:ml-10 xl:ml-40 md:w-1/2 lg:w-1/2 xl:w-1/2"
         >
-          <v-card
-            :raised="true"
-            elevation="24"
-            class="mt-12 "
-            min-width="300"
-            max-width="500"
-            min-height="70"
-          >
-            <v-card-text>
-              <div>Send us a message</div>
-              <form>
-                <v-text-field
-                  v-model="name"
-                  :error-messages="nameErrors"
-                  label="Name"
-                  required
-                  @input="$v.name.$touch()"
-                  @blur="$v.name.$touch()"
-                ></v-text-field>
-                <v-text-field
-                  v-model="email"
-                  :error-messages="emailErrors"
-                  label="E-mail"
-                  required
-                  @input="$v.email.$touch()"
-                  @blur="$v.email.$touch()"
-                ></v-text-field>
-                <v-text-field
-                  v-model="message"
-                  :error-messages="messageErrors"
-                  label="Your Message"
-                  required
-                  @input="$v.message.$touch()"
-                ></v-text-field>
-
-                <v-btn class="mr-4" @click="submit">submit</v-btn>
-                <v-btn @click="clear, (isVisible = false)">cancel</v-btn>
-              </form>
-            </v-card-text>
-            <v-card-actions> </v-card-actions>
-          </v-card>
+          <Contact />
         </div>
       </div>
     </div>
@@ -132,9 +84,11 @@
 import { validationMixin } from 'vuelidate'
 import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
 import HeaderIcon from '~/components/svg/about/HeaderIcon.vue'
+import Contact from '~/components/Contact.vue'
+import Accordion from '~/components/Accordion.vue'
 
 export default {
-  components: { HeaderIcon },
+  components: { HeaderIcon, Contact, Accordion },
   mixins: [validationMixin],
 
   validations: {
@@ -156,25 +110,33 @@ export default {
     items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
     faqlist: [
       {
-        header: 'Who we are?',
+        isVisible: false,
+        header: 'Who are we?',
         content:
           'We are a student-led organization based in the University of Wisconsin-Madison, USA that provides a peer-to-peer support platform for Malaysian students inthe US. Through our chat feature, we are providing an online medium for students to speak up and share their concerns, just like having a friend who listens to your stories. Our team consists of inspiring individuals with passion to care for others and dedication to change the stigma against mental health.'
       },
       {
+        isVisible: false,
         header: "What is STU's Mission?",
         content:
           'Provide a platform for individuals to express themselves freely regarding mental health'
       },
       {
+        isVisible: false,
         header: "What is STU's Vision?",
         content:
           'Create an environment where individuals can discuss comfortably about mental health'
       },
       {
+        isVisible: false,
         header: "What are STU's Objectives?",
-        content: ''
+        content:
+          'Our objectives are the breakdown in detail on how we are aiming to achieve our mission and vision for 2020.' +
+          '\n' +
+          'a. To provide mental health support to Malaysians by giving them the best recommendations and aid needed for them to improve and overcome issues such as, but not limited to, stress, 	anxiety, burnout, depression, and homesickness while keeping them anonymous. \n b. To ensure Malaysian know that there are people who want to listen and help them during these moments. \n c. To eliminate the stigma of a suicidal topic as something that they should be afraid of to share. \n d. Allow them to have someone from the same culture, beliefs, and also first language as a supporter. '
       },
       {
+        isVisible: false,
         header: 'How is 100% Confidentiality possible?',
         content:
           "We are using a system where the online chat user appears as a serial number. If you are using the email service, the messages pass through the first section where the email address will be changed into code before sending it to the responders. All responders are required to sign the HIPAA confidentiality rule, where all the users' stories are forbidden to leave the system. Any open conversation about any user or its identifier directly or indirectly will be considered as misconduct."
@@ -237,45 +199,4 @@ export default {
 }
 </script>
 
-<style scoped>
-h1 {
-  @apply text-4xl font-semibold text-black;
-}
-h2 {
-  @apply text-4xl text-center text-black;
-}
-h3 {
-  @apply text-green-500;
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-#whoweare-image {
-  @apply mt-2 object-center rounded-lg w-2 h-4;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  position: relative;
-  object-position: center;
-  left: 17%;
-}
-#objective-text {
-  left: 12%;
-}
-#app {
-  @apply h-24;
-  font-family: 'Righteous', arial;
-  font-weight: normal;
-  font-size: 0.5rem;
-  color: green;
-  background-color: white;
-  width: 100%;
-}
-</style>
+<style scoped></style>
