@@ -1,5 +1,9 @@
+// Configuring .env variables doc here: https://codecourse.com/watch/using-env-files-with-nuxt
+const env = require('dotenv').config()
+
 export default {
   mode: 'universal',
+  env: env.parsed,
   /*
    ** Headers of the page
    */
@@ -27,11 +31,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    { src: '~/plugins/vuelidate' },
-    { src: '~/plugins/vue-kinesis' },
-    { src: '~/plugins/vue-scroll' }
-  ],
+  plugins: [{ src: '~/plugins/vuelidate' }],
   /*
    ** Nuxt.js dev-modules
    */
