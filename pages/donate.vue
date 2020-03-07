@@ -40,11 +40,14 @@
           </div>
         </div>
         <div>
-          <button
+          <a
             class="justify-center px-20 py-2 text-center text-white bg-green-400 rounded hover:bg-green-700"
+            :href="paypalLink"
+            target="_blank"
+            rel="noreferrer"
           >
             Donate
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -90,12 +93,14 @@
             </div>
           </div>
           <div class="text-center">
-            <button
+            <a
               class="inline-block px-20 py-2 text-center text-white bg-green-400 rounded shadow-xl hover:bg-green-700"
-              @click="openPaypalLink"
+              :href="paypalLink"
+              target="_blank"
+              rel="noreferrer"
             >
               Donate
-            </button>
+            </a>
           </div>
         </div>
       </div>

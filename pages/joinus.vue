@@ -22,12 +22,14 @@
           <p class="mt-8 text-sm sm:text-lg font-body">No experience needed.</p>
         </div>
         <div class="flex flex-wrap w-full p-0 mt-8 buttons sm:w-full">
-          <button
+          <a
             class="justify-center w-full px-3 py-3 mr-0 font-serif font-bold text-center text-white bg-green-400 rounded hover:bg-green-700 sm:w-1/3 sm:mr-2"
-            @click="openApplyForm"
+            :href="applyFormLink"
+            target="_blank"
+            rel="noreferrer"
           >
             Apply Now
-          </button>
+          </a>
         </div>
       </div>
       <div class="w-full mt-10 sm:w-2/5 sm:mt-0">
@@ -106,9 +108,10 @@ export default {
     TeamIcon,
     FileIcon
   },
-  methods: {
-    openApplyForm() {
-      window.open('https://www.google.com', '_blank')
+  data() {
+    return {
+      applyFormLink:
+        'https://docs.google.com/forms/d/e/1FAIpQLScHDL33O6aq-Wbh8ZvV_TOnHtcL2mKihaqDbBvuafGW3HJYWg/viewform'
     }
   }
 }

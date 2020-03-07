@@ -34,16 +34,20 @@
         </div>
       </div>
 
-      <button
-        v-if="isOnline"
-        class="px-20 py-2 mt-4 text-3xl text-center text-white bg-green-400 rounded shadow-xl hover:bg-green-700"
-        @click="openChat"
-      >
-        Chat now!
-      </button>
+      <div v-if="isOnline" class="mt-4">
+        <a
+          class="px-20 py-2 mt-20 text-3xl text-center text-white bg-green-400 rounded shadow-xl hover:bg-green-700"
+          :href="chatLink"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Chat now!
+        </a>
+      </div>
+
       <button
         v-else
-        class="px-20 py-2 text-center text-white bg-gray-400 rounded hover:bg-gray-700"
+        class="px-20 py-2 mt-4 text-center text-white bg-gray-400 rounded hover:bg-gray-700"
       >
         Offline
       </button>
@@ -57,7 +61,7 @@
         <h2 class="mb-6 text-lg text-gray-700 sm:text-2xl">
           SpeakToUs listeners will respond to your email as soon as possible.
         </h2>
-        <Email class="" />
+        <Email :isaboutpage="isAboutPage" />
       </div>
     </div>
   </main>
@@ -75,12 +79,8 @@ export default {
   data() {
     return {
       isOnline: true,
-      chatLink: 'https://tawk.to/chat/' + process.env.TAWK_KEY + '/default'
-    }
-  },
-  methods: {
-    openChat() {
-      window.open(this.chatLink, '_blank')
+      isAboutPage: false,
+      chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default'
     }
   }
 }
