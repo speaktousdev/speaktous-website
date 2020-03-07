@@ -129,7 +129,7 @@
           </div>
         </div>
         <div class="hidden sm:block sm:w-1/2">
-          <img class="w-4/5 ml-12" src="../static/index/meeting.png" />
+          <JoinUsIcon class="w-full h-full" />
         </div>
       </div>
     </div>
@@ -137,7 +137,10 @@
 </template>
 
 <script>
-export default {}
+import JoinUsIcon from '~/components/svg/index/JoinUsIcon.vue'
+export default {
+  components: { JoinUsIcon }
+}
 </script>
 
 <style>
