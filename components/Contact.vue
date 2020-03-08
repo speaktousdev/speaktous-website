@@ -1,14 +1,14 @@
 <template v-if="isVisible">
   <form action="" class="">
-    <div class="flex flex-col  border-2 rounded-lg shadow-xl">
+    <div class="flex flex-col border-2 rounded-lg shadow-xl">
       <label for="contact-us"> Send us a message</label>
-      <div class="border-b border-b-2 border-gray-500 mx-8 py-4">
+      <div class="py-4 mx-8 border-b border-b-2 border-gray-500">
         <input
+          id="name"
+          v-model="name"
           type="name"
           min="1"
           max="20"
-          id="name"
-          v-model="name"
           placeholder="Name"
           class="px-2"
           :error-messages="nameErrors"
@@ -16,17 +16,17 @@
         />
       </div>
 
-      <div class="border-b border-b-2 border-gray-500 mx-8 py-4">
+      <div class="py-4 mx-8 border-b border-b-2 border-gray-500">
         <input
-          type="email"
           v-model="email"
+          type="email"
           placeholder="your-email@example.com"
           class="px-2"
           :error-messages="emailErrors"
           @input="$v.email.$touch()"
         />
       </div>
-      <div class="border-b border-b-2 border-gray-500 mx-8 py-4">
+      <div class="py-4 mx-8 border-b border-b-2 border-gray-500">
         <textarea
           type="message"
           placeholder="Your Message"
@@ -35,15 +35,15 @@
           @input="$v.message.$touch()"
         />
       </div>
-      <div class="px-20 md:px-24 mb-6  py-4 w-48 flex flex-row">
+      <div class="flex flex-row w-48 px-20 py-4 mb-6 md:px-24">
         <button
-          class=" p-2 w-24 h-10 bg-gray-200 border-4 rounded-lg shadow-lg"
+          class="w-24 h-10 p-2 bg-gray-200 border-4 rounded-lg shadow-lg "
           @click="submit"
         >
           SUBMIT
         </button>
         <button
-          class="p-2 ml-4 w-24 h-10 bg-gray-200 border-4 rounded-lg shadow-lg"
+          class="w-24 h-10 p-2 ml-4 bg-gray-200 border-4 rounded-lg shadow-lg"
           @click="clear, (isVisible = false)"
         >
           CANCEL
