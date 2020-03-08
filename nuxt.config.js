@@ -21,6 +21,15 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
+   ** PWA options
+   */
+  // pwa: {
+  //   icon: {
+  //     /* icon options */
+  //     iconSrc: './static/favicon.ico'
+  //   }
+  // },
+  /*
    ** Customize the progress-bar color
    */
   loading: { color: '#74B757' },
@@ -39,8 +48,7 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/tailwindcss'
   ],
   /*
    ** Nuxt.js modules
