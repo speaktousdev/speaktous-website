@@ -83,6 +83,7 @@
               class="text-green-800 underline"
               href="https://www.cdc.gov/aging/emergency/legal/privacy.htm"
               target="_blank"
+              rel="noreferrer"
               >HIPAA Confidentiality Agreement</a
             >.
           </h1>
