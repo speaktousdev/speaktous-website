@@ -1,14 +1,14 @@
 <template>
-  <main class="shadow-xl">
+  <main class="border shadow-xl">
     <div v-for="item in faqlist" :key="item.header" class="border-b ">
       <button
+        class="flex flex-row justify-between w-full h-auto px-4 py-4 font-bold text-left text-gray-800 outline-none hover:bg-green-300 "
+        :class="{ 'bg-green-300': item.isVisible }"
         @click="handleFaqContent(item, faqlist)"
-        class="w-full h-auto hover:bg-green-300 text-left px-4 py-4 font-bold text-gray-800 outline-none flex flex-row justify-between "
-        v-bind:class="{ 'bg-green-300': item.isVisible }"
       >
         <span>{{ item.header }}</span>
         <svg
-          class="fill-current w-4 h-4 ml-4 mr-2 justify-center"
+          class="justify-center w-4 h-4 ml-4 mr-2 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >
@@ -18,9 +18,9 @@
         </svg>
       </button>
       <div
-        class="px-6 py-6 text-justify bg-gray-100 text-gray-800"
         v-if="item.isVisible"
         :key="item.content"
+        class="px-6 py-6 text-justify text-gray-800 bg-gray-100"
       >
         <p>{{ item.content }}</p>
       </div>
