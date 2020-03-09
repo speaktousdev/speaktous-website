@@ -10,7 +10,7 @@
         href="/disclaimer"
         @click.prevent="$router.push('/disclaimer')"
       >
-        Terms & Privacy Policy
+        Disclaimer & Terms
       </a>
       <span>&#183;</span>
       <a class="ml-4" href="mailto:speaktousofficial@gmail.com">Contact Us</a>
