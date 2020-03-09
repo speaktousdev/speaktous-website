@@ -34,23 +34,26 @@
         </div>
       </div>
 
-      <div v-if="isOnline" class="mt-4">
-        <a
-          class="px-20 py-2 mt-20 text-3xl text-center text-white bg-green-400 rounded shadow-xl hover:bg-green-700"
-          :href="chatLink"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Chat now!
-        </a>
-      </div>
-
+      <button
+        v-if="isOnline"
+        class="px-20 py-2 mt-4 mt-20 text-3xl text-center text-white bg-green-400 rounded-lg shadow-xl hover:bg-green-700"
+        @click="isModalVisible = true"
+      >
+        Chat now!
+      </button>
       <button
         v-else
-        class="px-20 py-2 mt-4 text-center text-white bg-gray-400 rounded hover:bg-gray-700"
+        class="px-20 py-2 mt-4 text-center text-white bg-gray-600 rounded-lg opacity-50 cursor-not-allowed"
       >
         Offline
       </button>
+
+      <FloatingDisclaimer
+        v-if="isModalVisible"
+        :chat-link="chatLink"
+        @close="isModalVisible = false"
+      />
+
       <div class="mt-48 font-serif">
         <h1 v-if="isOnline" class="text-2xl sm:text-3xl">
           If you don't prefer chat, you can email us!
@@ -69,18 +72,21 @@
 
 <script>
 import ChatMainIcon from '~/components/svg/chat/ChatMainIcon.vue'
+import FloatingDisclaimer from '~/components/FloatingDisclaimer.vue'
 import Email from '~/components/Email.vue'
 
 export default {
   components: {
     ChatMainIcon,
+    FloatingDisclaimer,
     Email
   },
   data() {
     return {
       isOnline: true,
       isAboutPage: false,
-      chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default'
+      chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
+      isModalVisible: false
     }
   }
 }
