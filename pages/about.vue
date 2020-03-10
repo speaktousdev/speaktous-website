@@ -1,35 +1,38 @@
 <template>
-  <main class="max-w-screen-xl text-center lg:mx-auto">
-    <div class="justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row">
-      <div>
-        <p
-          class="mt-4 font-serif text-4xl font-bold tracking-wide lg:text-6xl md:mt-16 lg:mt-18 xl:mt-24 md:text-4xl md:text-left"
+  <main
+    class="max-w-screen-xl text-black lg:text-gray-800 text-center lg:mx-auto"
+  >
+    <div
+      class="justify-between px-10 lg:px-24  md:flex md:flex-row lg:h-screen"
+    >
+      <div class="md:w-1/2 lg:w-1/2">
+        <h1
+          class="mt-4 font-serif  text-4xl font-extrabold tracking-wide lg:text-6xl md:mt-16 lg:mt-14 md:text-4xl md:text-left"
         >
           About Us
-        </p>
-        <p class="mt-4 text-lg lg:mt-6 md:text-left lg:text-xl xl:text-2xl">
+        </h1>
+        <p class="mt-4  text-lg lg:mt-6 md:text-left lg:text-xl xl:text-2xl">
           We are a group of Malaysian students<br />who are passionate about
           <b />mental health.
         </p>
-        <p class="mt-4 text-lg xl:mt-8 md:text-left lg:text-xl xl:text-2xl">
-          We provide an <b>online chat system</b> for <br />Malaysian students
-          abroad to share<br />and express their feelings to a fellow<br />Malaysian.
+        <p class="mt-4  text-lg xl:mt-8 md:text-left lg:text-xl xl:text-2xl">
+          We provide an <br /><b>online chat system</b> <br />for Malaysian
+          students abroad to share and express their feelings to a fellow
+          Malaysian.
         </p>
       </div>
 
-      <HeaderIcon class="hidden w-2/4 h-auto py-2 md:block lg:block xl:block" />
+      <HeaderIcon
+        class="md:w-1/2 md:h-auto lg:w-1/2 lg:h-1/2 mb-24 hidden  md:block lg:block xl:block"
+      />
     </div>
 
-    <div id="second" class="mt-8 text-center md:mt-32">
-      <div class="relative inline-block">
-        <img
-          src="~/static/about/group-photo.png"
-          alt="SpeakToUs Group photo"
-          class="block w-screen"
-        />
+    <div class="mt-8 lg:mt-0 item-center md:mt-32">
+      <div class="">
+        <GroupPhoto class="w-full lg:w-3/4 h-auto ml-auto mr-auto block" />
       </div>
       <p
-        class="text-base tracking-wide xl:mt-4 md:text-xl lg:text-2xl xl:text-3xl"
+        class=" text-base tracking-wide xl:mt-4 md:text-xl lg:text-2xl xl:text-3xl"
       >
         We bring SpeakToUs to you
       </p>
@@ -38,7 +41,7 @@
     <div class="mt-16 text-center md:mt-24">
       <div class="inline-block w-11/12 lg:w-1/2 xl:w-1/2">
         <h1
-          class="inline-block ml-2 font-serif text-4xl font-semibold tracking-widest text-left lg:ml-4 xl:ml-6"
+          class=" inline-block ml-2 font-serif text-4xl font-semibold tracking-widest text-left lg:ml-4 xl:ml-6"
         >
           More About Us
         </h1>
@@ -48,10 +51,10 @@
 
     <div class="flex-col flex-grow px-8 mt-16 mb-8">
       <div class="w-full">
-        <h1 class="font-serif text-4xl font-semibold tracking-wide">
+        <h1 class="font-serif  text-4xl font-semibold tracking-wide">
           Contact Us
         </h1>
-        <p>
+        <p class="">
           We are reachable through email:
         </p>
         <button class="mb-8 text-green-500" @click="isVisible = !isVisible">
@@ -69,9 +72,10 @@
 import HeaderIcon from '~/components/svg/about/HeaderIcon.vue'
 import Accordion from '~/components/Accordion.vue'
 import Email from '~/components/Email.vue'
+import GroupPhoto from '~/components/svg/about/GroupPhoto.vue'
 
 export default {
-  components: { HeaderIcon, Accordion, Email },
+  components: { HeaderIcon, Accordion, Email, GroupPhoto },
   data: () => ({
     isVisible: false,
     isAboutPage: true,

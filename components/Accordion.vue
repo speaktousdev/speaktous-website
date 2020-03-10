@@ -20,7 +20,7 @@
       <div
         v-if="item.isVisible"
         :key="item.content"
-        class="px-6 py-6 text-justify text-gray-800 bg-gray-100"
+        class="px-6 py-6 text-justify text-black bg-gray-100"
       >
         <p>{{ item.content }}</p>
       </div>

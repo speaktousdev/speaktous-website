@@ -1,10 +1,12 @@
 <template>
-  <main class="max-w-screen-xl px-8 mx-auto sm:px-12 md:px-20">
+  <main
+    class="max-w-screen-xl text-black lg:text-gray-800 px-8 mx-auto sm:px-12 md:px-20 lg:px-24 "
+  >
     <div class="flex flex-wrap items-center py-6 section-1">
       <div class="w-full sm:pt-10 sm:w-3/5">
         <div class="text-center sm:w-64 sm:text-left">
           <h1
-            class="font-serif text-4xl font-extrabold text-center sm:text-left sm:text-6xl"
+            class="font-serif text-4xl font-extrabold text-center sm:text-left sm:text-6xl "
           >
             Join Us
           </h1>
@@ -12,7 +14,7 @@
             <rect class="w-24 h-2 bg-green" style="fill:green;" />
           </svg>
         </div>
-        <div class="text-center section-desc sm:pr-12 sm:text-left">
+        <div class="text-center section-desc sm:pr-12 lg:pr-6 sm:text-left">
           <p class="mt-2 text-lg sm:text-4xl font-body sm:mt-6">
             Be part of a changing community.
           </p>
@@ -33,7 +35,7 @@
         </div>
       </div>
       <div class="w-full mt-10 sm:w-2/5 sm:mt-0">
-        <TeamIcon class="w-full h-auto"></TeamIcon>
+        <TeamIcon class="justify-right w-11/12 h-auto"></TeamIcon>
       </div>
     </div>
 

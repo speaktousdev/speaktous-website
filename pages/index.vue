@@ -1,15 +1,15 @@
 <template>
-  <main class="max-w-screen-xl mx-auto">
-    <div class="flex flex-wrap px-8 py-6 intro-section sm:px-12">
-      <div class="w-full sm:pt-10 sm:w-3/5">
-        <div class="sm:w-64">
+  <main class="max-w-screen-xl mx-auto text-black lg:text-gray-800 ">
+    <div class="flex flex-wrap py-6 px-8 intro-section sm:px-12 lg:px-24">
+      <div class=" sm:pt-10 sm:w-3/5 ">
+        <div class="sm:w-64 lg:w-full">
           <h1
-            class="font-serif text-4xl font-extrabold text-center sm:text-left"
+            class="font-serif text-4xl lg:text-6xl font-extrabold text-center sm:text-left "
           >
             You Share
           </h1>
           <h1
-            class="mb-6 -mt-2 font-serif text-4xl font-extrabold text-center sm:text-left sm:mb-4"
+            class="mb-6 -mt-2 font-serif text-4xl lg:text-6xl font-extrabold text-center sm:text-left sm:mb-4"
           >
             We Care
           </h1>
@@ -51,7 +51,9 @@
       </div>
     </div>
 
-    <div class="px-6 py-6 bg-gray-200 share-section sm:px-12 sm:py-10">
+    <div
+      class="px-6 py-6 bg-gray-200 share-section sm:px-12 lg:px-24 sm:py-10 "
+    >
       <div class="items-center text-center title-with-underline">
         <h1
           class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl"
@@ -63,7 +65,7 @@
         ></div>
       </div>
       <div class="flex flex-wrap p-8">
-        <div class="share-item">
+        <div class="share-item ">
           <img class="w-40 mb-4" src="../static/index/login.png" />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             No registration needed
@@ -71,14 +73,14 @@
         </div>
         <div class="share-item">
           <img class="w-40 mb-4" src="../static/index/anon.png" />
-          <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
+          <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4 ">
             You are 100% anonymous on our online chat
           </h1>
         </div>
         <div class="share-item">
           <img class="w-40 mb-4" src="../static/index/Listener.png" />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
-            Supported by passionate listeners who have signed
+            Supported by passionate listeners who have signed<br />
             <a
               class="text-green-800 underline"
               href="https://www.cdc.gov/aging/emergency/legal/privacy.htm"
@@ -97,7 +99,7 @@
       </div>
     </div>
 
-    <div class="px-8 py-6 join-us-section sm:px-12 sm:py-10">
+    <div class="px-8 py-6 join-us-section sm:px-12 sm:py-10 lg:px-24">
       <div class="items-center text-center title-with-underline">
         <h1
           class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl"

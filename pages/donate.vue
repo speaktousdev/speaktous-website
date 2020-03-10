@@ -55,7 +55,7 @@
     <!-- This is for large (desktop) screens -->
     <div class="flex flex-wrap hidden px-12 mt-10 lg:flex lg:text-left">
       <div class="w-3/5 pr-12">
-        <h1 class="font-serif text-5xl font-extrabold text-gray-800 ">
+        <h1 class="font-serif text-6xl font-extrabold text-gray-800 ">
           Make a donation, <br />today!
         </h1>
         <svg class="w-24 h-2 mb-10">
