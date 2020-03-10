@@ -54,8 +54,8 @@
 
             <p class="p-2 mb-4 bg-gray-200 rounded-lg">
               We are <span class="font-bold">NOT medical professionals</span>,
-              but we share a similar cultural background a fellow Malaysian. We
-              are ready to listen and be there for you - trust us, we care!
+              but we share similar cultural backgrounds as a fellow Malaysian.
+              We are ready to listen and be there for you - trust us, we care!
             </p>
             <p class="p-2 mb-4 bg-gray-200 rounded-lg">
               Our approaches <span class="font-bold">may NOT fit</span> every
