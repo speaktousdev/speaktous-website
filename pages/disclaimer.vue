@@ -17,10 +17,10 @@
     </div>
 
     <div id="footer-background" class="mt-12 px-4 md:px-8 h-screen">
-      <div class="pt-12 lg:pt-16 px-8 md:px-12 lg:px-12 xl:px-12">
-        <p
-          class="font-serif tracking-wide text-black text-2xl md:text-5xl font-semibold"
-        >
+      <div
+        class="pt-12 lg:pt-16 px-8 md:px-12 lg:px-12 xl:px-12 lg:text-gray-800"
+      >
+        <p class="font-serif tracking-wide text-2xl md:text-5xl font-semibold">
           In case of medical emergencies
         </p>
         <ul
@@ -34,7 +34,7 @@
     </div>
 
     <div class="bg-gray-200 h-screen px-4 md:px-8">
-      <div class="px-8 lg:pt-16 md:px-12 lg:px-12 xl:px-12">
+      <div class="px-8 lg:pt-16 md:px-12 lg:px-12 xl:px-12 lg:text-gray-800">
         <div v-for="item in list2" :key="item.id" class="pt-8">
           <h1
             class="font-serif py-4 pr-12 md:pr-6 lg:pr-20 xl:pr-48 text-xl md:text-4xl font-bold tracking-wide leading-relaxed"
