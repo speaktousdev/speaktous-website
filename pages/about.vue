@@ -2,9 +2,7 @@
   <main
     class="max-w-screen-xl text-black lg:text-gray-800 text-center lg:mx-auto"
   >
-    <div
-      class="justify-between px-10 lg:px-24  md:flex md:flex-row lg:h-screen"
-    >
+    <div class="justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row ">
       <div class="md:w-1/2 lg:w-1/2">
         <h1
           class="mt-4 font-serif  text-4xl font-extrabold tracking-wide lg:text-6xl md:mt-16 lg:mt-14 md:text-4xl md:text-left"
@@ -23,13 +21,16 @@
       </div>
 
       <HeaderIcon
-        class="md:w-1/2 md:h-auto lg:w-1/2 lg:h-1/2 mb-24 hidden  md:block lg:block xl:block"
+        class="w-1/2 h-auto py-2 hidden  md:block lg:block xl:block"
       />
     </div>
 
-    <div class="mt-8 lg:mt-0 item-center md:mt-32">
+    <div class="mt-8 item-center md:mt-32">
       <div class="">
-        <GroupPhoto class="w-full lg:w-3/4 h-auto ml-auto mr-auto block" />
+        <img
+          class="w-full lg:w-3/4 h-auto ml-auto mr-auto block"
+          src="../static/about/stuphoto.png"
+        />
       </div>
       <p
         class=" text-base tracking-wide xl:mt-4 md:text-xl lg:text-2xl xl:text-3xl"
@@ -72,10 +73,9 @@
 import HeaderIcon from '~/components/svg/about/HeaderIcon.vue'
 import Accordion from '~/components/Accordion.vue'
 import Email from '~/components/Email.vue'
-import GroupPhoto from '~/components/svg/about/GroupPhoto.vue'
 
 export default {
-  components: { HeaderIcon, Accordion, Email, GroupPhoto },
+  components: { HeaderIcon, Accordion, Email },
   data: () => ({
     isVisible: false,
     isAboutPage: true,
