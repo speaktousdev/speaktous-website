@@ -1,15 +1,15 @@
 <template>
   <main class="max-w-screen-xl mx-auto text-black lg:text-gray-800 ">
-    <div class="flex flex-wrap py-6 px-8 intro-section sm:px-12 lg:px-24">
-      <div class=" sm:pt-10 sm:w-3/5 ">
+    <div class="flex flex-wrap px-8 py-6 intro-section sm:px-12 lg:px-24">
+      <div class=" sm:pt-10 sm:w-3/5">
         <div class="sm:w-64 lg:w-full">
           <h1
-            class="font-serif text-4xl lg:text-6xl font-extrabold text-center sm:text-left "
+            class="font-serif text-4xl font-extrabold text-center lg:text-6xl sm:text-left "
           >
             You Share
           </h1>
           <h1
-            class="mb-6 -mt-2 font-serif text-4xl lg:text-6xl font-extrabold text-center sm:text-left sm:mb-4"
+            class="mb-6 -mt-2 font-serif text-4xl font-extrabold text-center lg:text-6xl sm:text-left sm:mb-4"
           >
             We Care
           </h1>
@@ -34,7 +34,7 @@
             Chat Now
           </button>
           <button
-            class="justify-center w-full px-3 py-3 mt-3 font-serif font-bold text-center text-white bg-gray-400 rounded hover:bg-gray-700 sm:w-1/3 sm:mt-0"
+            class="justify-center w-full px-3 py-3 mt-3 font-serif font-bold text-center text-white bg-gray-600 rounded hover:bg-gray-700 sm:w-1/3 sm:mt-0"
             @click.prevent="$router.push('/about')"
           >
             Learn more
@@ -45,8 +45,7 @@
         <img
           class="w-full"
           src="../static/index/STU-logo.jpg"
-          alt="SpeakToUs
-        Logo"
+          alt="Speak To Us logo."
         />
       </div>
     </div>
@@ -66,19 +65,31 @@
       </div>
       <div class="flex flex-wrap p-8">
         <div class="share-item ">
-          <img class="w-40 mb-4" src="../static/index/login.png" />
+          <img
+            class="w-40 mb-4"
+            src="../static/index/login.png"
+            alt="A man entering through a door."
+          />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             No registration needed
           </h1>
         </div>
         <div class="share-item">
-          <img class="w-40 mb-4" src="../static/index/anon.png" />
+          <img
+            class="w-40 mb-4"
+            src="../static/index/anon.png"
+            alt="A spy with dark glasses and a black hat."
+          />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4 ">
             You are 100% anonymous on our online chat
           </h1>
         </div>
         <div class="share-item">
-          <img class="w-40 mb-4" src="../static/index/Listener.png" />
+          <img
+            class="w-40 mb-4"
+            src="../static/index/Listener.png"
+            alt="A telemarketer talking to a customer."
+          />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             Supported by passionate listeners who have signed<br />
             <a
@@ -91,7 +102,11 @@
           </h1>
         </div>
         <div class="share-item">
-          <img class="w-40 mb-4" src="../static/index/file.png" />
+          <img
+            class="w-40 mb-4"
+            src="../static/index/file.png"
+            alt="A brown folder that has a confidential stamp on it."
+          />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             Your confidentiality is guaranteed
           </h1>
