@@ -12,7 +12,7 @@
     </div>
 
     <div class="mb-8 text-center sm:mt-16">
-      <h1 class="font-serif text-4xl text-gray-800 sm:text-6xl">
+      <h1 class="font-serif text-4xl font-extrabold text-gray-800 sm:text-6xl">
         Chat With Us
         <br class="sm:hidden" />Online
       </h1>

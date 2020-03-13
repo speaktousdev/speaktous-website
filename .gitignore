@@ -88,3 +88,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Files that contain deployed pages audits
+audits/
