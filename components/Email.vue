@@ -109,7 +109,6 @@ export default {
   },
   validations: {
     name: {
-      required,
       minLength: minLength(2)
     },
     email: {
@@ -146,7 +145,7 @@ export default {
               )
             },
             (error) => {
-              alert('Your email failed to send :(', error)
+              alert('Your email was failed to send :(', error)
             }
           )
       }
