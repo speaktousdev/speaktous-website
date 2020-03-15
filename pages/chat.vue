@@ -12,7 +12,7 @@
     </div>
 
     <div class="mb-8 text-center sm:mt-16">
-      <h1 class="font-serif text-4xl text-gray-800 sm:text-6xl">
+      <h1 class="font-serif text-4xl font-extrabold text-gray-800 sm:text-6xl">
         Chat With Us
         <br class="sm:hidden" />Online
       </h1>
@@ -36,17 +36,24 @@
 
       <button
         v-if="isOnline"
-        class="px-20 py-2 mt-4 text-3xl text-center text-white bg-green-400 rounded shadow-xl hover:bg-green-700"
-        @click="openChat"
+        class="px-20 py-2 mt-4 mt-20 text-3xl text-center text-white bg-green-400 rounded-lg shadow-xl hover:bg-green-700"
+        @click="isModalVisible = true"
       >
         Chat now!
       </button>
       <button
         v-else
-        class="px-20 py-2 text-center text-white bg-gray-400 rounded hover:bg-gray-700"
+        class="px-20 py-2 mt-4 text-center text-white bg-gray-600 rounded-lg opacity-50 cursor-not-allowed"
       >
         Offline
       </button>
+
+      <FloatingDisclaimer
+        v-if="isModalVisible"
+        :chat-link="chatLink"
+        @close="isModalVisible = false"
+      />
+
       <div class="mt-48 font-serif">
         <h1 v-if="isOnline" class="text-2xl sm:text-3xl">
           If you don't prefer chat, you can email us!
@@ -57,7 +64,7 @@
         <h2 class="mb-6 text-lg text-gray-700 sm:text-2xl">
           SpeakToUs listeners will respond to your email as soon as possible.
         </h2>
-        <Email class="" />
+        <Email :isaboutpage="isAboutPage" />
       </div>
     </div>
   </main>
@@ -65,22 +72,21 @@
 
 <script>
 import ChatMainIcon from '~/components/svg/chat/ChatMainIcon.vue'
+import FloatingDisclaimer from '~/components/FloatingDisclaimer.vue'
 import Email from '~/components/Email.vue'
 
 export default {
   components: {
     ChatMainIcon,
+    FloatingDisclaimer,
     Email
   },
   data() {
     return {
       isOnline: true,
-      chatLink: 'https://tawk.to/chat/' + process.env.TAWK_KEY + '/default'
-    }
-  },
-  methods: {
-    openChat() {
-      window.open(this.chatLink, '_blank')
+      isAboutPage: false,
+      chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
+      isModalVisible: false
     }
   }
 }

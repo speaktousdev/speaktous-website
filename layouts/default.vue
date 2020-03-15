@@ -18,6 +18,4 @@ export default {
 }
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat&display=swap');
-</style>
+<style></style>
