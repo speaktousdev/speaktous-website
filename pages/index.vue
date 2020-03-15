@@ -2,21 +2,21 @@
   <main class="max-w-screen-xl mx-auto">
     <div class="flex flex-wrap px-8 py-6 intro-section sm:px-12">
       <div class="w-full sm:pt-10 sm:w-3/5">
-        <div class="sm:w-64">
+        <div class="sm:w-full">
           <h1
-            class="font-serif text-4xl font-extrabold text-center sm:text-left"
+            class="font-serif text-4xl sm:text-6xl font-extrabold text-center sm:text-left"
           >
             You Share
           </h1>
           <h1
-            class="mb-6 -mt-2 font-serif text-4xl font-extrabold text-center sm:text-left sm:mb-4"
+            class="mb-6 -mt-2 font-serif text-4xl sm:text-6xl font-extrabold text-center sm:text-left sm:mb-4"
           >
             We Care
           </h1>
         </div>
         <div class="text-left section-desc sm:pr-12">
           <p class="text-lg">
-            Speak To Us is an
+            SpeakToUs is an
             <strong class>online chat platform</strong>
             for Malaysian students in the United States to share and express
             their feelings to a fellow Malaysian.
@@ -64,15 +64,15 @@
       </div>
       <div class="flex flex-wrap p-8">
         <div class="share-item">
-          <img class="w-40 mb-4" src="../static/index/login.png" />
-          <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
-            No registration needed
-          </h1>
-        </div>
-        <div class="share-item">
           <img class="w-40 mb-4" src="../static/index/anon.png" />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             You are 100% anonymous on our online chat
+          </h1>
+        </div>
+        <div class="share-item">
+          <img class="w-40 mb-4" src="../static/index/login.png" />
+          <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
+            No sign up needed
           </h1>
         </div>
         <div class="share-item">
@@ -99,9 +99,9 @@
     <div class="px-8 py-6 join-us-section sm:px-12 sm:py-10">
       <div class="items-center text-center title-with-underline">
         <h1
-          class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl"
+          class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl tracking-wider"
         >
-          Be Part of Us!
+          Be Part of SpeakToUs!
         </h1>
         <div
           class="relative inline-block w-1/2 border-b-2 border-green-500 sm:block sm:left-0"

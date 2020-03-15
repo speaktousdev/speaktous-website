@@ -108,7 +108,10 @@ export default {
   },
   methods: {
     openApplyForm() {
-      window.open('https://www.google.com', '_blank')
+      window.open(
+        'https://docs.google.com/forms/d/e/1FAIpQLScHDL33O6aq-Wbh8ZvV_TOnHtcL2mKihaqDbBvuafGW3HJYWg/viewform',
+        '_blank'
+      )
     }
   }
 }

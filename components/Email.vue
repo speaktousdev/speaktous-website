@@ -9,6 +9,7 @@
       <input
         v-model.lazy="$v.email.$model"
         type="email"
+        name="user_email"
         placeholder="your_email@example.com"
         class="p-2 bg-gray-100 rounded-lg shadow-xl"
       />
@@ -44,6 +45,7 @@
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
+import emailjs from 'emailjs-com'
 import MailIcon from '~/components/svg/chat/MailIcon.vue'
 
 export default {
@@ -68,27 +70,33 @@ export default {
     }
   },
   methods: {
-    submitForm() {
-      // to tell vuelidate that the submit button has been pressed
+    submitForm(e) {
       this.$v.email.$touch()
       this.$v.message.$touch()
-
       if (this.$v.$invalid) {
         this.submitStatus = 'ERROR'
       } else {
         // do your submit logic here
         this.submitStatus = 'PENDING'
-        setTimeout(() => {
-          this.submitStatus = 'OK'
-          // eslint-disable-next-line no-console
-          window.confirm(
-            'You have successfully sent an email using "' +
-              this.email +
-              '" with the message "' +
-              this.message +
-              '".'
+        emailjs
+          .sendForm(
+            'stu_listener_gmail',
+            'template_2svcDcH4',
+            e.target,
+            'user_BwFVFbBAhWjyWTX2pirss'
           )
-        }, 500)
+          .then(
+            (result) => {
+              alert(
+                'Your email was succesfully sent!',
+                result.status,
+                result.text
+              )
+            },
+            (error) => {
+              alert('Your email failed to send :(', error)
+            }
+          )
       }
     }
   }

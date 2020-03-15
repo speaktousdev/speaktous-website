@@ -43,7 +43,7 @@
       </button>
       <button
         v-else
-        class="px-20 py-2 text-center text-white bg-gray-400 rounded hover:bg-gray-700"
+        class="px-20 py-2 mt-4 text-3xl text-center text-white bg-gray-400 rounded shadow-xl hover:bg-gray-700"
       >
         Offline
       </button>
@@ -74,8 +74,23 @@ export default {
   },
   data() {
     return {
-      isOnline: true,
+      isOnline: false,
       chatLink: 'https://tawk.to/chat/' + process.env.TAWK_KEY + '/default'
+    }
+  },
+  mounted() {
+    // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
+    // UTC Day Sunday: 0-2 (Madison), 8-10 (Malaysia)
+    const d = new Date()
+
+    if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
+      this.isOnline = true
+    } else if (
+      d.getUTCDay() === 0 &&
+      d.getUTCHours() >= 8 &&
+      d.getUTCHours() < 10
+    ) {
+      this.isOnline = true
     }
   },
   methods: {
