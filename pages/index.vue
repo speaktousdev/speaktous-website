@@ -16,7 +16,7 @@
         </div>
         <div class="text-left section-desc sm:pr-12">
           <p class="text-lg">
-            Speak To Us is an
+            SpeakToUs is an
             <strong class>online chat platform</strong>
             for Malaysian students in the United States to share and express
             their feelings to a fellow Malaysian.
@@ -71,7 +71,7 @@
             alt="A man entering through a door."
           />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
-            No registration needed
+            You are 100% anonymous on our online chat
           </h1>
         </div>
         <div class="share-item">
@@ -117,9 +117,9 @@
     <div class="px-8 py-6 join-us-section sm:px-12 sm:py-10 lg:px-24">
       <div class="items-center text-center title-with-underline">
         <h1
-          class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl"
+          class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl tracking-wider"
         >
-          Be Part of Us!
+          Be Part of SpeakToUs!
         </h1>
         <div
           class="relative inline-block w-1/2 border-b-2 border-green-500 sm:block sm:left-0"

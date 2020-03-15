@@ -83,10 +83,30 @@ export default {
   },
   data() {
     return {
-      isOnline: true,
+      isOnline: false,
       isAboutPage: false,
       chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
       isModalVisible: false
+    }
+  },
+  mounted() {
+    // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
+    // UTC Day Sunday: 0-2 (Madison), 8-10 (Malaysia)
+    const d = new Date()
+
+    if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
+      this.isOnline = true
+    } else if (
+      d.getUTCDay() === 0 &&
+      d.getUTCHours() >= 8 &&
+      d.getUTCHours() < 10
+    ) {
+      this.isOnline = true
+    }
+  },
+  methods: {
+    openChat() {
+      window.open(this.chatLink, '_blank')
     }
   }
 }
