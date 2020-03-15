@@ -1,10 +1,12 @@
 <template>
-  <main class="max-w-screen-xl px-8 mx-auto sm:px-12 md:px-20">
+  <main
+    class="max-w-screen-xl text-black lg:text-gray-800 px-8 mx-auto sm:px-12 md:px-20 lg:px-24 "
+  >
     <div class="flex flex-wrap items-center py-6 section-1">
       <div class="w-full sm:pt-10 sm:w-3/5">
         <div class="text-center sm:w-64 sm:text-left">
           <h1
-            class="font-serif text-4xl font-extrabold text-center sm:text-left sm:text-6xl"
+            class="font-serif text-4xl font-extrabold text-center sm:text-left sm:text-6xl "
           >
             Join Us
           </h1>
@@ -12,7 +14,7 @@
             <rect class="w-24 h-2 bg-green" style="fill:green;" />
           </svg>
         </div>
-        <div class="text-center section-desc sm:pr-12 sm:text-left">
+        <div class="text-center section-desc sm:pr-12 lg:pr-6 sm:text-left">
           <p class="mt-2 text-lg sm:text-4xl font-body sm:mt-6">
             Be part of a changing community.
           </p>
@@ -22,16 +24,18 @@
           <p class="mt-8 text-sm sm:text-lg font-body">No experience needed.</p>
         </div>
         <div class="flex flex-wrap w-full p-0 mt-8 buttons sm:w-full">
-          <button
+          <a
             class="justify-center w-full px-3 py-3 mr-0 font-serif font-bold text-center text-white bg-green-400 rounded hover:bg-green-700 sm:w-1/3 sm:mr-2"
-            @click="openApplyForm"
+            :href="applyFormLink"
+            target="_blank"
+            rel="noreferrer"
           >
             Apply Now
-          </button>
+          </a>
         </div>
       </div>
       <div class="w-full mt-10 sm:w-2/5 sm:mt-0">
-        <TeamIcon class="w-full h-auto"></TeamIcon>
+        <TeamIcon class="justify-right w-11/12 h-auto"></TeamIcon>
       </div>
     </div>
 
@@ -106,12 +110,10 @@ export default {
     TeamIcon,
     FileIcon
   },
-  methods: {
-    openApplyForm() {
-      window.open(
-        'https://docs.google.com/forms/d/e/1FAIpQLScHDL33O6aq-Wbh8ZvV_TOnHtcL2mKihaqDbBvuafGW3HJYWg/viewform',
-        '_blank'
-      )
+  data() {
+    return {
+      applyFormLink:
+        'https://docs.google.com/forms/d/e/1FAIpQLScHDL33O6aq-Wbh8ZvV_TOnHtcL2mKihaqDbBvuafGW3HJYWg/viewform'
     }
   }
 }

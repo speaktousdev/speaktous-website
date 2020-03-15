@@ -40,11 +40,14 @@
           </div>
         </div>
         <div>
-          <button
+          <a
             class="justify-center px-20 py-2 text-center text-white bg-green-400 rounded hover:bg-green-700"
+            :href="paypalLink"
+            target="_blank"
+            rel="noreferrer"
           >
             Donate
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -52,7 +55,7 @@
     <!-- This is for large (desktop) screens -->
     <div class="flex flex-wrap hidden px-12 mt-10 lg:flex lg:text-left">
       <div class="w-3/5 pr-12">
-        <h1 class="font-serif text-5xl font-extrabold text-gray-800 ">
+        <h1 class="font-serif text-6xl font-extrabold text-gray-800 ">
           Make a donation, <br />today!
         </h1>
         <svg class="w-24 h-2 mb-10">
@@ -90,12 +93,14 @@
             </div>
           </div>
           <div class="text-center">
-            <button
+            <a
               class="inline-block px-20 py-2 text-center text-white bg-green-400 rounded shadow-xl hover:bg-green-700"
-              @click="openPaypalLink"
+              :href="paypalLink"
+              target="_blank"
+              rel="noreferrer"
             >
               Donate
-            </button>
+            </a>
           </div>
         </div>
       </div>

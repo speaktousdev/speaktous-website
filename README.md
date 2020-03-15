@@ -1,10 +1,10 @@
 # speaktous
 
-> 
+>
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm run install
 
