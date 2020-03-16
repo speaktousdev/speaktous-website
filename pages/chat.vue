@@ -26,7 +26,7 @@
         <div class="text-center md:mt-6 md:ml-6 md:text-left">
           <p class="mt-4 text-xl underline sm:text-2xl">Online hours:</p>
           <p class="text-xl sm:text-2xl">
-            Every Sunday, 7 - 9pm (US Central Time GMT-6)
+            Every Saturday, 7 - 9pm (US Central Time GMT-6)
           </p>
           <p class="text-xl sm:text-2xl">
             Every Sunday 4 - 6pm (MY Time GMT+8)
@@ -91,10 +91,10 @@ export default {
   },
   mounted() {
     // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
-    // UTC Day Monday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
+    // UTC Day Sunday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
     const d = new Date()
 
-    if (d.getUTCDay() === 1 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
+    if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
       this.isOnline = true
     } else if (
       d.getUTCDay() === 0 &&
