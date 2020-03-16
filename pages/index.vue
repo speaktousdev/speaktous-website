@@ -63,12 +63,12 @@
           class="relative inline-block w-1/2 border-b-2 border-green-500 sm:block sm:left-0"
         ></div>
       </div>
-      <div class="flex flex-wrap p-8">
+      <div class="flex flex-wrap py-8">
         <div class="share-item ">
           <img
             class="w-40 mb-4"
-            src="../static/index/login.png"
-            alt="A man entering through a door."
+            src="../static/index/anon.png"
+            alt="A spy with dark glasses and a black hat."
           />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             You are 100% anonymous on our online chat
@@ -77,11 +77,11 @@
         <div class="share-item">
           <img
             class="w-40 mb-4"
-            src="../static/index/anon.png"
-            alt="A spy with dark glasses and a black hat."
+            src="../static/index/login.png"
+            alt="A man entering through a door."
           />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4 ">
-            You are 100% anonymous on our online chat
+            No registration required
           </h1>
         </div>
         <div class="share-item">
