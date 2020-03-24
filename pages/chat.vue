@@ -111,13 +111,18 @@ export default {
     // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
     // UTC Day Sunday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
     const d = new Date()
-
     if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
       this.isOnline = true
     } else if (
       d.getUTCDay() === 0 &&
       d.getUTCHours() >= 8 &&
       d.getUTCHours() < 10
+    ) {
+      this.isOnline = true
+    } else if (
+      d.getUTCDay() === 4 &&
+      d.getUTCHours() >= 2 &&
+      d.getUTCHours() < 3
     ) {
       this.isOnline = true
     }
