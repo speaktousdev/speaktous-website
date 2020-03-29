@@ -22,15 +22,33 @@
         </svg>
       </div>
       <div class="md:flex md:flex-row md:justify-center">
-        <ChatMainIcon class="hidden w-48 h-48 md:block" />
+        <ChatMainIcon class="hidden mt-32 w-56 h-56 md:block" />
         <div class="text-center md:mt-6 md:ml-6 md:text-left">
-          <p class="mt-4 text-xl underline sm:text-2xl">Online hours:</p>
-          <p class="text-xl sm:text-2xl">
-            Every Sunday, 7 - 9pm (US Central Time GMT-6)
+          <p class="mt-4 text-center text-xl underline sm:text-2xl">
+            Online hours:
           </p>
-          <p class="text-xl sm:text-2xl">
-            Every Sunday 4 - 6pm (MY Time GMT+8)
-          </p>
+          <table class="mt-4 font-serif text-center text-xl sm:text-xl">
+            <thead>
+              <tr>
+                <th class="w-1/2 border px-2 py-2">MY Time <br />GMT+8</th>
+                <th class="w-1/2 border px-2 py-2">US Central Time GMT-6</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-2 py-2">Thursday <br />10-11 A.M</td>
+                <td class="border px-2 py-2">Wednesday <br />9-10 P.M</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-2">Sunday <br />8-10 A.M</td>
+                <td class="border px-4 py-2">Saturday <br />7-9 P.M</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-2">Sunday <br />4-6 P.M</td>
+                <td class="border px-2 py-2">Sunday <br />3-5 A.M</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -83,10 +101,35 @@ export default {
   },
   data() {
     return {
-      isOnline: true,
+      isOnline: false,
       isAboutPage: false,
       chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
       isModalVisible: false
+    }
+  },
+  mounted() {
+    // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
+    // UTC Day Sunday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
+    const d = new Date()
+    if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
+      this.isOnline = true
+    } else if (
+      d.getUTCDay() === 0 &&
+      d.getUTCHours() >= 8 &&
+      d.getUTCHours() < 10
+    ) {
+      this.isOnline = true
+    } else if (
+      d.getUTCDay() === 4 &&
+      d.getUTCHours() >= 2 &&
+      d.getUTCHours() < 3
+    ) {
+      this.isOnline = true
+    }
+  },
+  methods: {
+    openChat() {
+      window.open(this.chatLink, '_blank')
     }
   }
 }
