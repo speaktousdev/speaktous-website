@@ -13,10 +13,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
-    "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/sitemap": "^2.1.0",
     "emailjs-com": "^2.4.1",
+    "nuxt": "^2.0.0",
     "vue-analytics": "^5.22.1",
     "vuelidate": "^0.7.5"
   },
