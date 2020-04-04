@@ -49,7 +49,9 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/sitemap-module
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    // Doc: https://github.com/nuxt-community/robots-module
+    '@nuxtjs/robots'
   ],
   /*
    ** Build configuration
