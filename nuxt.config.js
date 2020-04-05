@@ -118,6 +118,7 @@ export default {
   ],
   /*
    ** PWA configuration
+   ** Doc: https://pwa.nuxtjs.org/
    */
   pwa: {
     manifest: {
@@ -129,6 +130,13 @@ export default {
       name: 'SpeakToUs',
       description: process.env.npm_package_description || ''
     }
+  },
+  /*
+   ** Sitemap configuration
+   ** Doc: https://github.com/nuxt-community/sitemap-module
+   */
+  sitemap: {
+    hostname: 'https://www.speaktous.online'
   },
   /*
    ** Build configuration
