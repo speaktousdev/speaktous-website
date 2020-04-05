@@ -27,7 +27,7 @@
       <div>
         <img
           class="block w-full h-auto ml-auto mr-auto lg:w-3/4"
-          src="~assets/images/about/stuphoto.png"
+          src="~assets/images/about/stuphoto.jpg"
           alt="A group photo of the Speak To Us team."
         />
       </div>
