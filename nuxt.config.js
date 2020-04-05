@@ -2,9 +2,10 @@ export default {
   mode: 'universal',
   /*
    ** Headers of the page
+   ** Must have for every page: title, description, twitter:title, twitter:description, og:title, og:description, og:site_name, og:url
    */
   head: {
-    title: 'SpeakToUs' || process.env.npm_package_name,
+    title: 'SpeakToUs',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -12,6 +13,69 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      // Twitter meta tags
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'SpeakToUs'
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://www.speaktous.online/thumbnail.jpg'
+      },
+      {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: 'Speak To Us logo.'
+      },
+      // Other social media tags
+      // OG i.e. Open Graph Protocol docs: https://ogp.me/
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'SpeakToUs'
+      },
+      {
+        hid: 'og:type',
+        name: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://www.speaktous.online/thumbnail.jpg'
+      },
+      {
+        hid: 'og:image:alt',
+        name: 'og:image:alt',
+        content: 'Speak To Us logo.'
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: 'SpeakToUs'
+      },
+      {
+        hid: 'og:url',
+        name: 'og:url',
+        content: 'https://www.speaktous.online'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -53,6 +117,20 @@ export default {
     // Doc: https://github.com/nuxt-community/robots-module
     '@nuxtjs/robots'
   ],
+  /*
+   ** PWA configuration
+   */
+  pwa: {
+    manifest: {
+      name: 'SpeakToUs',
+      short_name: 'STU',
+      description: process.env.npm_package_description || ''
+    },
+    meta: {
+      name: 'SpeakToUs',
+      description: process.env.npm_package_description || ''
+    }
+  },
   /*
    ** Build configuration
    */

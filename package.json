@@ -1,7 +1,7 @@
 {
   "name": "speaktous",
   "version": "1.0.0",
-  "description": "",
+  "description": "SpeakToUs is an online chat platform for Malaysian students in the United States to share and express their feelings to a fellow Malaysian.",
   "author": "Mujahid Anuar",
   "private": true,
   "scripts": {
