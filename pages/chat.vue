@@ -106,7 +106,8 @@ export default {
       chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
       isModalVisible: false,
       title: 'Chat With Us Online | SpeakToUs',
-      description: 'We are available every Wednesday'
+      description:
+        'Our online chat is available (on US Central Time GMT-6) every Wednesday 9-10pm, Saturday 7-9pm & Sunday 3-5am.'
     }
   },
   mounted() {
