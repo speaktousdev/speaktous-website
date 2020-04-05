@@ -12,7 +12,7 @@
       </div>
       <div class="mt-4 mb-8 text-center">
         <div class="inline-block w-48 h-48 bg-green-700 rounded-full">
-          <img src="~/static/donate/hand.png" alt="A donating hand." />
+          <img src="~assets/images/donate/hand.png" alt="A donating hand." />
         </div>
       </div>
       <div
@@ -34,7 +34,10 @@
             <div class="flex flex-row">
               <p class="mb-8 mr-4 text-xl">DONATE WITH PAYPAL</p>
               <div class="w-8 h-8">
-                <img src="~/static/donate/paypal.png" alt="Paypal logo." />
+                <img
+                  src="~assets/images/donate/paypal.png"
+                  alt="Paypal logo."
+                />
               </div>
             </div>
           </div>
@@ -77,7 +80,7 @@
       <div class="w-2/5">
         <div class="my-8 text-center">
           <div class="inline-block w-64 h-64 bg-green-700 rounded-full">
-            <img src="~/static/donate/hand.png" alt="A donating hand." />
+            <img src="~assets/images/donate/hand.png" alt="A donating hand." />
           </div>
         </div>
 
@@ -87,7 +90,10 @@
               <div class="flex flex-row">
                 <p class="mr-4 text-2xl">Donate with PAYPAL</p>
                 <div class="w-8 h-8">
-                  <img src="~/static/donate/paypal.png" alt="Paypal logo." />
+                  <img
+                    src="~assets/images/donate/paypal.png"
+                    alt="Paypal logo."
+                  />
                 </div>
               </div>
             </div>
@@ -114,7 +120,10 @@
     <div class="mb-10 lg:flex lg:flex-row">
       <div class="px-4 my-10 text-center md:px-40 lg:px-10">
         <div class="inline-block w-48 h-48">
-          <img src="~/static/donate/dialog-box.png" alt="A dialogue box." />
+          <img
+            src="~assets/images/donate/dialog-box.png"
+            alt="A dialogue box."
+          />
         </div>
         <p class="text-lg">
           Easier and more accessible platform to share your thoughts
@@ -123,7 +132,7 @@
 
       <div class="px-4 my-10 text-center md:px-40 lg:px-10">
         <div class="inline-block w-48 h-48">
-          <img src="~/static/donate/nametag.png" alt="A nametag." />
+          <img src="~assets/images/donate/nametag.png" alt="A nametag." />
         </div>
         <p class="text-lg">
           Conversation with students who are professionally trained for mental
@@ -134,7 +143,7 @@
       <div class="px-4 my-10 text-center md:px-40 lg:px-10">
         <div class="inline-block w-48 h-48">
           <img
-            src="~/static/donate/present.png"
+            src="~assets/images/donate/present.png"
             alt="A person presenting Powerpoint slides."
           />
         </div>
@@ -157,7 +166,10 @@
 export default {
   data() {
     return {
-      paypalEmail: 'speaktous.trea@outlook.com'
+      paypalEmail: 'speaktous.trea@outlook.com',
+      title: 'Make a donation today! | SpeakToUs',
+      description:
+        'SpeakToUs is a nonprofit managed by student volunteers dedicated to provide mental health support for Malaysian students in the US. Our financial needs rely on your support.'
     }
   },
   computed: {
@@ -172,6 +184,46 @@ export default {
   methods: {
     openPaypalLink() {
       window.open(this.paypalLink, '_blank')
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        },
+        // Twitter meta tags
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description
+        },
+        // Other social media tags
+        // OG i.e. Open Graph Protocol docs: https://ogp.me/
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.title
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.description
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://www.speaktous.online/donate'
+        }
+      ]
     }
   }
 }

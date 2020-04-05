@@ -44,7 +44,7 @@
       <div class="w-full logo-placeholder sm:pt-8 sm:w-2/5">
         <img
           class="w-full"
-          src="../static/index/STU-logo.jpg"
+          src="~assets/images/index/STU-logo.jpg"
           alt="Speak To Us logo."
         />
       </div>
@@ -67,7 +67,7 @@
         <div class="share-item ">
           <img
             class="w-40 mb-4"
-            src="../static/index/anon.png"
+            src="~assets/images/index/anon.png"
             alt="A spy with dark glasses and a black hat."
           />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
@@ -77,7 +77,7 @@
         <div class="share-item">
           <img
             class="w-40 mb-4"
-            src="../static/index/login.png"
+            src="~assets/images/index/login.png"
             alt="A man entering through a door."
           />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4 ">
@@ -87,7 +87,7 @@
         <div class="share-item">
           <img
             class="w-40 mb-4"
-            src="../static/index/Listener.png"
+            src="~assets/images/index/Listener.png"
             alt="A telemarketer talking to a customer."
           />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
@@ -104,7 +104,7 @@
         <div class="share-item">
           <img
             class="w-40 mb-4"
-            src="../static/index/file.png"
+            src="~assets/images/index/file.png"
             alt="A brown folder that has a confidential stamp on it."
           />
           <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
@@ -117,7 +117,7 @@
     <div class="px-8 py-6 join-us-section sm:px-12 sm:py-10 lg:px-24">
       <div class="items-center text-center title-with-underline">
         <h1
-          class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl tracking-wider"
+          class="font-serif text-3xl font-extrabold tracking-wider text-center sm:text-left sm:text-4xl"
         >
           Be Part of SpeakToUs!
         </h1>
@@ -157,7 +157,12 @@
 <script>
 import JoinUsIcon from '~/components/svg/index/JoinUsIcon.vue'
 export default {
-  components: { JoinUsIcon }
+  components: { JoinUsIcon },
+  head() {
+    return {
+      title: 'SpeakToUs'
+    }
+  }
 }
 </script>
 

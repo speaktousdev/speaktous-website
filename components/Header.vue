@@ -5,7 +5,7 @@
       <div class="hidden sm:flex sm:pb-1 sm:pr-8">
         <a href="/" @click.prevent="$router.push('/')">
           <img
-            src="~/static/logo-long.png"
+            src="~/assets/images/logo.png"
             alt="Speak To Us organization logo."
             class="h-20"
           />
@@ -35,7 +35,7 @@
       <div class="flex items-center justify-center px-4 py-4 sm:hidden">
         <a href="/" @click.prevent="$router.push('/')">
           <img
-            src="~/static/logo-long.png"
+            src="~/assets/images/logo.png"
             alt="Speak To Us organization logo."
             class="h-16"
           />

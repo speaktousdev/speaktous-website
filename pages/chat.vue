@@ -22,30 +22,30 @@
         </svg>
       </div>
       <div class="md:flex md:flex-row md:justify-center">
-        <ChatMainIcon class="hidden mt-32 w-56 h-56 md:block" />
+        <ChatMainIcon class="hidden w-56 h-56 mt-32 md:block" />
         <div class="text-center md:mt-6 md:ml-6 md:text-left">
-          <p class="mt-4 text-center text-xl underline sm:text-2xl">
+          <p class="mt-4 text-xl text-center underline sm:text-2xl">
             Online hours:
           </p>
-          <table class="mt-4 font-serif text-center text-xl sm:text-xl">
+          <table class="mt-4 font-serif text-xl text-center sm:text-xl">
             <thead>
               <tr>
-                <th class="w-1/2 border px-2 py-2">MY Time <br />GMT+8</th>
-                <th class="w-1/2 border px-2 py-2">US Central Time GMT-6</th>
+                <th class="w-1/2 px-2 py-2 border">MY Time <br />GMT+8</th>
+                <th class="w-1/2 px-2 py-2 border">US Central Time GMT-6</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="border px-2 py-2">Thursday <br />10-11 A.M</td>
-                <td class="border px-2 py-2">Wednesday <br />9-10 P.M</td>
+                <td class="px-2 py-2 border">Thursday <br />10-11 A.M</td>
+                <td class="px-2 py-2 border">Wednesday <br />9-10 P.M</td>
               </tr>
               <tr>
-                <td class="border px-2 py-2">Sunday <br />8-10 A.M</td>
-                <td class="border px-4 py-2">Saturday <br />7-9 P.M</td>
+                <td class="px-2 py-2 border">Sunday <br />8-10 A.M</td>
+                <td class="px-4 py-2 border">Saturday <br />7-9 P.M</td>
               </tr>
               <tr>
-                <td class="border px-2 py-2">Sunday <br />4-6 P.M</td>
-                <td class="border px-2 py-2">Sunday <br />3-5 A.M</td>
+                <td class="px-2 py-2 border">Sunday <br />4-6 P.M</td>
+                <td class="px-2 py-2 border">Sunday <br />3-5 A.M</td>
               </tr>
             </tbody>
           </table>
@@ -104,7 +104,9 @@ export default {
       isOnline: false,
       isAboutPage: false,
       chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
-      isModalVisible: false
+      isModalVisible: false,
+      title: 'Chat With Us Online | SpeakToUs',
+      description: 'We are available every Wednesday'
     }
   },
   mounted() {
@@ -130,6 +132,46 @@ export default {
   methods: {
     openChat() {
       window.open(this.chatLink, '_blank')
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        },
+        // Twitter meta tags
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description
+        },
+        // Other social media tags
+        // OG i.e. Open Graph Protocol docs: https://ogp.me/
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.title
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.description
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://www.speaktous.online/chat'
+        }
+      ]
     }
   }
 }

@@ -27,7 +27,7 @@
       <div>
         <img
           class="block w-full h-auto ml-auto mr-auto lg:w-3/4"
-          src="../static/about/stuphoto.png"
+          src="~assets/images/about/stuphoto.png"
           alt="A group photo of the Speak To Us team."
         />
       </div>
@@ -79,12 +79,15 @@ export default {
     isVisible: false,
     isAboutPage: true,
     items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+    title: 'About Us | SpeakToUs',
+    description:
+      'We are a group of Malaysian students based in the University of Wisconsin-Madison, USA who are passionate about helping our fellow Malaysians in the US.',
     faqlist: [
       {
         isVisible: false,
         header: 'Who are we?',
         content:
-          'We are a student-led organization based in the University of Wisconsin-Madison, USA that provides a peer-to-peer support platform for Malaysian students inthe US. Through our chat feature, we are providing an online medium for students to speak up and share their concerns, just like having a friend who listens to your stories. Our team consists of inspiring individuals with passion to care for others and dedication to change the stigma against mental health.'
+          'We are a student-led organization based in the University of Wisconsin-Madison, USA that provides a peer-to-peer support platform for Malaysian students in the US. Through our chat feature, we are providing an online medium for students to speak up and share their concerns, just like having a friend who listens to your stories. Our team consists of inspiring individuals with passion to care for others and dedication to change the stigma against mental health.'
       },
       {
         isVisible: false,
@@ -113,7 +116,47 @@ export default {
           "We are using a system where the online chat user appears as a serial number. If you are using the email service, the messages pass through the first section where the email address will be changed into code before sending it to the responders. All responders are required to sign the HIPAA confidentiality rule, where all the users' stories are forbidden to leave the system. Any open conversation about any user or its identifier directly or indirectly will be considered as misconduct."
       }
     ]
-  })
+  }),
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        },
+        // Twitter meta tags
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description
+        },
+        // Other social media tags
+        // OG i.e. Open Graph Protocol docs: https://ogp.me/
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.title
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.description
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://www.speaktous.online/about'
+        }
+      ]
+    }
+  }
 }
 </script>
 

@@ -1,14 +1,14 @@
 <template>
   <main>
-    <div id="header-background" class=" h-screen sm:h-screen md:h-screen">
+    <div id="header-background" class="h-screen sm:h-screen md:h-screen">
       <div class="px-8 md:px-12 lg:px-16 xl:px-16">
         <div
-          class=" font-serif py-12 md:py-20 lg:py-20 xl:py-18 tracking-wide text-white text-5xl md:text-6xl lg:text-6xl xl:text-6xl font-semibold"
+          class="py-12 font-serif text-5xl font-semibold tracking-wide text-white md:py-20 lg:py-20 xl:py-18 md:text-6xl lg:text-6xl xl:text-6xl"
         >
           Disclaimer
         </div>
         <div
-          class=" tracking-wide text-white text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-semibold"
+          class="text-4xl font-semibold tracking-wide text-white md:text-5xl lg:text-5xl xl:text-5xl"
         >
           SpeakToUs is <br />a platform to <br />share your concerns <br />
           created by and for Malaysians.
@@ -16,33 +16,33 @@
       </div>
     </div>
 
-    <div id="footer-background" class="mt-12 px-4 md:px-8 h-screen">
+    <div id="footer-background" class="h-screen px-4 mt-12 md:px-8">
       <div
-        class="pt-12 lg:pt-16 px-8 md:px-12 lg:px-12 xl:px-12 lg:text-gray-800"
+        class="px-8 pt-12 lg:pt-16 md:px-12 lg:px-12 xl:px-12 lg:text-gray-800"
       >
-        <p class="font-serif tracking-wide text-2xl md:text-5xl font-semibold">
+        <p class="font-serif text-2xl font-semibold tracking-wide md:text-5xl">
           In case of medical emergencies
         </p>
         <ul
-          class="lg:pr-64 list-disc mt-2 md:mt-20  text-xl md:text-3xl lg:text-2xl pl-6  tracking-wide"
+          class="pl-6 mt-2 text-xl tracking-wide list-disc lg:pr-64 md:mt-20 md:text-3xl lg:text-2xl"
         >
-          <li v-for="item in list" :key="item.id" class=" py-4  md:py-6">
+          <li v-for="item in list" :key="item.id" class="py-4 md:py-6">
             {{ item.message }}
           </li>
         </ul>
       </div>
     </div>
 
-    <div class="bg-gray-200 h-screen px-4 md:px-8">
+    <div class="h-screen px-4 bg-gray-200 md:px-8">
       <div class="px-8 lg:pt-16 md:px-12 lg:px-12 xl:px-12 lg:text-gray-800">
         <div v-for="item in list2" :key="item.id" class="pt-8">
           <h1
-            class="font-serif py-4 pr-12 md:pr-6 lg:pr-20 xl:pr-48 text-xl md:text-4xl font-bold tracking-wide leading-relaxed"
+            class="py-4 pr-12 font-serif text-xl font-bold leading-relaxed tracking-wide md:pr-6 lg:pr-20 xl:pr-48 md:text-4xl"
           >
             {{ item.header }}
           </h1>
           <p
-            class=" pr-6 lg:pr-20 xl:pr-48 text-lg md:text-3xl lg:text-2xl  tracking-wide leading-relaxed"
+            class="pr-6 text-lg leading-relaxed tracking-wide lg:pr-20 xl:pr-48 md:text-3xl lg:text-2xl"
           >
             {{ item.message }}
           </p>
@@ -56,6 +56,9 @@
 export default {
   data() {
     return {
+      title: 'Disclaimer | SpeakToUs',
+      description:
+        'SpeakToUs is a platform to share your concerns created by and for Malaysians. Read more to find out our disclaimer.',
       list: [
         { id: 1, message: 'Call 911 for medical emergencies' },
         {
@@ -86,6 +89,46 @@ export default {
           header: 'Our Listeners are bilinguals: English and Malay. ',
           message:
             'Feel free to SpeakToUs in either language! More languages will be added soon.'
+        }
+      ]
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        },
+        // Twitter meta tags
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description
+        },
+        // Other social media tags
+        // OG i.e. Open Graph Protocol docs: https://ogp.me/
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.title
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.description
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://www.speaktous.online/disclaimer'
         }
       ]
     }
