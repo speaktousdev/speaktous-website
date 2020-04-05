@@ -1,6 +1,6 @@
 <template>
   <main
-    class="max-w-screen-xl text-black lg:text-gray-800 px-8 mx-auto sm:px-12 md:px-20 lg:px-24 "
+    class="max-w-screen-xl px-8 mx-auto text-black lg:text-gray-800 sm:px-12 md:px-20 lg:px-24 "
   >
     <div class="flex flex-wrap items-center py-6 section-1">
       <div class="w-full sm:pt-10 sm:w-3/5">
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="w-full mt-10 sm:w-2/5 sm:mt-0">
-        <TeamIcon class="justify-right w-11/12 h-auto"></TeamIcon>
+        <TeamIcon class="w-11/12 h-auto justify-right"></TeamIcon>
       </div>
     </div>
 
@@ -113,7 +113,50 @@ export default {
   data() {
     return {
       applyFormLink:
-        'https://docs.google.com/forms/d/e/1FAIpQLScHDL33O6aq-Wbh8ZvV_TOnHtcL2mKihaqDbBvuafGW3HJYWg/viewform'
+        'https://docs.google.com/forms/d/e/1FAIpQLScHDL33O6aq-Wbh8ZvV_TOnHtcL2mKihaqDbBvuafGW3HJYWg/viewform',
+      title: 'Join Us | SpeakToUs',
+      description:
+        'Be part of a changing community. Be a listener. No experience needed.'
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        },
+        // Twitter meta tags
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description
+        },
+        // Other social media tags
+        // OG i.e. Open Graph Protocol docs: https://ogp.me/
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.title
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.description
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://www.speaktous.online/joinus'
+        }
+      ]
     }
   }
 }
