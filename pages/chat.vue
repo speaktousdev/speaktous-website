@@ -103,7 +103,7 @@ export default {
       isModalVisible: false,
       title: 'Chat With Us Online | SpeakToUs',
       description:
-        'Our online chat is available (on US Central Time GMT-6) every Wednesday 9-10pm, Saturday 7-9pm & Sunday 3-5am.'
+        'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.'
     }
   },
   mounted() {
