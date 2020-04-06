@@ -18,7 +18,7 @@
       </h1>
       <div class="text-center">
         <svg class="inline-block w-24 h-2">
-          <rect class="w-24 h-2" style="fill:green;" />
+          <rect class="w-24 h-2" style="fill: green;" />
         </svg>
       </div>
       <div class="md:flex md:flex-row md:justify-center">
@@ -35,10 +35,6 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="px-2 py-2 border">Thursday <br />10-11 A.M</td>
-                <td class="px-2 py-2 border">Wednesday <br />9-10 P.M</td>
-              </tr>
               <tr>
                 <td class="px-2 py-2 border">Sunday <br />8-10 A.M</td>
                 <td class="px-4 py-2 border">Saturday <br />7-9 P.M</td>
@@ -114,18 +110,15 @@ export default {
     // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
     // UTC Day Sunday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
     const d = new Date()
+    // Sunday Madison
     if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
       this.isOnline = true
-    } else if (
+    }
+    // Sunday Malaysia
+    else if (
       d.getUTCDay() === 0 &&
       d.getUTCHours() >= 8 &&
       d.getUTCHours() < 10
-    ) {
-      this.isOnline = true
-    } else if (
-      d.getUTCDay() === 4 &&
-      d.getUTCHours() >= 2 &&
-      d.getUTCHours() < 3
     ) {
       this.isOnline = true
     }
