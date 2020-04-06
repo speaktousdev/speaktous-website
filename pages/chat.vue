@@ -36,10 +36,6 @@
             </thead>
             <tbody>
               <tr>
-                <td class="px-2 py-2 border">Thursday <br />10-11 A.M</td>
-                <td class="px-2 py-2 border">Wednesday <br />9-10 P.M</td>
-              </tr>
-              <tr>
                 <td class="px-2 py-2 border">Sunday <br />8-10 A.M</td>
                 <td class="px-4 py-2 border">Saturday <br />7-9 P.M</td>
               </tr>
