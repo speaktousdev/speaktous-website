@@ -61,8 +61,17 @@
           speaktousofficial@gmail.com
         </button>
       </div>
-      <div v-if="isVisible">
-        <Email :isaboutpage="isAboutPage" />
+      <div class="text-right" v-if="isVisible">
+        <div class="inline-block justify-center items-center">
+          <button
+            @click="isVisible = !isVisible"
+            class=" bg-green-400 text-white rounded-full h-8 w-8 lg:mr-48 flex items-center justify-center hover:bg-green-800"
+          >
+            X
+          </button>
+        </div>
+
+        <Email class="w-11/12" :isaboutpage="isAboutPage" />
       </div>
     </div>
   </main>
