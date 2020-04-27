@@ -41,7 +41,7 @@
               </tr>
               <tr>
                 <td class="px-2 py-2 border">Sunday <br />2-4 P.M</td>
-                <td class="px-2 py-2 border">Sunday <br />3-5 A.M</td>
+                <td class="px-2 py-2 border">Sunday <br />1-3 A.M</td>
               </tr>
             </tbody>
           </table>
