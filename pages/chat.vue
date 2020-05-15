@@ -36,8 +36,8 @@
             </thead>
             <tbody>
               <tr>
-                <td class="px-2 py-2 border">Sunday <br />8-10 A.M</td>
-                <td class="px-4 py-2 border">Saturday <br />7-9 P.M</td>
+                <td class="px-2 py-2 border">Sunday <br />10-12 A.M</td>
+                <td class="px-4 py-2 border">Saturday <br />9-11 P.M</td>
               </tr>
               <tr>
                 <td class="px-2 py-2 border">Sunday <br />2-4 P.M</td>
@@ -110,12 +110,12 @@ export default {
     // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
     // UTC Day Sunday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
     const d = new Date()
-    if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
+    if (d.getUTCDay() === 0 && d.getUTCHours() >= 2 && d.getUTCHours() < 4) {
       this.isOnline = true
     } else if (
       d.getUTCDay() === 0 &&
-      d.getUTCHours() >= 8 &&
-      d.getUTCHours() < 10
+      d.getUTCHours() >= 6 &&
+      d.getUTCHours() < 8
     ) {
       this.isOnline = true
     }
