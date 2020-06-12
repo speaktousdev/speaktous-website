@@ -40,7 +40,7 @@
                 <td class="px-4 py-2 border">Saturday <br />7-9 P.M</td>
               </tr>
               <tr>
-                <td class="px-2 py-2 border">Sunday <br />2-4 P.M</td>
+                <td class="px-2 py-2 border">Sunday <br />4-6 P.M</td>
                 <td class="px-2 py-2 border">Sunday <br />3-5 A.M</td>
               </tr>
             </tbody>
