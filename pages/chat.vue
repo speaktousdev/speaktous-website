@@ -43,6 +43,10 @@
                 <td class="px-2 py-2 border">Sunday <br />4-6 P.M</td>
                 <td class="px-2 py-2 border">Sunday <br />3-5 A.M</td>
               </tr>
+              <tr>
+                <td class="px-2 py-2 border">Sunday <br />7-9 P.M</td>
+                <td class="px-2 py-2 border">Sunday <br />6-8 A.M</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -116,6 +120,12 @@ export default {
       d.getUTCDay() === 0 &&
       d.getUTCHours() >= 8 &&
       d.getUTCHours() < 10
+    ) {
+      this.isOnline = true
+    } else if (
+      d.getUTCDay() === 0 &&
+      d.getUTCHours() >= 11 &&
+      d.getUTCHours() < 13
     ) {
       this.isOnline = true
     }

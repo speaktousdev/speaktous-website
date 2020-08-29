@@ -14,27 +14,27 @@
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.0",
-    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/robots": "^2.4.2",
-    "@nuxtjs/sitemap": "^2.1.0",
-    "emailjs-com": "^2.4.1",
-    "nuxt": "^2.0.0",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "emailjs-com": "^2.6.3",
+    "nuxt": "^2.14.4",
     "vue-analytics": "^5.22.1",
     "vuelidate": "^0.7.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
-    "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/tailwindcss": "^1.0.0",
-    "@vue/test-utils": "^1.0.0-beta.27",
+    "@nuxtjs/eslint-module": "^1.2.0",
+    "@nuxtjs/tailwindcss": "^1.4.1",
+    "@vue/test-utils": "^1.0.5",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
     "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "jest": "^24.1.0",
     "prettier": "^1.19.1",
-    "vue-jest": "^4.0.0-0"
+    "vue-jest": "^4.0.0-beta.5"
   }
 }
