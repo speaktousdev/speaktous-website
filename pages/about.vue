@@ -2,7 +2,7 @@
   <main
     class="max-w-screen-xl text-center text-black lg:text-gray-800 lg:mx-auto"
   >
-    <div class="justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row ">
+    <div class="justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row">
       <div class="md:w-1/2 lg:w-1/2">
         <h1
           class="mt-4 font-serif text-4xl font-extrabold tracking-wide lg:text-6xl md:mt-16 lg:mt-14 md:text-4xl md:text-left"
@@ -54,18 +54,16 @@
         <h1 class="font-serif text-4xl font-semibold tracking-wide">
           Contact Us
         </h1>
-        <p class="">
-          We are reachable through email:
-        </p>
+        <p class="">We are reachable through email:</p>
         <button class="mb-8 text-green-500" @click="isVisible = !isVisible">
           speaktousofficial@gmail.com
         </button>
       </div>
-      <div class="text-right" v-if="isVisible">
-        <div class="inline-block justify-center items-center">
+      <div v-if="isVisible" class="text-right">
+        <div class="items-center justify-center inline-block">
           <button
+            class="flex items-center justify-center w-8 h-8 text-white bg-green-400 rounded-full lg:mr-48 hover:bg-green-800"
             @click="isVisible = !isVisible"
-            class=" bg-green-400 text-white rounded-full h-8 w-8 lg:mr-48 flex items-center justify-center hover:bg-green-800"
           >
             X
           </button>
@@ -96,19 +94,19 @@ export default {
         isVisible: false,
         header: 'Who are we?',
         content:
-          'We are a student-led organization based in the University of Wisconsin-Madison, USA that provides a peer-to-peer support platform for Malaysian students in the US. Through our chat feature, we are providing an online medium for students to speak up and share their concerns, just like having a friend who listens to your stories. Our team consists of inspiring individuals with passion to care for others and dedication to change the stigma against mental health.'
+          'We are a student-led organization based in the University of Wisconsin-Madison, USA that provides a peer-to-peer support platform for Malaysian students in the US. Through our chat feature, we are providing an online medium for students to speak up and share their concerns, just like having a friend who listens to your stories. Our team consists of inspiring individuals with passion to care for others and dedication to change the stigma against mental health.',
       },
       {
         isVisible: false,
         header: "What is STU's Mission?",
         content:
-          'Provide a platform for individuals to express themselves freely regarding mental health'
+          'Provide a platform for individuals to express themselves freely regarding mental health',
       },
       {
         isVisible: false,
         header: "What is STU's Vision?",
         content:
-          'Create an environment where individuals can discuss comfortably about mental health'
+          'Create an environment where individuals can discuss comfortably about mental health',
       },
       {
         isVisible: false,
@@ -116,15 +114,15 @@ export default {
         content:
           'Our objectives are the breakdown in detail on how we are aiming to achieve our mission and vision for 2020.' +
           '\n' +
-          'a. To provide mental health support to Malaysians by giving them the best recommendations and aid needed for them to improve and overcome issues such as, but not limited to, stress, 	anxiety, burnout, depression, and homesickness while keeping them anonymous. \n b. To ensure Malaysian know that there are people who want to listen and help them during these moments. \n c. To eliminate the stigma of a suicidal topic as something that they should be afraid of to share. \n d. Allow them to have someone from the same culture, beliefs, and also first language as a supporter. '
+          'a. To provide mental health support to Malaysians by giving them the best recommendations and aid needed for them to improve and overcome issues such as, but not limited to, stress, 	anxiety, burnout, depression, and homesickness while keeping them anonymous. \n b. To ensure Malaysian know that there are people who want to listen and help them during these moments. \n c. To eliminate the stigma of a suicidal topic as something that they should be afraid of to share. \n d. Allow them to have someone from the same culture, beliefs, and also first language as a supporter. ',
       },
       {
         isVisible: false,
         header: 'How is 100% Confidentiality possible?',
         content:
-          "We are using a system where the online chat user appears as a serial number. If you are using the email service, the messages pass through the first section where the email address will be changed into code before sending it to the responders. All responders are required to sign the HIPAA confidentiality rule, where all the users' stories are forbidden to leave the system. Any open conversation about any user or its identifier directly or indirectly will be considered as misconduct."
-      }
-    ]
+          "We are using a system where the online chat user appears as a serial number. If you are using the email service, the messages pass through the first section where the email address will be changed into code before sending it to the responders. All responders are required to sign the HIPAA confidentiality rule, where all the users' stories are forbidden to leave the system. Any open conversation about any user or its identifier directly or indirectly will be considered as misconduct.",
+      },
+    ],
   }),
   head() {
     return {
@@ -133,39 +131,39 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.description
+          content: this.description,
         },
         // Twitter meta tags
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description
+          content: this.description,
         },
         // Other social media tags
         // OG i.e. Open Graph Protocol docs: https://ogp.me/
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: this.description
+          content: this.description,
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://www.speaktous.online/about'
-        }
-      ]
+          content: 'https://www.speaktous.online/about',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

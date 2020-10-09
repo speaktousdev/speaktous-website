@@ -97,9 +97,9 @@ export default {
   props: {
     chatLink: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 
