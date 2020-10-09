@@ -14,8 +14,8 @@ module.exports = {
         'Cambria',
         'Times New Roman',
         'Times',
-        'serif'
-      ]
+        'serif',
+      ],
     },
     extend: {
       colors: {
@@ -28,13 +28,17 @@ module.exports = {
           600: '#38a169',
           700: '#2f855a',
           800: '#276749',
-          900: '#22543d'
-        }
-      }
-    }
+          900: '#22543d',
+        },
+      },
+    },
   },
   variants: {
-    backgroundColor: ['responsive', 'active', 'hover', 'focus']
+    backgroundColor: ['responsive', 'active', 'hover', 'focus'],
   },
-  plugins: []
+  plugins: [],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
 }
