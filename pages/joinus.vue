@@ -1,17 +1,17 @@
 <template>
   <main
-    class="max-w-screen-xl px-8 mx-auto text-black lg:text-gray-800 sm:px-12 md:px-20 lg:px-24 "
+    class="max-w-screen-xl px-8 mx-auto text-black lg:text-gray-800 sm:px-12 md:px-20 lg:px-24"
   >
     <div class="flex flex-wrap items-center py-6 section-1">
       <div class="w-full sm:pt-10 sm:w-3/5">
         <div class="text-center sm:w-64 sm:text-left">
           <h1
-            class="font-serif text-4xl font-extrabold text-center sm:text-left sm:text-6xl "
+            class="font-serif text-4xl font-extrabold text-center sm:text-left sm:text-6xl"
           >
             Join Us
           </h1>
           <svg class="inline-block object-center w-24 h-2">
-            <rect class="w-24 h-2 bg-green" style="fill:green;" />
+            <rect class="w-24 h-2 bg-green" style="fill: green" />
           </svg>
         </div>
         <div class="text-center section-desc sm:pr-12 lg:pr-6 sm:text-left">
@@ -48,7 +48,7 @@
             As Our Listener..
           </h1>
           <svg class="inline-block object-center w-24 h-2">
-            <rect class="w-24 h-2 bg-green" style="fill:green" />
+            <rect class="w-24 h-2 bg-green" style="fill: green" />
           </svg>
         </div>
       </div>
@@ -81,7 +81,7 @@
           Why Be A Listener?
         </h1>
         <svg class="inline-block w-24 h-2">
-          <rect class="w-24 h-2 bg-green" style="fill:green;" />
+          <rect class="w-24 h-2 bg-green" style="fill: green" />
         </svg>
         <ul class="mt-8 text-left list-disc sm:mt-0">
           <li class="font-body">Be an active peer support.</li>
@@ -108,7 +108,7 @@ export default {
     ChatIcon,
     PeopleIcon,
     TeamIcon,
-    FileIcon
+    FileIcon,
   },
   data() {
     return {
@@ -116,7 +116,7 @@ export default {
         'https://docs.google.com/forms/d/e/1FAIpQLScHDL33O6aq-Wbh8ZvV_TOnHtcL2mKihaqDbBvuafGW3HJYWg/viewform',
       title: 'Join Us | SpeakToUs',
       description:
-        'Be part of a changing community. Be a listener. No experience needed.'
+        'Be part of a changing community. Be a listener. No experience needed.',
     }
   },
   head() {
@@ -126,39 +126,39 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.description
+          content: this.description,
         },
         // Twitter meta tags
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description
+          content: this.description,
         },
         // Other social media tags
         // OG i.e. Open Graph Protocol docs: https://ogp.me/
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: this.description
+          content: this.description,
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://www.speaktous.online/joinus'
-        }
-      ]
+          content: 'https://www.speaktous.online/joinus',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

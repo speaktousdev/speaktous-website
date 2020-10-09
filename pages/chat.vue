@@ -18,7 +18,7 @@
       </h1>
       <div class="text-center">
         <svg class="inline-block w-24 h-2">
-          <rect class="w-24 h-2" style="fill:green;" />
+          <rect class="w-24 h-2" style="fill: green" />
         </svg>
       </div>
       <div class="md:flex md:flex-row md:justify-center">
@@ -97,7 +97,7 @@ export default {
   components: {
     ChatMainIcon,
     FloatingDisclaimer,
-    Email
+    Email,
   },
   data() {
     return {
@@ -107,7 +107,7 @@ export default {
       isModalVisible: false,
       title: 'Chat With Us Online | SpeakToUs',
       description:
-        'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.'
+        'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.',
     }
   },
   mounted() {
@@ -133,7 +133,7 @@ export default {
   methods: {
     openChat() {
       window.open(this.chatLink, '_blank')
-    }
+    },
   },
   head() {
     return {
@@ -142,39 +142,39 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.description
+          content: this.description,
         },
         // Twitter meta tags
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description
+          content: this.description,
         },
         // Other social media tags
         // OG i.e. Open Graph Protocol docs: https://ogp.me/
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: this.description
+          content: this.description,
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://www.speaktous.online/chat'
-        }
-      ]
+          content: 'https://www.speaktous.online/chat',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

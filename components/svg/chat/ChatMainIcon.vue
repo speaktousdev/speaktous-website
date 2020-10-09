@@ -333,5 +333,6 @@
     <circle cx="6" cy="659" r="6" fill="#f55f44" opacity="0.5" />
     <circle cx="683" cy="64" r="6" fill="#4d8af0" opacity="0.5" />
     <circle cx="104" cy="76" r="6" fill="#47e6b1" opacity="0.5" />
-    <circle cx="689" cy="346" r="6" fill="#f55f44" opacity="0.5" /></svg
-></template>
+    <circle cx="689" cy="346" r="6" fill="#f55f44" opacity="0.5" />
+  </svg>
+</template>
