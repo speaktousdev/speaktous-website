@@ -1,8 +1,8 @@
 <template>
   <main class="border shadow-xl">
-    <div v-for="item in faqlist" :key="item.header" class="border-b ">
+    <div v-for="item in faqlist" :key="item.header" class="border-b">
       <button
-        class="flex flex-row justify-between w-full h-auto px-4 py-4 font-bold text-left text-gray-800 outline-none hover:bg-green-300 "
+        class="flex flex-row justify-between w-full h-auto px-4 py-4 font-bold text-left text-gray-800 outline-none hover:bg-green-300"
         :class="{ 'bg-green-300': item.isVisible }"
         @click="handleFaqContent(item, faqlist)"
       >
@@ -40,8 +40,8 @@ export default {
   props: {
     faqlist: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
 
   data() {
@@ -56,8 +56,8 @@ export default {
       })
 
       chosenItem.isVisible = !chosenItem.isVisible
-    }
-  }
+    },
+  },
 }
 </script>
 

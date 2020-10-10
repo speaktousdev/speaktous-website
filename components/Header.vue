@@ -14,21 +14,11 @@
 
       <!-- Default screen navigation -->
       <nav class="hidden sm:flex">
-        <nuxt-link class="link-default" to="/">
-          Home
-        </nuxt-link>
-        <nuxt-link class="link-default" to="/chat">
-          Chat
-        </nuxt-link>
-        <nuxt-link class="link-default" to="/about">
-          About
-        </nuxt-link>
-        <nuxt-link class="link-default" to="/donate">
-          Donate
-        </nuxt-link>
-        <nuxt-link class="link-default" to="/joinus">
-          Join us!
-        </nuxt-link>
+        <nuxt-link class="link-default" to="/">Home</nuxt-link>
+        <nuxt-link class="link-default" to="/chat">Chat</nuxt-link>
+        <nuxt-link class="link-default" to="/about">About</nuxt-link>
+        <nuxt-link class="link-default" to="/donate">Donate</nuxt-link>
+        <nuxt-link class="link-default" to="/joinus">Join us!</nuxt-link>
       </nav>
 
       <!-- Mobile logo -->
@@ -86,8 +76,8 @@ export default {
     ChatIcon,
     AboutIcon,
     DonateIcon,
-    JoinusIcon
-  }
+    JoinusIcon,
+  },
 }
 </script>
 

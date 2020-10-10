@@ -7,7 +7,7 @@
       </h1>
       <div class="text-center">
         <svg class="inline-block w-24 h-2">
-          <rect class="w-24 h-2" style="fill:green;" />
+          <rect class="w-24 h-2" style="fill: green" />
         </svg>
       </div>
       <div class="mt-4 mb-8 text-center">
@@ -58,11 +58,11 @@
     <!-- This is for large (desktop) screens -->
     <div class="flex flex-wrap hidden px-12 mt-10 lg:flex lg:text-left">
       <div class="w-3/5 pr-12">
-        <h1 class="font-serif text-6xl font-extrabold text-gray-800 ">
+        <h1 class="font-serif text-6xl font-extrabold text-gray-800">
           Make a donation, <br />today!
         </h1>
         <svg class="w-24 h-2 mb-10">
-          <rect class="w-24 h-2" style="fill:green;" />
+          <rect class="w-24 h-2" style="fill: green" />
         </svg>
         <div class="p-6 text-xl text-gray-800 bg-gray-300 rounded-lg shadow-xl">
           <p class="mb-4">
@@ -169,7 +169,7 @@ export default {
       paypalEmail: 'speaktous.trea@outlook.com',
       title: 'Make a donation today! | SpeakToUs',
       description:
-        'SpeakToUs is a nonprofit managed by student volunteers dedicated to provide mental health support for Malaysian students in the US. Our financial needs rely on your support.'
+        'SpeakToUs is a nonprofit managed by student volunteers dedicated to provide mental health support for Malaysian students in the US. Our financial needs rely on your support.',
     }
   },
   computed: {
@@ -179,12 +179,12 @@ export default {
         this.paypalEmail +
         '&lc=US&item_name=Donation+to+Speak+To+Us&no_note=0&cn=&curency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted'
       )
-    }
+    },
   },
   methods: {
     openPaypalLink() {
       window.open(this.paypalLink, '_blank')
-    }
+    },
   },
   head() {
     return {
@@ -193,39 +193,39 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.description
+          content: this.description,
         },
         // Twitter meta tags
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description
+          content: this.description,
         },
         // Other social media tags
         // OG i.e. Open Graph Protocol docs: https://ogp.me/
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: this.description
+          content: this.description,
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://www.speaktous.online/donate'
-        }
-      ]
+          content: 'https://www.speaktous.online/donate',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

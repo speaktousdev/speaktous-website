@@ -18,7 +18,7 @@
       </h1>
       <div class="text-center">
         <svg class="inline-block w-24 h-2">
-          <rect class="w-24 h-2" style="fill: green;" />
+          <rect class="w-24 h-2" style="fill: green" />
         </svg>
       </div>
       <div class="md:flex md:flex-row md:justify-center">
@@ -42,6 +42,10 @@
               <tr>
                 <td class="px-2 py-2 border">Sunday <br />4-6 P.M</td>
                 <td class="px-2 py-2 border">Sunday <br />3-5 A.M</td>
+              </tr>
+              <tr>
+                <td class="px-2 py-2 border">Sunday <br />7-9 P.M</td>
+                <td class="px-2 py-2 border">Sunday <br />6-8 A.M</td>
               </tr>
             </tbody>
           </table>
@@ -103,7 +107,7 @@ export default {
       isModalVisible: false,
       title: 'Chat With Us Online | SpeakToUs',
       description:
-        'Our online chat is available (on US Central Time GMT-6) every Wednesday 9-10pm, Saturday 7-9pm & Sunday 3-5am.'
+        'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.'
     }
   },
   mounted() {
@@ -119,6 +123,12 @@ export default {
       d.getUTCDay() === 0 &&
       d.getUTCHours() >= 8 &&
       d.getUTCHours() < 10
+    ) {
+      this.isOnline = true
+    } else if (
+      d.getUTCDay() === 0 &&
+      d.getUTCHours() >= 11 &&
+      d.getUTCHours() < 13
     ) {
       this.isOnline = true
     }
