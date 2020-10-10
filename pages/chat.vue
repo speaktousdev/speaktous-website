@@ -121,7 +121,7 @@ export default {
     //   this.isOnline = true
     // }
     // Sunday Malaysia
-    if (d.getUTCDay() === 0 && d.getUTCHours() >= 9 && d.getUTCHours() < 11) {
+    if (d.getUTCDay() === 6 && d.getUTCHours() >= 13 && d.getUTCHours() < 15) {
       this.isOnline = true
     }
     // } else if (
