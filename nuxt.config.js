@@ -1,6 +1,7 @@
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
+  ssr: false,
   /*
    ** Headers of the page
    ** Must have for every page: title, description, twitter:title, twitter:description, og:title, og:description, og:site_name, og:url
@@ -94,11 +95,12 @@ export default {
   plugins: [
     { src: '~/plugins/vuelidate' },
     { src: '~/plugins/ga', mode: 'client' },
+    { src: '~/plugins/v-tooltip.js' },
   ],
   /*
    ** Auto import components (https://go.nuxtjs.dev/config-components)
    */
-  components: false,
+  components: true,
   /*
    ** Nuxt.js dev-modules
    */
