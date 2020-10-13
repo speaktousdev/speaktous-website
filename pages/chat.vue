@@ -31,25 +31,37 @@
           <table class="mt-4 font-serif text-xl text-center sm:text-xl">
             <thead>
               <tr>
-                <th class="w-1/2 px-2 py-2 border">MY Time <br />GMT+8</th>
                 <th class="w-1/2 px-2 py-2 border">US Central Time GMT-6</th>
+                <th class="w-1/2 px-2 py-2 border">MY Time <br />GMT+8</th>
               </tr>
             </thead>
             <tbody>
-              <!-- <tr>
-                <td class="px-2 py-2 border">Sunday <br />8-10 A.M</td>
-                <td class="px-4 py-2 border">Saturday <br />7-9 P.M</td>
+              <tr v-for="schedule in schedules" :key="schedule.id">
+                <!-- US Time -->
+                <td class="px-2 py-2 border">
+                  {{ schedule.day }} <br />
+                  {{
+                    schedule.startTime > 12
+                      ? schedule.startTime - 12
+                      : schedule.startTime
+                  }}
+                  -
+                  {{
+                    schedule.endTime > 12
+                      ? schedule.endTime - 12
+                      : schedule.endTime
+                  }}
+                  {{ schedule.endTime > 12 ? 'PM' : 'AM' }}
+                </td>
+                <!-- Malaysia Time -->
+                <td class="px-2 py-2 border">
+                  {{ convertMalaysiaSchedule(schedule).day }} <br />
+                  {{ convertMalaysiaSchedule(schedule).startTime }}
+                  -
+                  {{ convertMalaysiaSchedule(schedule).endTime }}
+                  {{ convertMalaysiaSchedule(schedule).switchAM }}
+                </td>
               </tr>
-              <tr>
-                <td class="px-2 py-2 border">Sunday <br />4-6 P.M</td>
-                <td class="px-2 py-2 border">Sunday <br />3-5 A.M</td>
-              </tr>
-              <tr>
-                <td class="px-2 py-2 border">Sunday <br />7-9 P.M</td>
-                <td class="px-2 py-2 border">Sunday <br />6-8 A.M</td>
-              </tr> -->
-              <td class="px-2 py-2 border">Sunday <br />9-11 A.M</td>
-              <td class="px-4 py-2 border">Saturday <br />8-10 P.M</td>
             </tbody>
           </table>
         </div>
@@ -57,7 +69,7 @@
 
       <button
         v-if="isOnline"
-        class="px-20 py-2 mt-4 mt-20 text-3xl text-center text-white bg-green-400 rounded-lg shadow-xl hover:bg-green-700"
+        class="px-20 py-2 mt-4 text-3xl text-center text-white bg-green-400 rounded-lg shadow-xl hover:bg-green-700"
         @click="isModalVisible = true"
       >
         Chat now!
@@ -109,33 +121,110 @@ export default {
       chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
       isModalVisible: false,
       title: 'Chat With Us Online | SpeakToUs',
-      description:
-        'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.',
+      description: this.getDescriptionString(),
+
+      // Schedules in Madison time (US Central Time GMT-5) 24 hrs format
+      schedules: [
+        {
+          id: 1,
+          day: 'Sunday',
+          startTime: 20,
+          endTime: 22,
+        },
+        {
+          id: 2,
+          day: 'Thursday',
+          startTime: 5,
+          endTime: 7,
+        },
+        {
+          id: 3,
+          day: 'Wednesday',
+          startTime: 8,
+          endTime: 10,
+        },
+      ],
     }
   },
   mounted() {
-    // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
-    // UTC Day Sunday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
-    const d = new Date()
-    // Sunday Madison
-    // if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
-    //   this.isOnline = true
-    // }
-    // Sunday Malaysia
-    if (d.getUTCDay() === 0 && d.getUTCHours() >= 1 && d.getUTCHours() < 3) {
+    const currentTime = new Date()
+    if (this.isCurrentTimeWithinSchedule(currentTime)) {
       this.isOnline = true
     }
-    // } else if (
-    //   d.getUTCDay() === 0 &&
-    //   d.getUTCHours() >= 11 &&
-    //   d.getUTCHours() < 13
-    // ) {
+    // if (d.getUTCDay() === 0 && d.getUTCHours() >= 1 && d.getUTCHours() < 3) {
     //   this.isOnline = true
     // }
   },
   methods: {
     openChat() {
       window.open(this.chatLink, '_blank')
+    },
+    convertUtcDay(time) {
+      const dayToConvert = time.day.toLowerCase()
+      const utcDayArray = [
+        'sunday',
+        'monday',
+        'tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+      ]
+      // console.log(utcDayArray.indexOf(dayToConvert))
+      if (time.startTime + 5 >= 24) {
+        return utcDayArray.indexOf(dayToConvert) + 1
+      } else return utcDayArray.indexOf(dayToConvert)
+    },
+    convertUtcHours(hours) {
+      // REMINDER : THIS FUNCTION CONSIDERS DAYLIGHT SAVING TIME
+      // utcHours = hours + 5
+      return hours + 5 >= 24 ? hours - 19 : hours
+    },
+    isCurrentTimeWithinSchedule(currentTime) {
+      // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
+      const flag = this.schedules.findIndex(
+        (s) =>
+          this.convertUtcDay(s) === currentTime.getUTCDay() &&
+          this.convertUtcHours(s.startTime) <= currentTime.getUTCHours()
+      )
+      return flag >= 0
+    },
+    getDescriptionString() {
+      return 'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.'
+    },
+    convertMalaysiaSchedule(schedule) {
+      // Calculations consider Daylight saving starts
+      const dayArray = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday',
+      ]
+      let mytStartTime
+      if (schedule.startTime > 12) {
+        mytStartTime = schedule.startTime - 11
+      } else {
+        mytStartTime = schedule.startTime + 1
+      }
+      let mytEndTime
+      if (schedule.endTime > 12) {
+        mytEndTime = schedule.endTime - 11
+      } else {
+        mytEndTime = schedule.endTime + 1
+      }
+      return {
+        day:
+          schedule.startTime <= 10
+            ? dayArray[dayArray.indexOf(schedule.day)]
+            : dayArray[dayArray.indexOf(schedule.day) + 1],
+        startTime: mytStartTime,
+        endTime: mytEndTime,
+        switchAM: schedule.endTime >= 12 ? 'AM' : 'PM',
+      }
     },
   },
   head() {
