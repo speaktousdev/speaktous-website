@@ -55,13 +55,13 @@ export default {
         'Sunday',
       ]
       let mytStartTime
-      if (schedule.startTime > 12) {
+      if (schedule.startTime >= 12) {
         mytStartTime = schedule.startTime - 11
       } else {
         mytStartTime = schedule.startTime + 1
       }
       let mytEndTime
-      if (schedule.endTime > 12) {
+      if (schedule.endTime >= 12) {
         mytEndTime = schedule.endTime - 11
       } else {
         mytEndTime = schedule.endTime + 1
