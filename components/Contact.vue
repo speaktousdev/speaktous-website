@@ -37,7 +37,7 @@
       </div>
       <div class="flex flex-row w-48 px-20 py-4 mb-6 md:px-24">
         <button
-          class="w-24 h-10 p-2 bg-gray-200 border-4 rounded-lg shadow-lg "
+          class="w-24 h-10 p-2 bg-gray-200 border-4 rounded-lg shadow-lg"
           @click="submit"
         >
           SUBMIT
@@ -63,13 +63,13 @@ export default {
       name: '',
       email: '',
       message: '',
-      isVisible: false
+      isVisible: false,
     }
   },
   validations: {
     name: { required, maxLength: maxLength(20) },
     email: { required, email },
-    message: { required, minLength: minLength(10) }
+    message: { required, minLength: minLength(10) },
   },
   // To check for errors
   computed: {
@@ -105,7 +105,7 @@ export default {
       if (!this.$v.message.$dirty) return errors
       !this.$v.message.required && errors.push('Message is required')
       return errors
-    }
+    },
   },
   methods: {
     submit() {
@@ -118,8 +118,8 @@ export default {
       this.select = null
       this.checkbox = false
       this.message = ''
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped></style>

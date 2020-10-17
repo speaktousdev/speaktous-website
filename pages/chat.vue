@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */ /* eslint-disable prettier/prettier */
 <template>
   <main class="max-w-screen-xl p-4 lg:mx-auto sm:mx-20">
     <div class="flex flex-row items-center mt-4">
@@ -18,7 +19,7 @@
       </h1>
       <div class="text-center">
         <svg class="inline-block w-24 h-2">
-          <rect class="w-24 h-2" style="fill:green;" />
+          <rect class="w-24 h-2" style="fill: green" />
         </svg>
       </div>
       <div class="md:flex md:flex-row md:justify-center">
@@ -42,6 +43,10 @@
               <tr>
                 <td class="px-2 py-2 border">Sunday <br />4-6 P.M</td>
                 <td class="px-2 py-2 border">Sunday <br />3-5 A.M</td>
+              </tr>
+              <tr>
+                <td class="px-2 py-2 border">Sunday <br />7-9 P.M</td>
+                <td class="px-2 py-2 border">Sunday <br />6-8 A.M</td>
               </tr>
             </tbody>
           </table>
@@ -91,9 +96,9 @@ import Email from '~/components/Email.vue'
 
 export default {
   components: {
-    ChatMainIcon,
     FloatingDisclaimer,
-    Email
+    ChatMainIcon,
+    Email,
   },
   data() {
     return {
@@ -103,13 +108,17 @@ export default {
       isModalVisible: false,
       title: 'Chat With Us Online | SpeakToUs',
       description:
-        'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.'
+        'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.',
     }
   },
   mounted() {
     // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
     // UTC Day Sunday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
     const d = new Date()
+    // Sunday Madison
+    // if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
+    //   this.isOnline = true
+    // }
     if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
       this.isOnline = true
     } else if (
@@ -118,12 +127,18 @@ export default {
       d.getUTCHours() < 10
     ) {
       this.isOnline = true
+    } else if (
+      d.getUTCDay() === 0 &&
+      d.getUTCHours() >= 11 &&
+      d.getUTCHours() < 13
+    ) {
+      this.isOnline = true
     }
   },
   methods: {
     openChat() {
       window.open(this.chatLink, '_blank')
-    }
+    },
   },
   head() {
     return {
@@ -132,39 +147,39 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.description
+          content: this.description,
         },
         // Twitter meta tags
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description
+          content: this.description,
         },
         // Other social media tags
         // OG i.e. Open Graph Protocol docs: https://ogp.me/
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: this.description
+          content: this.description,
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://www.speaktous.online/chat'
-        }
-      ]
+          content: 'https://www.speaktous.online/chat',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

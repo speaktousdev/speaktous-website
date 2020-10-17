@@ -24,9 +24,9 @@
       <p
         v-if="
           isaboutpage &&
-            $v.name.$error &&
-            $v.name.required &&
-            !$v.name.$minLength
+          $v.name.$error &&
+          $v.name.required &&
+          !$v.name.$minLength
         "
         class="mt-1 text-left text-red-600"
       >
@@ -91,33 +91,33 @@ import MailIcon from '~/components/svg/chat/MailIcon.vue'
 export default {
   name: 'Email',
   components: {
-    MailIcon
+    MailIcon,
   },
   props: {
     isaboutpage: {
       type: Boolean,
-      required
-    }
+      required,
+    },
   },
   data() {
     return {
       name: '',
       email: '',
       message: '',
-      submitStatus: null
+      submitStatus: null,
     }
   },
   validations: {
     name: {
-      minLength: minLength(2)
+      minLength: minLength(2),
     },
     email: {
       required,
-      email
+      email,
     },
     message: {
-      required
-    }
+      required,
+    },
   },
   methods: {
     submitForm(e) {
@@ -149,8 +149,8 @@ export default {
             }
           )
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

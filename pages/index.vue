@@ -1,10 +1,10 @@
 <template>
-  <main class="max-w-screen-xl mx-auto text-black lg:text-gray-800 ">
+  <main class="max-w-screen-xl mx-auto text-black lg:text-gray-800">
     <div class="flex flex-wrap px-8 py-6 intro-section sm:px-12 lg:px-24">
-      <div class=" sm:pt-10 sm:w-3/5">
+      <div class="sm:pt-10 sm:w-3/5">
         <div class="sm:w-64 lg:w-full">
           <h1
-            class="font-serif text-4xl font-extrabold text-center lg:text-6xl sm:text-left "
+            class="font-serif text-4xl font-extrabold text-center lg:text-6xl sm:text-left"
           >
             You Share
           </h1>
@@ -50,9 +50,7 @@
       </div>
     </div>
 
-    <div
-      class="px-6 py-6 bg-gray-200 share-section sm:px-12 lg:px-24 sm:py-10 "
-    >
+    <div class="px-6 py-6 bg-gray-200 share-section sm:px-12 lg:px-24 sm:py-10">
       <div class="items-center text-center title-with-underline">
         <h1
           class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl"
@@ -64,7 +62,7 @@
         ></div>
       </div>
       <div class="flex flex-wrap py-8">
-        <div class="share-item ">
+        <div class="share-item">
           <img
             class="w-40 mb-4"
             src="~assets/images/index/anon.png"
@@ -80,7 +78,7 @@
             src="~assets/images/index/login.png"
             alt="A man entering through a door."
           />
-          <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4 ">
+          <h1 class="mb-8 ml-0 text-xl text-center sm:text-left sm:ml-4">
             No registration required
           </h1>
         </div>
@@ -127,7 +125,7 @@
       </div>
       <div class="flex flex-wrap">
         <div class="w-full sm:w-1/2">
-          <h2 class="mt-5 text-lg section-desc ">
+          <h2 class="mt-5 text-lg section-desc">
             In the SpeakToUs Family, we consist of inspiring individuals with
             passion to care for others and dedication to destigmatize mental
             health.
@@ -160,9 +158,9 @@ export default {
   components: { JoinUsIcon },
   head() {
     return {
-      title: 'SpeakToUs'
+      title: 'SpeakToUs',
     }
-  }
+  },
 }
 </script>
 

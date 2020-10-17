@@ -64,33 +64,33 @@ export default {
         {
           id: 2,
           message:
-            'If your condition is not as serious for you to call the ambulance, find a friend who can drive you or accompany you to the nearest hospital or clinic.'
+            'If your condition is not as serious for you to call the ambulance, find a friend who can drive you or accompany you to the nearest hospital or clinic.',
         },
         {
           id: 3,
           message:
-            "If you have mental health emergencies, please contact your respective university's health services."
-        }
+            "If you have mental health emergencies, please contact your respective university's health services.",
+        },
       ],
       list2: [
         {
           id: 1,
           header: 'We are NOT medical professionals,',
           message:
-            ' but we share a similar cultural background as Malaysians. We are ready to listen and be there for you.'
+            ' but we share a similar cultural background as Malaysians. We are ready to listen and be there for you.',
         },
         {
           id: 2,
           header: 'Our approaches may NOT fit,',
-          message: ' but we’ll try our best to accommodate your concern.'
+          message: ' but we’ll try our best to accommodate your concern.',
         },
         {
           id: 3,
           header: 'Our Listeners are bilinguals: English and Malay. ',
           message:
-            'Feel free to SpeakToUs in either language! More languages will be added soon.'
-        }
-      ]
+            'Feel free to SpeakToUs in either language! More languages will be added soon.',
+        },
+      ],
     }
   },
   head() {
@@ -100,39 +100,39 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.description
+          content: this.description,
         },
         // Twitter meta tags
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description
+          content: this.description,
         },
         // Other social media tags
         // OG i.e. Open Graph Protocol docs: https://ogp.me/
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.title
+          content: this.title,
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: this.description
+          content: this.description,
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://www.speaktous.online/disclaimer'
-        }
-      ]
+          content: 'https://www.speaktous.online/disclaimer',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 
