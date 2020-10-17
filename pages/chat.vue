@@ -94,21 +94,21 @@ export default {
       schedules: [
         {
           id: 1,
-          day: 'Wednesday',
-          startTime: 20,
-          endTime: 22,
+          day: 'Saturday',
+          startTime: 19,
+          endTime: 21,
         },
         {
           id: 2,
-          day: 'Friday',
+          day: 'Sunday',
           startTime: 3,
-          endTime: 8,
+          endTime: 5,
         },
         {
           id: 3,
           day: 'Sunday',
-          startTime: 13,
-          endTime: 14,
+          startTime: 18,
+          endTime: 20,
         },
       ],
     }
