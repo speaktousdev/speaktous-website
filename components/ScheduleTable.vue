@@ -16,17 +16,19 @@
               ? schedule.startTime - 12
               : schedule.startTime
           }}
+          {{ schedule.startTime >= 12 ? 'PM' : 'AM' }}
           -
           {{ schedule.endTime > 12 ? schedule.endTime - 12 : schedule.endTime }}
-          {{ schedule.endTime > 12 ? 'PM' : 'AM' }}
+          {{ schedule.endTime >= 12 ? 'PM' : 'AM' }}
         </td>
         <!-- Malaysia Time -->
         <td class="px-2 py-2 border">
           {{ convertMalaysiaSchedule(schedule).day }} <br />
           {{ convertMalaysiaSchedule(schedule).startTime }}
+          {{ convertMalaysiaSchedule(schedule).switchStartMeridiem }}
           -
           {{ convertMalaysiaSchedule(schedule).endTime }}
-          {{ convertMalaysiaSchedule(schedule).switchAM }}
+          {{ convertMalaysiaSchedule(schedule).switchEndMeridiem }}
         </td>
       </tr>
     </tbody>
@@ -73,7 +75,8 @@ export default {
             : dayArray[dayArray.indexOf(schedule.day) + 1],
         startTime: mytStartTime,
         endTime: mytEndTime,
-        switchAM: schedule.endTime >= 12 ? 'AM' : 'PM',
+        switchStartMeridiem: schedule.startTime < 12 ? 'PM' : 'AM',
+        switchEndMeridiem: schedule.endTime >= 12 ? 'AM' : 'PM',
       }
     },
   },
