@@ -3,7 +3,10 @@
     class="flex flex-col justify-center max-w-screen-xl px-10 text-black lg:text-gray-800 lg:mx-auto"
   >
     <h1 class="my-8 text-3xl text-center">We bring SpeakToUs to you</h1>
-    <div class="mt-10 mb-48 parent" style="height: 500px">
+    <div class="block w-11/12 lg:hidden">
+      <CirclePhotoCollage :images="images" />
+    </div>
+    <div class="hidden mt-10 mb-48 parent lg:grid" style="height: 500px">
       <div class="bg-gray-400 div2">
         <img src="@/assets/images/team/shaza.jpg" alt="A photo of Shaza" />
       </div>
@@ -67,7 +70,7 @@
 
 <style scoped>
 .parent {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
   grid-column-gap: 20px;
@@ -133,7 +136,82 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      images: [
+        {
+          name: 'Shaza',
+          url: require('@/assets/images/team/shaza.jpg'),
+        },
+        {
+          name: 'Ayda',
+          url: require('@/assets/images/team/ayda.jpg'),
+        },
+        {
+          name: 'Effrie',
+          url: require('@/assets/images/team/effrie.jpg'),
+        },
+        {
+          name: 'Kamal',
+          url: require('@/assets/images/team/kamal.jpg'),
+        },
+        {
+          name: 'Adriana',
+          url: require('@/assets/images/team/adriana.jpg'),
+        },
+        {
+          name: 'Ghee',
+          url: require('@/assets/images/team/ghee.jpg'),
+        },
+        {
+          name: 'Riza',
+          url: require('@/assets/images/team/riza.jpg'),
+        },
+        {
+          name: 'Umi',
+          url: require('@/assets/images/team/umi.jpg'),
+        },
+        {
+          name: 'Shereen',
+          url: require('@/assets/images/team/shereen.jpg'),
+        },
+        {
+          name: 'Sheikh',
+          url: require('@/assets/images/team/sheikh.jpg'),
+        },
+        {
+          name: 'Mujahid',
+          url: require('@/assets/images/team/mujahid.jpg'),
+        },
+        {
+          name: 'Mirza',
+          url: require('@/assets/images/team/mirza.jpg'),
+        },
+        {
+          name: 'Liyana',
+          url: require('@/assets/images/team/liyana.jpg'),
+        },
+        {
+          name: 'Aina',
+          url: require('@/assets/images/team/aina.jpg'),
+        },
+        {
+          name: 'Adlina',
+          url: require('@/assets/images/team/adlina.jpg'),
+        },
+        {
+          name: 'Emily',
+          url: require('@/assets/images/team/emily.jpg'),
+        },
+        {
+          name: 'Fayyadh',
+          url: require('@/assets/images/team/fayyadh.jpg'),
+        },
+        {
+          name: 'Nadia',
+          url: require('@/assets/images/team/nadia.jpg'),
+        },
+      ],
+    }
   },
 }
 </script>
