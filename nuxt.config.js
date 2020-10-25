@@ -96,6 +96,7 @@ export default {
     { src: '~/plugins/vuelidate' },
     { src: '~/plugins/ga', mode: 'client' },
     { src: '~/plugins/v-tooltip.js' },
+    { src: '~/plugins/vue-lazyload.js' },
   ],
   /*
    ** Auto import components (https://go.nuxtjs.dev/config-components)
@@ -109,6 +110,8 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    // Doc: https://marquez.co/docs/nuxt-optimized-images
+    '@aceforth/nuxt-optimized-images',
   ],
   /*
    ** Nuxt.js modules
@@ -144,6 +147,13 @@ export default {
    */
   sitemap: {
     hostname: 'https://www.speaktous.online',
+  },
+  /*
+   ** nuxt-optimized-images configuration
+   ** Doc: https://marquez.co/docs/nuxt-optimized-images
+   */
+  optimizedImages: {
+    optimizeImages: true,
   },
   /*
    ** Build configuration
