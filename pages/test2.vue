@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center max-w-screen-xl px-10 text-black lg:text-gray-800 lg:mx-auto"
+    class="flex flex-col items-center justify-center max-w-screen-xl text-black lg:text-gray-800 lg:mx-auto"
   >
     <h1 class="mb-8 text-3xl">We bring SpeakToUs to you</h1>
-    <div class="w-3/4">
+    <div class="w-11/12 lg:w-3/4">
       <CirclePhotoCollage :images="images" />
     </div>
   </div>

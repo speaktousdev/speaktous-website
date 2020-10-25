@@ -8,7 +8,7 @@
       class="focus:outline-none"
     >
       <img
-        class="inline-block w-16 h-16 text-white transition duration-300 ease-in-out transform rounded-full hover:scale-150 md:w-20 md:h-20 lg:w-32 lg:h-32"
+        class="inline-block w-16 h-16 text-white transition duration-100 ease-in-out transform rounded-full sm:w-20 sm:h-20 hover:scale-150 md:w-24 md:h-24 lg:w-32 lg:h-32"
         :src="image.url"
         :alt="`A photo of ${image.name}`"
       />
