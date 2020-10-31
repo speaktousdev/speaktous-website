@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <Header />
-    <nuxt class="flex-grow" />
+    <nuxt class="flex-grow mt-20 sm:mt-0" />
     <Footer class="pb-20 sm:pb-2" />
   </div>
 </template>

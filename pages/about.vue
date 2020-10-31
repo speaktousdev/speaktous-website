@@ -1,6 +1,6 @@
 <template>
   <main
-    class="max-w-screen-xl text-center text-black lg:text-gray-800 lg:mx-auto"
+    class="max-w-screen-xl text-center font-serif text-black lg:text-gray-800 lg:mx-auto"
   >
     <div class="justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row">
       <div class="md:w-1/2 lg:w-1/2">
@@ -22,8 +22,28 @@
 
       <HeaderIcon class="hidden w-1/2 h-auto py-2 md:block lg:block xl:block" />
     </div>
+    <div class="mt-6 px-10 lg:px-24 flex flex-col md:flex-row">
+      <button
+        class="font-serif font-bold text-white rounded-lg px-16 py-3 bg-green-400 hover:bg-green-700"
+        @click.prevent="$router.push('/history')"
+      >
+        History
+      </button>
+      <!-- PDF link does not work -->
+      <button
+        class="font-serif font-bold text-white mt-2 md:mt-0 md:ml-2 rounded-lg px-16 py-3 bg-gray-600 hover:bg-gray-700"
+      >
+        <a href="../static/companyprofile.pdf">Profile</a>
+      </button>
+    </div>
 
-    <div class="mt-8 item-center md:mt-32">
+    <!-- <button
+      class="mt-10 text-white bg-green-stu hover:bg-green-700 rounded-lg px-3 py-3"
+    >
+      History
+    </button> -->
+
+    <!-- <div class="mt-8 item-center md:mt-32">
       <div>
         <img
           class="block w-full h-auto ml-auto mr-auto lg:w-3/4"
@@ -36,8 +56,8 @@
       >
         We bring SpeakToUs to you
       </p>
-    </div>
-
+    </div> -->
+    <!-- 
     <div class="mt-16 text-center md:mt-24">
       <div class="inline-block w-11/12 lg:w-1/2 xl:w-1/2">
         <h1
@@ -47,6 +67,86 @@
         </h1>
         <Accordion :faqlist="faqlist" />
       </div>
+    </div> -->
+
+    <!-- Mission,Vision,Core Values section -->
+    <div class="mt-24 lg:px-48">
+      <div
+        class="rounded-full circle-h-w circle1-color text-left mr-auto ml-0 transform -translate-x-6 lg:-translate-x-40"
+      >
+        <h2
+          class="pt-4 md:pt-12 text-white font-semibold md:text-3xl lg:text-4xl"
+        >
+          Mission
+        </h2>
+        <p
+          class="pt-4 text-xs md:text-xl lg:text-2xl leading-6 md:leading-9 text-white"
+        >
+          Provide a platform for individuals to express themselves freely
+          regarding mental health.
+        </p>
+      </div>
+      <div
+        class="rounded-full circle-h-w circle2-color text-left ml-auto mr-0 transform translate-x-6 lg:translate-x-40 lg:-translate-y-56"
+      >
+        <h2
+          class="pt-4 md:pt-12 text-gray-800 font-semibold md:text-3xl lg:text-4xl"
+        >
+          Vision
+        </h2>
+        <p
+          class="pt-4 text-xs md:text-xl lg:text-2xl leading-6 md:leading-9 text-gray-800"
+        >
+          Create an environment where individuals can discuss comfortably about
+          mental health.
+        </p>
+      </div>
+      <div
+        class="rounded-full circle-h-w circle3-color text-left mr-auto ml-0 transform -translate-x-6 lg:-translate-y-64"
+      >
+        <h2
+          class="pt-4 md:pt-12 text-white font-semibold md:text-3xl lg:text-4xl"
+        >
+          Core Values
+        </h2>
+        <ul
+          class="list-disc pt-4 text-xs md:text-xl lg:text-2xl leading-6 md:leading-9 text-white"
+        >
+          <li>Confidentiality</li>
+          <li>Respect</li>
+          <li>Dedication</li>
+          <li>Open Communication</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="px-10 lg:px-24 mt-24 lg:mt-0">
+      <h1 class="font-semibold text-4xl">Objective</h1>
+      <p class="text-left mt-4 sm:text-lg">
+        Our objectives are the breakdown in detail on how we are aiming to
+        achieve our mission and vision for 2020.
+      </p>
+
+      <ul class="list-disc mt-8 text-left text-sm sm:text-lg pr-4">
+        <li class="mb-8">
+          To provide mental health support to Malaysians by giving them the best
+          recommendations and aid needed for them to improve and overcome issues
+          such as, but not limited to, stress, anxiety, burnout, depression, and
+          homesickness while keeping them anonymous.
+        </li>
+        <li class="mb-8">
+          To ensure Malaysian know that there are people who want to listen and
+          help them during these moments.
+        </li>
+        <li class="mb-8">
+          To eliminate the stigma of a suicidal topic as something that they
+          should be afraid of to share.
+        </li>
+        <li class="mb-8">
+          Allow them to have someone from the same culture, beliefs, and also
+          first language as a supporter.
+        </li>
+      </ul>
     </div>
 
     <div class="flex-col flex-grow px-8 mt-16 mb-8">
@@ -77,11 +177,11 @@
 
 <script>
 import HeaderIcon from '~/components/svg/about/HeaderIcon.vue'
-import Accordion from '~/components/Accordion.vue'
+// import Accordion from '~/components/Accordion.vue'
 import Email from '~/components/Email.vue'
 
 export default {
-  components: { HeaderIcon, Accordion, Email },
+  components: { HeaderIcon, Email },
   data: () => ({
     isVisible: false,
     isAboutPage: true,
@@ -167,4 +267,42 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.bg-green-stu {
+  background-color: rgb(116, 183, 87);
+  /* @apply border-b border-green-200; */
+}
+
+.circle1-color {
+  background-color: #3f3d56;
+}
+
+.circle2-color {
+  background-color: #c4c4c4;
+}
+
+.circle3-color {
+  background: #006714;
+}
+
+/* Mobile screen */
+.circle-h-w {
+  @apply h-64 w-64 px-16 pt-10;
+}
+
+@screen md {
+  .circle-h-w {
+    height: 450px;
+    width: 450px;
+    @apply px-24;
+  }
+}
+
+@screen lg {
+  .circle-h-w {
+    height: 472px;
+    width: 472px;
+    @apply px-24;
+  }
+}
+</style>
