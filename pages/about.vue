@@ -23,18 +23,18 @@
       <HeaderIcon class="hidden w-1/2 h-auto py-2 md:block lg:block xl:block" />
     </div>
     <div class="flex flex-col px-10 mt-6 lg:px-24 md:flex-row">
-      <button
+      <nuxt-link
+        to="/history"
         class="px-16 py-3 font-serif font-bold text-white bg-green-400 rounded-lg hover:bg-green-700"
-        @click.prevent="$router.push('/history')"
       >
         History
-      </button>
-      <!-- PDF link does not work -->
-      <button
+      </nuxt-link>
+      <a
+        href="companyprofile.pdf"
+        target="_blank"
         class="px-16 py-3 mt-2 font-serif font-bold text-white bg-gray-600 rounded-lg md:mt-0 md:ml-2 hover:bg-gray-700"
+        >Profile</a
       >
-        <a href="../static/companyprofile.pdf">Profile</a>
-      </button>
     </div>
 
     <!-- <button
