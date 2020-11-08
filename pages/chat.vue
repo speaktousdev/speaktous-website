@@ -112,25 +112,25 @@ export default {
     }
   },
   mounted() {
-    // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
+    // UTC timezone is 6 hours ahead of Madison, WI; 8 hours behind Malaysia
     // UTC Day Sunday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
     const d = new Date()
     // Sunday Madison
     // if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
     //   this.isOnline = true
     // }
-    if (d.getUTCDay() === 6 && d.getUTCHours() >= 2 && d.getUTCHours() < 4) {
+    if (d.getUTCDay() === 0 && d.getUTCHours() >= 1 && d.getUTCHours() < 3) {
       this.isOnline = true
     } else if (
       d.getUTCDay() === 0 &&
-      d.getUTCHours() >= 8 &&
-      d.getUTCHours() < 10
+      d.getUTCHours() >= 9 &&
+      d.getUTCHours() < 11
     ) {
       this.isOnline = true
     } else if (
       d.getUTCDay() === 0 &&
-      d.getUTCHours() >= 13 &&
-      d.getUTCHours() < 15
+      d.getUTCHours() >= 14 &&
+      d.getUTCHours() < 16
     ) {
       this.isOnline = true
     }
