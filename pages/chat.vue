@@ -128,9 +128,9 @@ export default {
     ) {
       this.isOnline = true
     } else if (
-      d.getUTCDay() === 0 &&
-      d.getUTCHours() >= 14 &&
-      d.getUTCHours() < 16
+      d.getUTCDay() === 1 &&
+      d.getUTCHours() >= 2 &&
+      d.getUTCHours() < 4
     ) {
       this.isOnline = true
     }
