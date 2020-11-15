@@ -89,6 +89,7 @@ export default {
       isModalVisible: false,
       title: 'Chat With Us Online | SpeakToUs',
       description: this.getDescriptionString(),
+      isDstObserved: this.getDstObserved(),
 
       // Schedules in Madison time (US Central Time GMT-5) 24 hrs format
       schedules: [
@@ -126,6 +127,8 @@ export default {
     openChat() {
       window.open(this.chatLink, '_blank')
     },
+
+    // Note: convertUtcDay and convertUtcHours only converts the Madison schedules using hard-coded math!
     convertUtcDay(time) {
       const dayToConvert = time.day.toLowerCase()
       const utcDayArray = [
@@ -136,25 +139,49 @@ export default {
         'thursday',
         'friday',
         'saturday',
+        'sunday',
       ]
       // console.log(utcDayArray.indexOf(dayToConvert))
-      if (time.startTime + 5 >= 24) {
+
+      // TODO: check this logic
+      if (!this.isDstObserved && time.startTime + 5 >= 24) {
+        return utcDayArray.indexOf(dayToConvert) + 1
+      } else if (this.isDstObserved && time.startTime + 6 >= 24) {
         return utcDayArray.indexOf(dayToConvert) + 1
       } else return utcDayArray.indexOf(dayToConvert)
     },
     convertUtcHours(hours) {
-      // REMINDER : THIS FUNCTION CONSIDERS DAYLIGHT SAVING TIME
-      // utcHours = hours + 5
-      return hours + 5 >= 24 ? hours - 19 : hours
+      // utcHours = hours + 6 (Standard Time - Non-DST)
+      // utcHours = hours + 5 (DST )
+      if (this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours
+      else return hours + 6 >= 24 ? hours - 19 : hours
     },
     isCurrentTimeWithinSchedule(currentTime) {
-      // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
+      // DST : UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
+      // Standard time : UTC timezone is 6 hours ahead of Madison, WI; 8 hours behind Malaysia
       const flag = this.schedules.findIndex(
         (s) =>
           this.convertUtcDay(s) === currentTime.getUTCDay() &&
           this.convertUtcHours(s.startTime) <= currentTime.getUTCHours()
       )
       return flag >= 0
+    },
+    getDstObserved() {
+      const currentTime = new Date()
+
+      // https://www.w3resource.com/javascript-exercises/javascript-date-exercise-38.php
+      let dst = null
+      for (let i = 0; i < 12; ++i) {
+        dst = new Date(currentTime.getFullYear(), i, 1)
+        const offset = dst.getTimezoneOffset()
+
+        if (dst === null) dst = offset
+        else if (offset < dst) {
+          dst = offset
+          break
+        } else if (offset > dst) break
+      }
+      return (currentTime.getTimezoneOffset() === dst) | 0
     },
     getDescriptionString() {
       return 'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.'
