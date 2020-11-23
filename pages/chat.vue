@@ -37,16 +37,16 @@
             </thead>
             <tbody>
               <tr>
-                <td class="px-2 py-2 border">Sunday <br />8-10 A.M</td>
+                <td class="px-2 py-2 border">Sunday <br />9-11 A.M</td>
                 <td class="px-4 py-2 border">Saturday <br />7-9 P.M</td>
               </tr>
               <tr>
-                <td class="px-2 py-2 border">Sunday <br />4-6 P.M</td>
+                <td class="px-2 py-2 border">Sunday <br />5-7 P.M</td>
                 <td class="px-2 py-2 border">Sunday <br />3-5 A.M</td>
               </tr>
               <tr>
-                <td class="px-2 py-2 border">Sunday <br />7-9 P.M</td>
-                <td class="px-2 py-2 border">Sunday <br />6-8 A.M</td>
+                <td class="px-2 py-2 border">Monday <br />10-12 P.M</td>
+                <td class="px-2 py-2 border">Sunday <br />8-10 P.M</td>
               </tr>
             </tbody>
           </table>
@@ -112,25 +112,25 @@ export default {
     }
   },
   mounted() {
-    // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
+    // UTC timezone is 6 hours ahead of Madison, WI; 8 hours behind Malaysia
     // UTC Day Sunday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
     const d = new Date()
     // Sunday Madison
     // if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
     //   this.isOnline = true
     // }
-    if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
+    if (d.getUTCDay() === 0 && d.getUTCHours() >= 1 && d.getUTCHours() < 3) {
       this.isOnline = true
     } else if (
       d.getUTCDay() === 0 &&
-      d.getUTCHours() >= 8 &&
-      d.getUTCHours() < 10
+      d.getUTCHours() >= 9 &&
+      d.getUTCHours() < 11
     ) {
       this.isOnline = true
     } else if (
-      d.getUTCDay() === 0 &&
-      d.getUTCHours() >= 11 &&
-      d.getUTCHours() < 13
+      d.getUTCDay() === 1 &&
+      d.getUTCHours() >= 2 &&
+      d.getUTCHours() < 4
     ) {
       this.isOnline = true
     }
