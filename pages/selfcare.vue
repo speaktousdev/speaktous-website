@@ -1,14 +1,16 @@
 <template>
   <main class="max-w-screen-xl p-4 px-16 lg:mx-auto sm:mx-20">
-    <div class="lg:flex lg:flex-row-reverse">
-      <div class="lg:w-1/2 flex justify-center items-center">
-        <div class="w-3/4 h-56 border border-gray-700">
-          SELF CARE LOGO PLACEHOLDER
-        </div>
+    <section class="lg:flex lg:flex-row-reverse lg:space-x-8">
+      <div class="hidden md:flex md:items-center md:justify-center lg:w-3/8">
+        <img
+          src="~/assets/images/selfcare/logo.png"
+          alt="Self care campaign logo. Santa in a box."
+          class=""
+        />
       </div>
-      <div class="lg:w-1/2">
+      <div class="lg:w-6/8">
         <h1
-          class="font-serif mt-12 text-2xl md:text-3xl lg:text-6xl text-center lg:text-left font-semibold"
+          class="mt-12 font-serif text-2xl font-semibold text-center md:text-3xl lg:text-6xl lg:text-left"
         >
           Self-Care Santa!
         </h1>
@@ -27,86 +29,177 @@
         <p class="mt-12 md:text-xl">Check them out and place your order now!</p>
 
         <div
-          class="flex flex-col md:flex-row items-center justify-center lg:justify-start mt-8"
+          class="flex flex-col items-center justify-center mt-8 md:flex-row lg:justify-start"
         >
           <!-- This button scroll the page to the Packages section -->
-          <button
-            class="rounded-full h-12 w-56 bg-gray-600 md:text-xl font-semibold hover:bg-gray-700"
+          <a
+            class="flex items-center justify-center w-56 h-12 font-semibold bg-gray-400 rounded-full md:text-xl hover:bg-gray-600"
+            href="#packages"
           >
             Packages
-          </button>
+          </a>
           <!-- This button link to the Google Form -->
-          <a href="https://forms.gle/RxrKoCb6QX1Tnij87" target="_blank"
-            ><button
-              class="md:ml-8 mt-4 h-12 w-56 md:mt-0 rounded-full md:text-xl text-white font-semibold bg-green-400 hover:bg-green-700"
-            >
-              Buy now
-            </button></a
+          <a
+            href="https://forms.gle/RxrKoCb6QX1Tnij87"
+            target="_blank"
+            rel="noreferrer"
+            class="flex items-center justify-center w-56 h-12 mt-4 font-semibold text-white bg-green-400 rounded-full md:ml-8 md:mt-0 md:text-xl hover:bg-green-700"
+            >Buy now</a
           >
         </div>
       </div>
-    </div>
+    </section>
     <!-- What's in the packages & Package prices section -->
-    <div class="lg:flex lg:flex-row">
+    <section class="lg:flex lg:flex-row lg:space-x-8">
       <div class="lg:w-1/2">
-        <h1
-          class="font-serif text-center font-semibold mt-24 text-2xl md:text-3xl"
+        <h2
+          class="mt-24 font-serif text-2xl font-semibold text-center md:text-3xl"
         >
-          What's in the packages?
-        </h1>
+          What's in a package?
+        </h2>
 
-        <ol class="list-decimal mt-8 md:text-xl">
-          <li>Essential items</li>
-          <ul class="list-disc">
-            <li>2 sachets of chocolate</li>
-            <li>2 face masks</li>
-            <li>1 pair of comfy socks</li>
-            <li>1 scented candle</li>
-            <li>1 baking mix</li>
-          </ul>
+        <div
+          class="flex flex-col items-center justify-center p-8 mt-8 bg-gray-200 rounded-2xl"
+        >
+          <ol class="list-decimal md:text-xl">
+            <li>Essential items:</li>
+            <ul class="text-gray-800 list-disc list-inside">
+              <li>🍫 2 sachets of chocolate</li>
+              <li>🎭 2 face masks</li>
+              <li>🧦 1 pair of comfy socks</li>
+              <li>🕯️ 1 scented candle</li>
+              <li>🎂 1 baking mix</li>
+            </ul>
 
-          <li class="mt-4">Special item of your own</li>
-          <li class="mt-4">Customizable card</li>
-        </ol>
+            <li class="pt-2">Special item of your own ✨</li>
+            <li class="pt-2">Customizable card ✉️</li>
+          </ol>
+        </div>
 
-        <p class="mt-8 lg:mt-16 text-center md:text-xl lg:text-left">
-          All wrap in a special box for you or your friend!
+        <p
+          class="p-8 mt-8 text-lg font-semibold text-center text-gray-800 bg-gradient-to-r from-green-200 to-indigo-200 lg:mt-16 md:text-xl lg:text-left rounded-2xl"
+        >
+          All wrapped in a special box for you or your friend! 🎁
         </p>
       </div>
       <div class="lg:w-1/2">
-        <h1
-          class="font-serif text-center font-semibold mt-24 text-2xl md:text-3xl"
+        <h2
+          class="mt-24 font-serif text-2xl font-semibold text-center md:text-3xl"
         >
           Package prices
-        </h1>
-        <p class="mt-8 text-center md:text-2xl">
-          These prices are for A,B, and Surprise Me! packages. Prices vary
-          according to different countries.
+        </h2>
+        <p class="mt-8 text-center md:text-xl">
+          These prices are for <b>A</b>, <b>B</b>, and
+          <b>Surprise Me!</b> packages. Prices vary according to country.
         </p>
         <div class="mt-4">
           <div class="flex items-center justify-center">
-            <div class="mt-4 rounded-lg w-56 h-32 md:w-64 md:h-40 bg-gray-700">
-              <h1
-                class="pt-4 md:pt-8 text-center text-4xl text-white font-semibold"
+            <div class="w-56 h-32 mt-4 bg-gray-700 rounded-lg md:w-64 md:h-40">
+              <p
+                class="pt-4 text-4xl font-semibold text-center text-white md:pt-8"
               >
                 RM 25 *
-              </h1>
-              <h2 class="text-center text-xl text-white">Malaysia</h2>
+              </p>
+              <h2 class="text-xl text-center text-white">Malaysia</h2>
             </div>
           </div>
-          <div class="mt-4 md:mt-8 flex items-center justify-center">
-            <div class="rounded-lg w-56 h-32 md:w-64 md:h-40 bg-gray-400">
-              <h1
-                class="pt-4 md:pt-8 text-center text-4xl text-gray-800 font-semibold"
+          <div class="flex items-center justify-center mt-4 md:mt-8">
+            <div class="w-56 h-32 bg-gray-400 rounded-lg md:w-64 md:h-40">
+              <p
+                class="pt-4 text-4xl font-semibold text-center text-gray-800 md:pt-8"
               >
                 $ 15
-              </h1>
-              <h2 class="text-center text-xl text-gray-800">USA</h2>
+              </p>
+              <h2 class="text-xl text-center text-gray-800">USA</h2>
             </div>
           </div>
-          <p class="mt-4 text-center">* Include free shipping</p>
+          <p class="mt-4 text-center">*Include free shipping!</p>
         </div>
       </div>
-    </div>
+    </section>
+    <!-- Packages section -->
+    <section class="flex flex-col items-center justify-center">
+      <h2
+        id="packages"
+        class="mt-24 mb-2 font-serif text-2xl font-semibold text-center md:text-3xl"
+      >
+        Packages
+      </h2>
+      <p class="pb-8 text-sm text-center lg:pb-16 lg:text-base">
+        We have 3 options to choose from!
+      </p>
+      <div
+        class="flex flex-col space-y-20 lg:space-y-0 lg:flex-row lg:justify-between lg:space-x-48"
+      >
+        <PackageCard
+          title="Package A"
+          special-item="Embroidery"
+          package="A"
+          button-styles="text-gray-800 bg-gray-300 hover:bg-gray-600 hover:text-white"
+        />
+        <PackageCard
+          title="Package B"
+          special-item="Puzzle"
+          package="B"
+          button-styles="text-white bg-green-600 hover:bg-green-400"
+        />
+        <PackageCard
+          title="Package C"
+          special-item="Mystery Gift"
+          package="C"
+          button-styles="text-white bg-purple-900 hover:bg-purple-600"
+        />
+      </div>
+    </section>
+    <!-- Note card section -->
+    <section class="flex flex-col items-center justify-center pb-20">
+      <h2
+        class="mt-24 mb-2 font-serif text-2xl font-semibold text-center md:text-3xl"
+      >
+        Note cards
+      </h2>
+      <p class="pb-8 text-sm text-center lg:text-base">
+        Note card only option is available too!
+      </p>
+      <div class="lg:flex lg:flex-row-reverse">
+        <div class="flex flex-col items-center">
+          <img
+            src=""
+            alt="Note card image."
+            class="w-11/12 h-56 bg-gray-300 rounded-xl lg:w-64"
+          />
+        </div>
+        <div
+          class="flex flex-col items-center justify-center lg:items-start lg:justify-start lg:pr-12"
+        >
+          <p class="pt-6 lg:text-xl">
+            Customize your card with a personal message,
+            <br class="hidden lg:block" />
+            or SpeakToUs will write it out for you!
+          </p>
+          <p class="pt-8 pb-6">
+            <span class="text-xl font-bold">RM2.50 / $2.50</span> per note card
+          </p>
+          <a
+            href="https://forms.gle/RxrKoCb6QX1Tnij87"
+            target="_blank"
+            rel="noreferrer"
+            class="flex items-center justify-center w-56 h-12 mt-4 font-semibold text-white bg-green-600 rounded-full md:text-xl hover:bg-green-400"
+          >
+            Buy now
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
+
+<script>
+import PackageCard from '@/components/PackageCard.vue'
+
+export default {
+  components: {
+    PackageCard,
+  },
+}
+</script>
