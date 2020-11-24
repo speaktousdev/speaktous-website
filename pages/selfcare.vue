@@ -1,7 +1,7 @@
 <template>
   <main class="max-w-screen-xl p-4 px-16 lg:mx-auto sm:mx-20">
     <section class="lg:flex lg:flex-row-reverse lg:space-x-8">
-      <div class="hidden md:flex md:items-center md:justify-center lg:w-3/8">
+      <div class="md:flex md:items-center md:justify-center lg:w-3/8">
         <img
           src="~/assets/images/selfcare/logo.png"
           alt="Self care campaign logo. Santa in a box."
@@ -15,7 +15,7 @@
           Self-Care Santa!
         </h1>
         <p class="mt-4 md:text-xl">
-          Self Care Santa is a collaboration between SpeakToUs and NAMSA. We
+          Self-Care Santa is a collaboration between SpeakToUs and NAMSA. We
           offer
           <b>self-care packages</b> and <b>note cards</b> for people to buy for
           themselves or for their friends and loved ones.
@@ -59,7 +59,7 @@
         </h2>
 
         <div
-          class="flex flex-col items-center justify-center p-8 mt-8 bg-gray-200 rounded-2xl"
+          class="flex flex-col items-center lg:mx-12 justify-center mt-8 border-l-4 border-gray-700"
         >
           <ol class="list-decimal md:text-xl">
             <li>Essential items:</li>
@@ -71,13 +71,13 @@
               <li>🎂 1 baking mix</li>
             </ul>
 
-            <li class="pt-2">Special item of your own ✨</li>
-            <li class="pt-2">Customizable card ✉️</li>
+            <li class="pt-8">A special item of your own ✨</li>
+            <li class="pt-8">A customizable card ✉️</li>
           </ol>
         </div>
 
         <p
-          class="p-8 mt-8 text-lg font-semibold text-center text-gray-800 bg-gradient-to-r from-green-200 to-indigo-200 lg:mt-16 md:text-xl lg:text-left rounded-2xl"
+          class="p-8 mt-8 text-lg font-semibold text-center text-gray-800 bg-gradient-to-r from-green-200 to-indigo-200 lg:mt-16 md:text-xl lg:text-left rounded-lg"
         >
           All wrapped in a special box for you or your friend! 🎁
         </p>
@@ -125,7 +125,7 @@
       >
         Packages
       </h2>
-      <p class="pb-8 text-sm text-center lg:pb-16 lg:text-base">
+      <p class="pb-8 text-sm text-center lg:pb-16 md:text-xl lg:text-base">
         We have 3 options to choose from!
       </p>
       <div
@@ -158,7 +158,7 @@
       >
         Note cards
       </h2>
-      <p class="pb-8 text-sm text-center lg:text-base">
+      <p class="pb-8 text-sm text-center md:text-xl lg:text-base">
         Note card only option is available too!
       </p>
       <div class="lg:flex lg:flex-row-reverse">
@@ -172,7 +172,7 @@
         <div
           class="flex flex-col items-center justify-center lg:items-start lg:justify-start lg:pr-12"
         >
-          <p class="pt-6 lg:text-xl">
+          <p class="pt-6 text-center lg:text-left lg:text-xl">
             Customize your card with a personal message,
             <br class="hidden lg:block" />
             or SpeakToUs will write it out for you!
@@ -189,6 +189,18 @@
             Buy now
           </a>
         </div>
+      </div>
+    </section>
+    <section class="mt-12">
+      <h2
+        class="font-serif text-center border-b-2 font-semibold md:text-xl lg:mx-64"
+      >
+        Questions on the Self-Care Santa project?
+      </h2>
+      <div class="mt-4 text-center hover:text-green-400">
+        <a href="mailto:speaktousofficial@gmail.com"
+          >Email us at speaktousofficial@gmail.com</a
+        >
       </div>
     </section>
   </main>
