@@ -1,27 +1,26 @@
 <template>
-  <main
-    class="max-w-screen-xl text-center text-black lg:text-gray-800 lg:mx-auto"
-  >
+  <main class="max-w-screen-xl text-black lg:text-gray-800 lg:mx-auto">
     <div class="justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row">
-      <div class="md:w-1/2 lg:w-1/2">
+      <div class="text-center justify-center">
         <h1
-          class="mt-4 font-serif text-4xl font-extrabold tracking-wide lg:text-6xl md:mt-16 lg:mt-14 md:text-4xl md:text-left"
+          class="mt-4 font-serif text-4xl font-extrabold tracking-wide lg:text-6xl md:mt-16 lg:mt-14 md:text-4xl"
         >
           History
         </h1>
-        <p class="mt-4 text-lg xl:mt-8 md:text-left lg:text-xl xl:text-2xl">
-          We are a student-led organization based in the University of
-          Wisconsin-Madison, USA that provides a <br /><b
-            >peer-to-peer support platform</b
-          >
-          <br />for Malaysian students in the US. Through our chat feature, we
-          are providing an online medium for students to speak up and share
-          their concerns, just like having a friend who listens to your stories.
-        </p>
-        <p class="mt-4 text-lg xl:mt-8 md:text-left lg:text-xl xl:text-2xl">
-          Our team consists of inspiring inviduals with passion to care for
-          others and dedication to change the stigma against mental health.
-        </p>
+        <div class="text-center md:px-20">
+          <p class="mt-4 text-lg xl:mt-8 lg:text-xl xl:text-2xl">
+            We are a student-led organization based in the University of
+            Wisconsin-Madison, USA that provides a
+            <b>peer-to-peer support platform</b>
+            for Malaysian students in the US. Through our chat feature, we are
+            providing an online medium for students to speak up and share their
+            concerns, just like having a friend who listens to your stories.
+          </p>
+          <p class="mt-4 text-lg xl:mt-8 lg:text-xl xl:text-2xl">
+            Our team consists of inspiring inviduals with passion to care for
+            others and dedication to change the stigma against mental health.
+          </p>
+        </div>
       </div>
     </div>
     <div class="px-6 py-6 bg-gray-200 share-section sm:px-12 lg:px-24 sm:py-10">
@@ -31,7 +30,7 @@
         Timeline
       </h1>
       <div v-for="item in timelineItem" :key="item.id">
-        <Timeline />
+        <Timeline :content="item" />
       </div>
     </div>
   </main>
@@ -49,21 +48,33 @@ export default {
       timelineItem: [
         {
           id: 1,
-          date: '16 October 2019',
+          date: '2017 - 2018',
           image: '~assets/images/about/stuphoto.jpg',
-          text: 'The first time we meet as a team',
+          bulletPoint: [
+            'The year where mental health comes into the picture when Shaza started to experience it by herself. She reached out and found herself in Effrie’s house seeking help. ',
+            'A medium length point 2',
+            'A really really long point to test out the maximum width of the container in its entirety and ever',
+          ],
         },
         {
           id: 2,
           date: '20 November 2019',
           image: '~assets/images/about/stuphoto.jpg',
-          text: 'Establish chat service',
+          bulletPoint: [
+            'Short point 1',
+            'A medium length point 2',
+            'A really really long point to test out the container',
+          ],
         },
         {
           id: 3,
           date: '13 March 2020',
           image: '~assets/images/about/stuphoto.jpg',
-          text: 'We came up with our new website!',
+          bulletPoint: [
+            'Short point 1',
+            'A medium length point 2',
+            'A really really long point to test out the container',
+          ],
         },
       ],
     }

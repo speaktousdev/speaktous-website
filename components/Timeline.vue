@@ -1,16 +1,22 @@
 <template>
   <div class="timeline">
-    <div class="container left">The line</div>
-    <div class="content">The date</div>
+    <div class="container" :class="content.id % 2 == 1 ? 'left' : 'right'">
+      <div class="content">
+        <h2 class="text-lg font-bold mb-4">{{ content.date }}</h2>
+        <ul class="list-disc">
+          <li v-for="point in content.bulletPoint" :key="point.bullet">
+            {{ point }}
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    timelineItem: {
-      type: String,
-    },
+    content: Object,
   },
 }
 </script>
@@ -18,11 +24,6 @@ export default {
 <style>
 * {
   box-sizing: border-box;
-}
-
-body {
-  background-color: #474e5d;
-  font-family: Helvetica, sans-serif;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -58,10 +59,10 @@ body {
   position: absolute;
   width: 25px;
   height: 25px;
-  right: -17px;
+  right: -13px;
   background-color: white;
-  border: 4px solid #ff9f55;
-  top: 15px;
+  border: 4px solid #006715;
+  top: 20px;
   border-radius: 50%;
   z-index: 1;
 }
@@ -104,20 +105,19 @@ body {
   border-color: transparent white transparent transparent;
 }
 
-/* Fix the circle for containers on the right side */
 .right::after {
   left: -16px;
 }
 
-/* The actual content */
 .content {
   padding: 20px 30px;
   background-color: white;
   position: relative;
   border-radius: 6px;
+  display: block;
+  text-align: left;
 }
 
-/* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
   /* Place the timelime to the left */
   .timeline::after {
@@ -142,7 +142,7 @@ body {
   /* Make sure all circles are at the same spot */
   .left::after,
   .right::after {
-    left: 15px;
+    left: 18px;
   }
 
   /* Make all right containers behave like the left ones */
