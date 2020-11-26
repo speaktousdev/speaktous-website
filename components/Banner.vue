@@ -1,10 +1,10 @@
 <template>
   <div class="bg-gradient-to-r from-red-400 via-yellow-400 to-green-700">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="px-3 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div
-        class="flex flex-col md:flex-row items-center justify-between flex-wrap"
+        class="flex flex-col flex-wrap items-center justify-between md:flex-row"
       >
-        <div class="flex-1 flex items-center">
+        <div class="flex items-center flex-1">
           <span class="flex p-2 rounded-lg">
             <img :src="icon" alt="" class="w-8" />
           </span>
@@ -15,13 +15,13 @@
             </span>
           </p>
         </div>
-        <div class="flex justify-center items-center my-2">
+        <div class="flex items-center justify-center my-2">
           <div class="" @click.prevent="$router.push('/selfcare')">
             <a
               href=""
-              class="flex items-center justify-center px-3 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50"
+              class="flex items-center justify-center px-3 py-1 text-sm text-green-800 transition duration-300 ease-in-out transform bg-white border border-transparent rounded-md shadow-sm hover:font-semibold hover:scale-105 hover:bg-green-100"
             >
-              Learn more
+              Learn more!
             </a>
           </div>
         </div>
