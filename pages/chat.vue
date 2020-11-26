@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */ /* eslint-disable prettier/prettier */
 <template>
   <main class="max-w-screen-xl p-4 lg:mx-auto sm:mx-20">
     <div class="flex flex-row items-center mt-4">
@@ -28,34 +27,16 @@
           <p class="mt-4 text-xl text-center underline sm:text-2xl">
             Online hours:
           </p>
-          <table class="mt-4 font-serif text-xl text-center sm:text-xl">
-            <thead>
-              <tr>
-                <th class="w-1/2 px-2 py-2 border">MY Time <br />GMT+8</th>
-                <th class="w-1/2 px-2 py-2 border">US Central Time GMT-6</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="px-2 py-2 border">Sunday <br />8-10 A.M</td>
-                <td class="px-4 py-2 border">Saturday <br />7-9 P.M</td>
-              </tr>
-              <tr>
-                <td class="px-2 py-2 border">Sunday <br />4-6 P.M</td>
-                <td class="px-2 py-2 border">Sunday <br />3-5 A.M</td>
-              </tr>
-              <tr>
-                <td class="px-2 py-2 border">Sunday <br />7-9 P.M</td>
-                <td class="px-2 py-2 border">Sunday <br />6-8 A.M</td>
-              </tr>
-            </tbody>
-          </table>
+          <ScheduleTable
+            :schedules="schedules"
+            :is-dst-observed="isDstObserved"
+          />
         </div>
       </div>
 
       <button
         v-if="isOnline"
-        class="px-20 py-2 mt-4 mt-20 text-3xl text-center text-white bg-green-400 rounded-lg shadow-xl hover:bg-green-700"
+        class="px-20 py-2 mt-4 text-3xl text-center text-white bg-green-400 rounded-lg shadow-xl hover:bg-green-700"
         @click="isModalVisible = true"
       >
         Chat now!
@@ -93,12 +74,14 @@
 import ChatMainIcon from '~/components/svg/chat/ChatMainIcon.vue'
 import FloatingDisclaimer from '~/components/FloatingDisclaimer.vue'
 import Email from '~/components/Email.vue'
+import ScheduleTable from '~/components/ScheduleTable.vue'
 
 export default {
   components: {
     FloatingDisclaimer,
     ChatMainIcon,
     Email,
+    ScheduleTable,
   },
   data() {
     return {
@@ -107,37 +90,106 @@ export default {
       chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
       isModalVisible: false,
       title: 'Chat With Us Online | SpeakToUs',
-      description:
-        'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.',
+      description: this.getDescriptionString(),
+      isDstObserved: this.getDstObserved(),
+
+      // Schedules in Madison time (US Central Time) 24 hrs format
+      schedules: [
+        {
+          id: 1,
+          day: 'Saturday',
+          startTime: 19,
+          endTime: 21,
+        },
+        {
+          id: 2,
+          day: 'Sunday',
+          startTime: 3,
+          endTime: 5,
+        },
+        {
+          id: 3,
+          day: 'Sunday',
+          startTime: 20,
+          endTime: 22,
+        },
+      ],
     }
   },
   mounted() {
-    // UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
-    // UTC Day Sunday: 0000hrs-0200hrs (Madison), Sunday 0800hrs -1000hrs (Malaysia)
-    const d = new Date()
-    // Sunday Madison
-    // if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
-    //   this.isOnline = true
-    // }
-    if (d.getUTCDay() === 0 && d.getUTCHours() >= 0 && d.getUTCHours() < 2) {
-      this.isOnline = true
-    } else if (
-      d.getUTCDay() === 0 &&
-      d.getUTCHours() >= 8 &&
-      d.getUTCHours() < 10
-    ) {
-      this.isOnline = true
-    } else if (
-      d.getUTCDay() === 0 &&
-      d.getUTCHours() >= 11 &&
-      d.getUTCHours() < 13
-    ) {
+    const currentTime = new Date()
+
+    if (this.isCurrentTimeWithinSchedule(currentTime)) {
       this.isOnline = true
     }
+    // if (d.getUTCDay() === 0 && d.getUTCHours() >= 1 && d.getUTCHours() < 3) {
+    //   this.isOnline = true
+    // }
   },
   methods: {
     openChat() {
       window.open(this.chatLink, '_blank')
+    },
+
+    // Note: convertUtcDay and convertUtcHours only converts the Madison schedules using hard-coded math!
+    convertUtcDay(time) {
+      const dayToConvert = time.day.toLowerCase()
+      const utcDayArray = [
+        'sunday',
+        'monday',
+        'tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+      ]
+      // console.log(utcDayArray.indexOf(dayToConvert))
+
+      // TODO: check this logic
+      if (!this.isDstObserved && time.startTime + 5 >= 24) {
+        return utcDayArray.indexOf(dayToConvert) + 1
+      } else if (this.isDstObserved && time.startTime + 6 >= 24) {
+        return utcDayArray.indexOf(dayToConvert) + 1
+      } else return utcDayArray.indexOf(dayToConvert)
+    },
+    convertUtcHours(hours) {
+      // utcHours = hours + 6 (Standard Time ; Non-DST)
+      // utcHours = hours + 5 (DST)
+      if (!this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours
+      else return hours + 6 >= 24 ? hours - 19 : hours
+    },
+    isCurrentTimeWithinSchedule(currentTime) {
+      // DST : UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
+      // Standard time : UTC timezone is 6 hours ahead of Madison, WI; 8 hours behind Malaysia
+      const flag = this.schedules.findIndex(
+        (s) =>
+          this.convertUtcDay(s) === currentTime.getUTCDay() &&
+          this.convertUtcHours(s.startTime) <= currentTime.getUTCHours()
+      )
+      return flag >= 0
+    },
+
+    // Returns 1 if Daylight saving time is observed. https://en.wikipedia.org/wiki/Daylight_saving_time
+    getDstObserved() {
+      const currentTime = new Date()
+
+      // https://www.w3resource.com/javascript-exercises/javascript-date-exercise-38.php
+      let dst = null
+      for (let i = 0; i < 12; ++i) {
+        dst = new Date(currentTime.getFullYear(), i, 1)
+        const offset = dst.getTimezoneOffset()
+
+        if (dst === null) dst = offset
+        else if (offset < dst) {
+          dst = offset
+          break
+        } else if (offset > dst) break
+      }
+      return (currentTime.getTimezoneOffset() === dst) | 0
+    },
+    getDescriptionString() {
+      return 'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.'
     },
   },
   head() {
