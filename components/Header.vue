@@ -1,7 +1,7 @@
 <template>
   <div>
     <header
-      class="fixed w-full sm:relative z-40 bg-green-stu sm:flex sm:justify-center sm:items-end sm:py-2"
+      class="fixed z-40 w-full sm:relative bg-green-stu sm:flex sm:justify-center sm:items-end sm:py-2"
     >
       <!-- Default logo -->
       <div class="hidden sm:flex sm:pb-1 sm:pr-8">
@@ -23,24 +23,24 @@
         <nuxt-link class="link-default" to="/joinus">Join us!</nuxt-link>
         <div class="static">
           <h2
-            class="absolute text-red-600 text-xs font-semibold ml-4 transform md:-translate-y-4"
+            class="absolute ml-4 text-xs font-semibold text-red-600 transform md:-translate-y-4"
           >
             NEW !
           </h2>
-          <nuxt-link class="link-default" to="/joinus">Self Care</nuxt-link>
+          <nuxt-link class="link-default" to="/selfcare">Self Care</nuxt-link>
         </div>
       </nav>
 
       <div v-if="showNavbar === true">
-        <div class="sm:hidden py-2">
-          <div class="absolute p-4 flex items-center">
+        <div class="py-2 sm:hidden">
+          <div class="absolute flex items-center p-4">
             <button class="" @click="menuOpen = true">
               <HamburgerMenu class="" />
             </button>
           </div>
 
           <!-- Mobile logo -->
-          <div class="w-screen flex justify-center items-center">
+          <div class="flex items-center justify-center w-screen">
             <a href="/" @click.prevent="$router.push('/')">
               <img
                 src="~/assets/images/logo.png"
@@ -70,7 +70,7 @@
           <nuxt-link class="hamburger-menu" to="/joinus"> Join Us </nuxt-link>
           <div class="static flex flex-row">
             <h2
-              class="text-red-600 text-xs font-semibold absolute transform -translate-y-3"
+              class="absolute text-xs font-semibold text-red-600 transform -translate-y-3"
             >
               NEW !
             </h2>
@@ -197,7 +197,7 @@ export default {
 
 @screen sm {
   .nuxt-link-exact-active {
-    @apply text-green-700;
+    @apply text-green-900 font-semibold;
   }
 }
 </style>
