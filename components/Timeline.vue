@@ -4,7 +4,11 @@
       <div class="content">
         <h2 class="text-lg font-bold mb-4">{{ content.date }}</h2>
         <ul class="list-disc">
-          <li v-for="point in content.bulletPoint" :key="point.bullet">
+          <li
+            v-for="point in content.bulletPoint"
+            :key="point.bullet"
+            class="text-sm md:text-lg"
+          >
             {{ point }}
           </li>
         </ul>
@@ -16,6 +20,7 @@
 <script>
 export default {
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     content: Object,
   },
 }

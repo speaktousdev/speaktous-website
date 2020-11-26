@@ -1,14 +1,14 @@
 <template>
   <main class="max-w-screen-xl text-black lg:text-gray-800 lg:mx-auto">
-    <div class="justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row">
-      <div class="text-center justify-center">
+    <div class="justify-between px-10 lg:px-24 mt-18 mb-4 md:flex md:flex-row">
+      <div class="text-center md:mb-8">
         <h1
           class="mt-4 font-serif text-4xl font-extrabold tracking-wide lg:text-6xl md:mt-16 lg:mt-14 md:text-4xl"
         >
           History
         </h1>
         <div class="text-center md:px-20">
-          <p class="mt-4 text-lg xl:mt-8 lg:text-xl xl:text-2xl">
+          <p class="mx-2 text-lg xl:mt-8 lg:text-xl xl:text-2xl">
             We are a student-led organization based in the University of
             Wisconsin-Madison, USA that provides a
             <b>peer-to-peer support platform</b>
@@ -25,7 +25,7 @@
     </div>
     <div class="px-6 py-6 bg-gray-200 share-section sm:px-12 lg:px-24 sm:py-10">
       <h1
-        class="mt-4 font-serif text-2xl font-extrabold tracking-wide lg:text-4xl md:mt-16 lg:mt-14 md:text-2xl md:text-left"
+        class="font-serif text-2xl font-extrabold tracking-wide lg:text-4xl md:my-8 md:text-2xl md:text-center"
       >
         Timeline
       </h1>
@@ -48,32 +48,50 @@ export default {
       timelineItem: [
         {
           id: 1,
-          date: '2017 - 2018',
-          image: '~assets/images/about/stuphoto.jpg',
+          date: 'Aug 2017 - Aug 2018',
           bulletPoint: [
-            'The year where mental health comes into the picture when Shaza started to experience it by herself. She reached out and found herself in Effrie’s house seeking help. ',
-            'A medium length point 2',
-            'A really really long point to test out the maximum width of the container in its entirety and ever',
+            'Mental health awareness comes into the picture when Shaza started to experience mental health situations herself. She thought it was just one of those bad days, long bad days without an ending.',
+            'After realizing the condition was getting serious, she reached out to her friends and family which one day brought her to Effrie’s house, a friend who was experiencing the same condition. ',
+            'They bonded as they shared and realized that they were not alone. Even though their situations were different, the talk helped them.',
           ],
         },
         {
           id: 2,
-          date: '20 November 2019',
-          image: '~assets/images/about/stuphoto.jpg',
+          date: 'Feb 2019',
           bulletPoint: [
-            'Short point 1',
-            'A medium length point 2',
-            'A really really long point to test out the container',
+            'A mental health talk Shaza attended had brought the idea to create a platform for students to talk anonymously. She talked about the idea out to Effrie.',
+            'Effrie supported the idea and she volunteered to assist with writing out the idea and then submitted it to the Malaysia Student Association (MSA).',
+            'Shaza called it – SpeakToUs.',
           ],
         },
         {
           id: 3,
-          date: '13 March 2020',
-          image: '~assets/images/about/stuphoto.jpg',
+          date: 'April 2019',
           bulletPoint: [
-            'Short point 1',
-            'A medium length point 2',
-            'A really really long point to test out the container',
+            'The SpeakToUs was presented to the MSA committee, however, it was rejected because the idea required high commitment. Shaza thought that was the end.',
+          ],
+        },
+        {
+          id: 4,
+          date: 'Early September 2019',
+          bulletPoint: [
+            'Shaza used another approach to create SpeakToUs as a stand-alone organization.',
+            'She started to recruit and Effrie was the first member.',
+          ],
+        },
+        {
+          id: 5,
+          date: '16th September 2019',
+          bulletPoint: [
+            'With 9 volunteers and one advisor, Mr.Ghee Syn Ong, SpeakToUs was born.',
+            'This group is called the #pioneers.',
+          ],
+        },
+        {
+          id: 6,
+          date: 'Dec 2019 - Present',
+          bulletPoint: [
+            '#Pioneers built a strong foundation for SpeakToUs. With their determination, the online platform was born and made available to users until now.',
           ],
         },
       ],
