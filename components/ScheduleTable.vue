@@ -2,7 +2,12 @@
   <table class="mt-4 font-serif text-xl text-center sm:text-xl">
     <thead>
       <tr>
-        <th class="w-1/2 px-2 py-2 border">US Central Time GMT-5</th>
+        <th v-if="isDstObserved" class="w-1/2 px-2 py-2 border">
+          US Central Time <br />GMT-6
+        </th>
+        <th v-else class="w-1/2 px-2 py-2 border">
+          US Central Time <br />GMT-5
+        </th>
         <th class="w-1/2 px-2 py-2 border">MY Time <br />GMT+8</th>
       </tr>
     </thead>
@@ -11,14 +16,10 @@
         <!-- US Time -->
         <td class="px-2 py-2 border">
           {{ schedule.day }} <br />
-          {{
-            schedule.startTime > 12
-              ? schedule.startTime - 12
-              : schedule.startTime
-          }}
+          {{ schedule.startTime % 12 === 0 ? 12 : schedule.startTime % 12 }}
           {{ schedule.startTime >= 12 ? 'PM' : 'AM' }}
           -
-          {{ schedule.endTime > 12 ? schedule.endTime - 12 : schedule.endTime }}
+          {{ schedule.endTime % 12 === 0 ? 12 : schedule.endTime % 12 }}
           {{ schedule.endTime >= 12 ? 'PM' : 'AM' }}
         </td>
         <!-- Malaysia Time -->
@@ -42,6 +43,10 @@ export default {
       type: Array,
       required: true,
     },
+    isDstObserved: {
+      type: Number,
+      required: true,
+    },
   },
   methods: {
     convertMalaysiaSchedule(schedule) {
@@ -57,26 +62,41 @@ export default {
         'Sunday',
       ]
       let mytStartTime
+      let convertStartMeridiem = false
       if (schedule.startTime >= 12) {
-        mytStartTime = schedule.startTime - 11
+        mytStartTime = this.isDstObserved
+          ? schedule.startTime - 10
+          : schedule.startTime - 11
+        convertStartMeridiem = true
       } else {
-        mytStartTime = schedule.startTime + 1
+        mytStartTime = this.isDstObserved
+          ? schedule.startTime + 2
+          : schedule.startTime + 1
       }
+
       let mytEndTime
+      let convertEndMeridiem = false
       if (schedule.endTime >= 12) {
-        mytEndTime = schedule.endTime - 11
+        mytEndTime = this.isDstObserved
+          ? schedule.endTime - 10
+          : schedule.endTime - 11
+        convertEndMeridiem = true
       } else {
-        mytEndTime = schedule.endTime + 1
+        mytEndTime = this.isDstObserved
+          ? schedule.endTime + 2
+          : schedule.endTime + 1
       }
+
       return {
         day:
           schedule.startTime <= 10
             ? dayArray[dayArray.indexOf(schedule.day)]
             : dayArray[dayArray.indexOf(schedule.day) + 1],
-        startTime: mytStartTime,
-        endTime: mytEndTime,
-        switchStartMeridiem: schedule.startTime < 12 ? 'PM' : 'AM',
-        switchEndMeridiem: schedule.endTime >= 12 ? 'AM' : 'PM',
+        startTime: mytStartTime % 12 === 0 ? 12 : mytStartTime % 12,
+        endTime: mytEndTime % 12 === 0 ? 12 : mytEndTime % 12,
+        switchStartMeridiem:
+          mytStartTime >= 12 && convertStartMeridiem ? 'PM' : 'AM',
+        switchEndMeridiem: mytEndTime >= 12 && convertEndMeridiem ? 'PM' : 'AM',
       }
     },
   },

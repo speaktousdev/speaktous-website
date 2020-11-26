@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */ /* eslint-disable prettier/prettier */
 <template>
   <main class="max-w-screen-xl p-4 lg:mx-auto sm:mx-20">
     <div class="flex flex-row items-center mt-4">
@@ -28,7 +27,10 @@
           <p class="mt-4 text-xl text-center underline sm:text-2xl">
             Online hours:
           </p>
-          <ScheduleTable :schedules="schedules" />
+          <ScheduleTable
+            :schedules="schedules"
+            :is-dst-observed="isDstObserved"
+          />
         </div>
       </div>
 
@@ -91,31 +93,32 @@ export default {
       description: this.getDescriptionString(),
       isDstObserved: this.getDstObserved(),
 
-      // Schedules in Madison time (US Central Time GMT-5) 24 hrs format
+      // Schedules in Madison time (US Central Time) 24 hrs format
       schedules: [
         {
           id: 1,
-          day: 'Sunday',
-          startTime: 21,
-          endTime: 23,
+          day: 'Saturday',
+          startTime: 19,
+          endTime: 21,
         },
         {
           id: 2,
           day: 'Sunday',
-          startTime: 12,
-          endTime: 13,
+          startTime: 3,
+          endTime: 5,
         },
         {
           id: 3,
           day: 'Sunday',
-          startTime: 10,
-          endTime: 15,
+          startTime: 20,
+          endTime: 22,
         },
       ],
     }
   },
   mounted() {
     const currentTime = new Date()
+
     if (this.isCurrentTimeWithinSchedule(currentTime)) {
       this.isOnline = true
     }
@@ -151,9 +154,9 @@ export default {
       } else return utcDayArray.indexOf(dayToConvert)
     },
     convertUtcHours(hours) {
-      // utcHours = hours + 6 (Standard Time - Non-DST)
-      // utcHours = hours + 5 (DST )
-      if (this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours
+      // utcHours = hours + 6 (Standard Time ; Non-DST)
+      // utcHours = hours + 5 (DST)
+      if (!this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours
       else return hours + 6 >= 24 ? hours - 19 : hours
     },
     isCurrentTimeWithinSchedule(currentTime) {
@@ -166,6 +169,8 @@ export default {
       )
       return flag >= 0
     },
+
+    // Returns 1 if Daylight saving time is observed. https://en.wikipedia.org/wiki/Daylight_saving_time
     getDstObserved() {
       const currentTime = new Date()
 
