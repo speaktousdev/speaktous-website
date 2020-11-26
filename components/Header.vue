@@ -21,6 +21,14 @@
         <nuxt-link class="link-default" to="/about">About</nuxt-link>
         <nuxt-link class="link-default" to="/donate">Donate</nuxt-link>
         <nuxt-link class="link-default" to="/joinus">Join us!</nuxt-link>
+        <div class="static">
+          <h2
+            class="absolute text-red-600 text-xs font-semibold ml-4 transform md:-translate-y-4"
+          >
+            NEW !
+          </h2>
+          <nuxt-link class="link-default" to="/joinus">Self Care</nuxt-link>
+        </div>
       </nav>
 
       <div v-if="showNavbar === true">
@@ -60,6 +68,14 @@
           <nuxt-link class="hamburger-menu" to="/chat"> Chat </nuxt-link>
           <nuxt-link class="hamburger-menu" to="/donate"> Donate </nuxt-link>
           <nuxt-link class="hamburger-menu" to="/joinus"> Join Us </nuxt-link>
+          <div class="static flex flex-row">
+            <h2
+              class="text-red-600 text-xs font-semibold absolute transform -translate-y-3"
+            >
+              NEW !
+            </h2>
+            <nuxt-link class="hamburger-menu" to="/joinus">Self Care</nuxt-link>
+          </div>
         </div>
       </nav>
     </header>

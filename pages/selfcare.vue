@@ -129,7 +129,7 @@
         We have 3 options to choose from!
       </p>
       <div
-        class="flex flex-col space-y-20 lg:space-y-0 lg:flex-row lg:justify-between lg:space-x-48"
+        class="flex flex-col space-y-20 lg:space-y-0 lg:flex-row lg:justify-between lg:space-x-32"
       >
         <PackageCard
           title="Package A"
