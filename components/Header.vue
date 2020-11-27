@@ -63,11 +63,11 @@
           class="flex flex-col items-center text-3xl"
           @click="menuOpen = false"
         >
-          <nuxt-link class="hamburger-menu" to="/"> Home </nuxt-link>
-          <nuxt-link class="hamburger-menu" to="/about"> About </nuxt-link>
-          <nuxt-link class="hamburger-menu" to="/chat"> Chat </nuxt-link>
-          <nuxt-link class="hamburger-menu" to="/donate"> Donate </nuxt-link>
-          <nuxt-link class="hamburger-menu" to="/joinus"> Join Us </nuxt-link>
+          <nuxt-link class="hamburger-menu" to="/">Home</nuxt-link>
+          <nuxt-link class="hamburger-menu" to="/about">About</nuxt-link>
+          <nuxt-link class="hamburger-menu" to="/chat">Chat</nuxt-link>
+          <nuxt-link class="hamburger-menu" to="/donate">Donate</nuxt-link>
+          <nuxt-link class="hamburger-menu" to="/joinus">Join Us</nuxt-link>
           <div class="static flex flex-row">
             <h2
               class="absolute text-xs font-semibold text-red-600 transform -translate-y-3"
