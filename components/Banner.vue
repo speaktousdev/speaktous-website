@@ -1,36 +1,47 @@
 <template>
-  <div class="bg-gradient-to-r from-red-400 via-yellow-400 to-green-700">
+  <div
+    class="bg-gradient-to-r from-red-400 via-yellow-400 to-green-700"
+    :class="isBannerDismissed ? 'hidden' : ''"
+  >
     <div class="px-3 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div
-        class="flex flex-col flex-wrap items-center justify-between md:flex-row"
-      >
-        <div class="flex items-center flex-1">
-          <span class="flex p-2 rounded-lg">
-            <img :src="icon" alt="" class="w-8" />
-          </span>
-          <p class="ml-3 font-semibold text-gray-800 truncate">
-            <span class="lg:hidden"> {{ shortMessage }} </span>
-            <span class="hidden lg:inline">
-              {{ message }}
+      <div class="flex items-center">
+        <button @click="isBannerDismissed = true">
+          <CloseIcon />
+          <span class="sr-only">Dismiss banner</span>
+        </button>
+        <div
+          class="flex flex-col items-center justify-center flex-1 pr-5 sm:flex-row sm:space-x-4"
+        >
+          <div class="flex items-center">
+            <span class="flex p-1 rounded-lg">
+              <img :src="icon" alt="Gift icon" class="w-8" />
             </span>
-          </p>
-        </div>
-        <div class="flex items-center justify-center my-2">
-          <div class="" @click.prevent="$router.push('/selfcare')">
-            <a
-              href=""
+            <p class="ml-3 font-semibold text-gray-800 truncate">
+              <span class="text-sm lg:hidden">{{ shortMessage }}</span>
+              <span class="hidden lg:inline">{{ message }}</span>
+            </p>
+          </div>
+          <div class="flex items-center justify-center pb-4 sm:pb-0">
+            <nuxt-link
+              to="/selfcare"
               class="flex items-center justify-center px-3 py-1 text-sm text-green-800 transition duration-300 ease-in-out transform bg-white border border-transparent rounded-md shadow-sm hover:font-semibold hover:scale-105 hover:bg-green-100"
             >
               Learn more!
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <script>
+import CloseIcon from '~/components/svg/nav/CloseIcon.vue'
+
 export default {
+  components: {
+    CloseIcon,
+  },
   props: {
     icon: {
       type: String,
@@ -46,6 +57,11 @@ export default {
       type: String,
       required: true,
     },
+  },
+  data() {
+    return {
+      isBannerDismissed: false,
+    }
   },
 }
 </script>

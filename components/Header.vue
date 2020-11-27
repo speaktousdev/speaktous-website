@@ -5,13 +5,13 @@
     >
       <!-- Default logo -->
       <div class="hidden sm:flex sm:pb-1 sm:pr-8">
-        <a href="/" @click.prevent="$router.push('/')">
+        <nuxt-link to="/">
           <img
             src="~/assets/images/logo.png"
             alt="Speak To Us organization logo."
             class="h-20"
           />
-        </a>
+        </nuxt-link>
       </div>
 
       <!-- Default screen navigation -->
@@ -41,13 +41,13 @@
 
           <!-- Mobile logo -->
           <div class="flex items-center justify-center w-screen">
-            <a href="/" @click.prevent="$router.push('/')">
+            <nuxt-link to="/">
               <img
                 src="~/assets/images/logo.png"
                 alt="Speak To Us organization logo."
                 class="h-12"
               />
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>
