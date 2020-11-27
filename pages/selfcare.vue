@@ -59,25 +59,25 @@
         </h2>
 
         <div
-          class="flex flex-col items-center lg:mx-12 justify-center mt-8 border-l-4 border-gray-700"
+          class="flex flex-col items-center justify-center mt-8 border-l-4 border-gray-700 lg:px-12"
         >
           <ol class="list-decimal md:text-xl">
             <li>Essential items:</li>
             <ul class="text-gray-800 list-disc list-inside">
-              <li>🍫 2 sachets of chocolate</li>
-              <li>🎭 2 face masks</li>
+              <li>🍫 2 sachets of hot chocolate instant mix</li>
+              <li>🎭 1 face mask</li>
               <li>🧦 1 pair of comfy socks</li>
               <li>🕯️ 1 scented candle</li>
               <li>🎂 1 baking mix</li>
             </ul>
 
-            <li class="pt-8">A special item of your own ✨</li>
             <li class="pt-8">A customizable card ✉️</li>
+            <li class="pt-8">A special item of your own choice ✨</li>
           </ol>
         </div>
 
         <p
-          class="p-8 mt-8 text-lg font-semibold text-center text-gray-800 bg-gradient-to-r from-green-200 to-indigo-200 lg:mt-16 md:text-xl lg:text-left rounded-lg"
+          class="p-8 mt-8 text-lg font-semibold text-center text-gray-800 rounded-lg bg-gradient-to-r from-green-200 to-indigo-200 lg:mt-16 md:text-xl lg:text-left"
         >
           All wrapped in a special box for you or your friend! 🎁
         </p>
@@ -98,7 +98,7 @@
               <p
                 class="pt-4 text-4xl font-semibold text-center text-white md:pt-8"
               >
-                RM 25 *
+                RM 25
               </p>
               <h2 class="text-xl text-center text-white">Malaysia</h2>
             </div>
@@ -108,12 +108,12 @@
               <p
                 class="pt-4 text-4xl font-semibold text-center text-gray-800 md:pt-8"
               >
-                $ 15
+                $15
               </p>
               <h2 class="text-xl text-center text-gray-800">USA</h2>
             </div>
           </div>
-          <p class="mt-4 text-center">*Include free shipping!</p>
+          <p class="mt-4 text-center">Shipping is free!</p>
         </div>
       </div>
     </section>
@@ -193,7 +193,7 @@
     </section>
     <section class="mt-12">
       <h2
-        class="font-serif text-center border-b-2 font-semibold md:text-xl lg:mx-64"
+        class="font-serif font-semibold text-center border-b-2 md:text-xl lg:mx-64"
       >
         Questions on the Self-Care Santa project?
       </h2>
