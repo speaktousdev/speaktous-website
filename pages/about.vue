@@ -37,12 +37,6 @@
       >
     </div>
 
-    <!-- <button
-      class="px-3 py-3 mt-10 text-white rounded-lg bg-green-stu hover:bg-green-700"
-    >
-      History
-    </button> -->
-
     <!-- <div class="mt-8 item-center md:mt-32">
       <div>
         <img
@@ -296,10 +290,6 @@ export default {
 .circle-h-w {
   @apply h-64 w-64 px-16 pt-10;
 }
-
-/* .circle-vision {
-  clip-path: circle(50% at 58% 50%);
-} */
 
 @screen md {
   .circle-h-w {
