@@ -27,18 +27,18 @@
           </p>
         </div>
         <div class="flex flex-wrap w-full p-0 mt-8 buttons sm:w-full">
-          <button
-            class="justify-center w-full px-3 py-3 mr-0 font-serif font-bold text-center text-white bg-green-400 rounded hover:bg-green-700 sm:w-1/3 sm:mr-2"
-            @click.prevent="$router.push('/chat')"
+          <nuxt-link
+            to="/chat"
+            class="justify-center w-full px-3 py-3 mr-0 font-serif font-bold text-center text-white bg-green-400 rounded-lg hover:bg-green-700 sm:w-1/3 sm:mr-2"
           >
             Chat Now
-          </button>
-          <button
-            class="justify-center w-full px-3 py-3 mt-3 font-serif font-bold text-center text-white bg-gray-600 rounded hover:bg-gray-700 sm:w-1/3 sm:mt-0"
-            @click.prevent="$router.push('/about')"
+          </nuxt-link>
+          <nuxt-link
+            to="/about"
+            class="justify-center w-full px-3 py-3 mt-3 font-serif font-bold text-center text-white bg-gray-600 rounded-lg hover:bg-gray-700 sm:w-1/3 sm:mt-0"
           >
             Learn more
-          </button>
+          </nuxt-link>
         </div>
       </div>
       <div class="w-full logo-placeholder sm:pt-8 sm:w-2/5">
@@ -136,12 +136,12 @@
             <br />Does this description “speak” you? Come and join us!
           </h2>
           <div class="mt-8 text-center sm:text-left">
-            <button
-              class="justify-center w-40 px-4 py-2 mb-2 font-serif font-bold text-center text-white bg-green-400 rounded hover:bg-green-700"
-              @click.prevent="$router.push('/joinus')"
+            <nuxt-link
+              to="/joinus"
+              class="flex justify-center w-40 px-4 py-2 mb-2 font-serif font-bold text-center text-white bg-green-400 rounded hover:bg-green-700"
             >
               Join us!
-            </button>
+            </nuxt-link>
           </div>
         </div>
         <div class="hidden sm:block sm:w-1/2">

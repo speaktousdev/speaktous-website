@@ -65,6 +65,7 @@
         >
           <nuxt-link class="hamburger-menu" to="/">Home</nuxt-link>
           <nuxt-link class="hamburger-menu" to="/about">About</nuxt-link>
+          <nuxt-link class="hamburger-menu" to="/history">History</nuxt-link>
           <nuxt-link class="hamburger-menu" to="/chat">Chat</nuxt-link>
           <nuxt-link class="hamburger-menu" to="/donate">Donate</nuxt-link>
           <nuxt-link class="hamburger-menu" to="/joinus">Join Us</nuxt-link>

@@ -3,7 +3,7 @@
     id="footer"
     class="flex flex-col items-center justify-center pt-6 text-sm text-gray-800 bg-gray-200 border-t border-gray-300"
   >
-    <p>© 2020 by SpeakToUs Organization</p>
+    <p>© 2020 by SpeakToUs Organization.</p>
     <div class="flex">
       <nuxt-link class="mr-4 hover:font-semibold" to="/disclaimer"
         >Disclaimer & Terms</nuxt-link
