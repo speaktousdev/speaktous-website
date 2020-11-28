@@ -75,7 +75,9 @@
             >
               NEW !
             </h2>
-            <nuxt-link class="hamburger-menu" to="/joinus">Self Care</nuxt-link>
+            <nuxt-link class="hamburger-menu" to="/selfcare"
+              >Self Care</nuxt-link
+            >
           </div>
         </div>
       </nav>
