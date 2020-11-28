@@ -32,6 +32,11 @@ export default {
         content: process.env.npm_package_description || '',
       },
       {
+        hid: 'twitter:site',
+        name: 'twitter:site',
+        content: '@_SpeakToUs_',
+      },
+      {
         hid: 'twitter:image',
         name: 'twitter:image',
         content: 'https://www.speaktous.online/thumbnail.jpg',

@@ -246,5 +246,72 @@ export default {
   components: {
     PackageCard,
   },
+  data() {
+    return {
+      title: 'Self-Care Santa | SpeakToUs',
+      description:
+        'Self-Care Santa is a campaign that offers self-care packages and curated note cards for people to buy for themselves or for their friends and loved ones.',
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description,
+        },
+        // Twitter meta tags
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description,
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://www.speaktous.online/selfcare-logo.png',
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: 'Self Care Santa campaign logo.',
+        },
+        // Other social media tags
+        // OG i.e. Open Graph Protocol docs: https://ogp.me/
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.title,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.description,
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://www.speaktous.online/selfcare',
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://www.speaktous.online/selfcare-logo.png',
+        },
+        {
+          hid: 'og:image:alt',
+          name: 'og:image:alt',
+          content: 'Self Care Santa campaign logo.',
+        },
+      ],
+    }
+  },
 }
 </script>
