@@ -147,7 +147,7 @@
       <h2 class="my-8 text-2xl font-semibold text-center md:text-4xl">
         We bring SpeakToUs to you
       </h2>
-      <rect-photo-collage class="mt-10" />
+      <RectPhotoCollage class="mt-10" />
     </section>
 
     <section class="flex-col flex-grow px-8 mt-16 mb-8">
@@ -178,11 +178,12 @@
 
 <script>
 import HeaderIcon from '~/components/svg/about/HeaderIcon.vue'
+import RectPhotoCollage from '~/components/RectPhotoCollage.vue'
 // import Accordion from '~/components/Accordion.vue'
 import Email from '~/components/Email.vue'
 
 export default {
-  components: { HeaderIcon, Email },
+  components: { HeaderIcon, Email, RectPhotoCollage },
   data: () => ({
     isVisible: false,
     isAboutPage: true,

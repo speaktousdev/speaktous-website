@@ -59,7 +59,7 @@
         </h2>
 
         <div
-          class="flex flex-col items-center justify-center mt-8 border-l-4 border-gray-700 lg:px-12"
+          class="flex flex-col items-center justify-center mt-8 border-gray-700 lg:border-l-4 lg:px-12"
         >
           <ol class="list-decimal md:text-xl">
             <li>Essential items:</li>
@@ -191,16 +191,49 @@
         </div>
       </div>
     </section>
-    <section class="mt-12">
+    <section class="pb-6 mt-12">
       <h2
         class="font-serif font-semibold text-center border-b-2 md:text-xl lg:mx-64"
       >
         Questions on the Self-Care Santa project?
       </h2>
-      <div class="mt-4 text-center hover:text-green-400">
-        <a href="mailto:speaktousofficial@gmail.com"
-          >Email us at speaktousofficial@gmail.com</a
-        >
+      <div class="mt-4 text-center">
+        <p>
+          Email us at
+          <a
+            href="mailto:speaktousofficial@gmail.com"
+            class="text-green-700 hover:underline"
+            >speaktousofficial@gmail.com</a
+          >
+        </p>
+
+        <p>OR</p>
+
+        <p>
+          DM us on
+          <a
+            href="https://twitter.com/_SpeakToUs_"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="text-blue-700 hover:underline"
+            >Twitter</a
+          >,
+          <a
+            href="https://www.instagram.com/_speaktous_/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="text-pink-700 hover:underline"
+            >Instagram</a
+          >
+          or
+          <a
+            href="https://www.facebook.com/speaktousofficial/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="text-indigo-700 hover:underline"
+            >Facebook</a
+          >
+        </p>
       </div>
     </section>
   </main>
