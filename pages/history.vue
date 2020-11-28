@@ -1,6 +1,6 @@
 <template>
   <main class="max-w-screen-xl text-black lg:text-gray-800 lg:mx-auto">
-    <div class="justify-between px-10 lg:px-24 mt-18 mb-4 md:flex md:flex-row">
+    <div class="justify-between px-10 mb-4 lg:px-24 mt-18 md:flex md:flex-row">
       <div class="text-center md:mb-8">
         <h1
           class="mt-4 font-serif text-4xl font-extrabold tracking-wide lg:text-6xl md:mt-16 lg:mt-14 md:text-4xl"
@@ -23,7 +23,9 @@
         </div>
       </div>
     </div>
-    <div class="px-6 py-6 bg-gray-200 share-section sm:px-12 lg:px-24 sm:py-10">
+    <div
+      class="px-6 py-6 mb-6 bg-gray-200 share-section sm:px-12 lg:px-24 sm:py-10"
+    >
       <h1
         class="font-serif text-2xl font-extrabold tracking-wide lg:text-4xl md:my-8 md:text-2xl md:text-center"
       >
@@ -32,6 +34,15 @@
       <div v-for="item in timelineItem" :key="item.id">
         <Timeline :content="item" />
       </div>
+    </div>
+
+    <div class="flex items-center justify-center mb-6">
+      <nuxt-link
+        to="/about"
+        class="flex px-16 py-3 font-serif font-bold text-white bg-green-400 rounded-xl hover:bg-green-700"
+      >
+        Go to About page
+      </nuxt-link>
     </div>
   </main>
 </template>
