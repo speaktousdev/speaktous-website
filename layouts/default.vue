@@ -3,7 +3,6 @@
     <Banner
       message="LIMITED! Treat yourself and friends with special Self-Care products curated by our team!"
       short-message="LIMITED! Get these Self-Care products!"
-      icon="https://icons-for-free.com/iconfiles/png/512/christmas+gift+gift+box+present+icon-1320184382640199846.png"
     />
     <Header />
     <nuxt class="flex-grow mt-20 sm:mt-0" />
