@@ -31,6 +31,7 @@
             <nuxt-link
               to="/selfcare"
               class="flex items-center justify-center px-3 py-1 text-xs text-green-800 transition duration-300 ease-in-out transform bg-white border border-transparent rounded-md shadow-sm sm:text-sm hover:font-semibold hover:scale-105 hover:bg-green-100"
+              @click.native="isBannerDismissed = true"
             >
               Learn more!
             </nuxt-link>
