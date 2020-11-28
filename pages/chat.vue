@@ -23,7 +23,9 @@
       </div>
       <div class="md:flex md:flex-row md:justify-center">
         <ChatMainIcon class="hidden w-56 h-56 mt-32 md:block" />
-        <div class="text-center md:mt-6 md:ml-6 md:text-left">
+        <div
+          class="flex flex-col items-center text-center md:mt-6 md:ml-6 md:text-left"
+        >
           <p class="mt-4 text-xl text-center underline sm:text-2xl">
             Online hours:
           </p>
