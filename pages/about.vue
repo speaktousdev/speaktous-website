@@ -2,7 +2,9 @@
   <main
     class="max-w-screen-xl font-serif text-center text-black lg:text-gray-800 lg:mx-auto"
   >
-    <div class="justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row">
+    <div
+      class="flex items-center justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row"
+    >
       <div class="md:w-1/2 lg:w-1/2">
         <h1
           class="mt-4 font-serif text-4xl font-extrabold tracking-wide lg:text-6xl md:mt-16 lg:mt-14 md:text-4xl md:text-left"
@@ -20,7 +22,9 @@
         </p>
       </div>
 
-      <HeaderIcon class="hidden w-1/2 h-auto py-2 md:block lg:block xl:block" />
+      <HeaderIcon
+        class="hidden w-1/2 py-2 md:flex md:items-center md:justify-center"
+      />
     </div>
     <div class="flex flex-col px-10 mt-6 lg:px-24 md:flex-row">
       <nuxt-link
