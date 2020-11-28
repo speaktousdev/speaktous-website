@@ -133,7 +133,7 @@ export default {
   pwa: {
     manifest: {
       name: 'SpeakToUs',
-      short_name: 'STU',
+      short_name: 'SpeakToUs',
       description: process.env.npm_package_description || '',
     },
     meta: {
