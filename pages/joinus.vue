@@ -1,6 +1,6 @@
 <template>
   <main
-    class="max-w-screen-xl px-8 mx-auto text-black lg:text-gray-800 sm:px-12 md:px-20 lg:px-24"
+    class="max-w-screen-xl mx-auto text-black lg:text-gray-800 sm:px-12 md:px-20 lg:px-24"
   >
     <div class="flex flex-wrap items-center py-6 section-1">
       <div class="w-full sm:pt-10 sm:w-3/5">
@@ -23,9 +23,9 @@
           </p>
           <p class="mt-8 text-sm sm:text-lg font-body">No experience needed.</p>
         </div>
-        <div class="flex flex-wrap w-full p-0 mt-8 buttons sm:w-full">
+        <div class="flex flex-wrap mx-8 mt-8 buttons sm:w-full">
           <a
-            class="justify-center w-full px-3 py-3 mr-0 font-serif font-bold text-center text-white bg-green-400 rounded hover:bg-green-700 sm:w-1/3 sm:mr-2"
+            class="justify-center w-full px-3 py-3 font-serif font-bold text-center text-white bg-green-400 rounded hover:bg-green-700 sm:w-1/3 sm:mr-2"
             :href="applyFormLink"
             target="_blank"
             rel="noreferrer"
@@ -34,8 +34,8 @@
           </a>
         </div>
       </div>
-      <div class="w-full mt-10 sm:w-2/5 sm:mt-0">
-        <TeamIcon class="w-11/12 h-auto justify-right"></TeamIcon>
+      <div class="mt-10 sm:w-2/5 sm:mt-0">
+        <TeamIcon class="justify-center w-11/12 h-auto"></TeamIcon>
       </div>
     </div>
 

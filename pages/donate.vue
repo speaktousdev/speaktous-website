@@ -1,8 +1,8 @@
 <template>
-  <main class="max-w-screen-xl p-4 mx-auto lg:px-16">
+  <main class="max-w-screen-xl mx-auto lg:px-16">
     <!-- This is for mobile screens -->
     <div class="text-center lg:hidden">
-      <h1 class="font-serif text-4xl font-extrabold">
+      <h1 class="font-serif text-3xl font-extrabold sm:text-4xl sm:pt-4">
         Make a donation, today!
       </h1>
       <div class="text-center">
@@ -56,7 +56,7 @@
     </div>
 
     <!-- This is for large (desktop) screens -->
-    <div class="flex flex-wrap hidden px-12 mt-10 lg:flex lg:text-left">
+    <div class="hidden px-12 mt-10 lg:flex-wrap lg:flex lg:text-left">
       <div class="w-3/5 pr-12">
         <h1 class="font-serif text-6xl font-extrabold text-gray-800">
           Make a donation, <br />today!
@@ -155,7 +155,7 @@
     </div>
 
     <div>
-      <p class="text-center text-gray-600">
+      <p class="pb-8 text-center text-gray-600">
         *Donations will be utilized but not limited only to those means.
       </p>
     </div>
