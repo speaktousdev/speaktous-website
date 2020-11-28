@@ -17,14 +17,16 @@
               <img :src="icon" alt="Gift icon" class="w-8" />
             </span>
             <p class="ml-3 font-semibold text-gray-800 truncate">
-              <span class="text-sm lg:hidden">{{ shortMessage }}</span>
+              <span class="text-xs sm:text-sm lg:hidden">{{
+                shortMessage
+              }}</span>
               <span class="hidden lg:inline">{{ message }}</span>
             </p>
           </div>
           <div class="flex items-center justify-center pb-4 sm:pb-0">
             <nuxt-link
               to="/selfcare"
-              class="flex items-center justify-center px-3 py-1 text-sm text-green-800 transition duration-300 ease-in-out transform bg-white border border-transparent rounded-md shadow-sm hover:font-semibold hover:scale-105 hover:bg-green-100"
+              class="flex items-center justify-center px-3 py-1 text-xs text-green-800 transition duration-300 ease-in-out transform bg-white border border-transparent rounded-md shadow-sm sm:text-sm hover:font-semibold hover:scale-105 hover:bg-green-100"
             >
               Learn more!
             </nuxt-link>
