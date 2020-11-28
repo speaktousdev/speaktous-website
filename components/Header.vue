@@ -1,7 +1,12 @@
 <template>
   <div>
+    <Banner
+      message="LIMITED! Treat yourself and friends with special Self-Care products curated by our team!"
+      short-message="LIMITED! Get these Self-Care products!"
+    />
     <header
       class="fixed z-40 w-full sm:relative bg-green-stu sm:flex sm:justify-center sm:items-end sm:py-2"
+      :class="headerStyle"
     >
       <!-- Default logo -->
       <div class="hidden sm:flex sm:pb-1 sm:pr-8">
@@ -119,6 +124,7 @@
 // import ChatIcon from '~/components/svg/nav/ChatIcon.vue'
 // import DonateIcon from '~/components/svg/nav/DonateIcon.vue'
 // import JoinusIcon from '~/components/svg/nav/JoinusIcon.vue'
+import Banner from '~/components/Banner.vue'
 import HamburgerMenu from '~/components/svg/nav/HamburgerMenu.vue'
 import CloseIcon from '~/components/svg/nav/CloseIcon.vue'
 
@@ -129,6 +135,7 @@ export default {
     // AboutIcon,
     // DonateIcon,
     // JoinusIcon,
+    Banner,
     HamburgerMenu,
     CloseIcon,
   },
@@ -136,6 +143,7 @@ export default {
     menuOpen: false,
     showNavbar: true,
     lastScrollPosition: 0,
+    headerStyle: '',
   }),
   mounted() {
     window.addEventListener('scroll', this.onScroll)
@@ -155,6 +163,14 @@ export default {
       if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
         return
       }
+
+      // if banner is not visible, move the header to the top of the viewport
+      if (currentScrollPosition <= 60) {
+        this.headerStyle = ''
+      } else {
+        this.headerStyle = 'top-0'
+      }
+
       this.showNavbar = currentScrollPosition < this.lastScrollPosition
       this.lastScrollPosition = currentScrollPosition
       this.menuOpen = false

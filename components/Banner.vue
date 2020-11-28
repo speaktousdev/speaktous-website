@@ -3,7 +3,7 @@
     class="bg-gradient-to-r from-red-400 via-yellow-400 to-green-700"
     :class="isBannerDismissed ? 'hidden' : ''"
   >
-    <div class="px-3 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="px-3 sm:px-6 lg:px-8">
       <div class="flex items-center">
         <button @click="isBannerDismissed = true">
           <CloseIcon />
