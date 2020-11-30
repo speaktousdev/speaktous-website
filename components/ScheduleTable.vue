@@ -86,7 +86,7 @@ export default {
         mytEndTime = this.isDstObserved
           ? schedule.endTime + 1
           : schedule.endTime + 2
-        endMeridiemString = 'PM'
+        endMeridiemString = mytStartTime < 12 && mytEndTime >= 12 ? 'AM' : 'PM'
       }
 
       return {
