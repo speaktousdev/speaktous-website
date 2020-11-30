@@ -4,9 +4,7 @@
     data-name="Layer 1"
     xmlns="http://www.w3.org/2000/svg"
     width="1184.11"
-    height="743.5"
     viewBox="0 0 1184.11 743.5"
-    class="w-auto h-auto"
   >
     <title>team page</title>
     <path

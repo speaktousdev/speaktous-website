@@ -1,8 +1,10 @@
 <template>
   <main
-    class="max-w-screen-xl text-center text-black lg:text-gray-800 lg:mx-auto"
+    class="max-w-screen-xl font-serif text-center text-black lg:text-gray-800 lg:mx-auto"
   >
-    <div class="justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row">
+    <div
+      class="flex items-center justify-between px-10 lg:px-24 mt-18 md:flex md:flex-row"
+    >
       <div class="md:w-1/2 lg:w-1/2">
         <h1
           class="mt-4 font-serif text-4xl font-extrabold tracking-wide lg:text-6xl md:mt-16 lg:mt-14 md:text-4xl md:text-left"
@@ -20,10 +22,26 @@
         </p>
       </div>
 
-      <HeaderIcon class="hidden w-1/2 h-auto py-2 md:block lg:block xl:block" />
+      <HeaderIcon
+        class="hidden w-1/2 py-2 md:flex md:items-center md:justify-center"
+      />
+    </div>
+    <div class="flex flex-col px-10 mt-6 lg:px-24 md:flex-row">
+      <nuxt-link
+        to="/history"
+        class="px-16 py-3 font-serif font-bold text-white bg-green-400 rounded-lg hover:bg-green-700"
+      >
+        History
+      </nuxt-link>
+      <a
+        href="companyprofile.pdf"
+        target="_blank"
+        class="px-16 py-3 mt-2 font-serif font-bold text-white bg-gray-600 rounded-lg md:mt-0 md:ml-2 hover:bg-gray-700"
+        >Profile</a
+      >
     </div>
 
-    <div class="mt-8 item-center md:mt-32">
+    <!-- <div class="mt-8 item-center md:mt-32">
       <div>
         <img
           class="block w-full h-auto ml-auto mr-auto lg:w-3/4"
@@ -36,8 +54,8 @@
       >
         We bring SpeakToUs to you
       </p>
-    </div>
-
+    </div> -->
+    <!-- 
     <div class="mt-16 text-center md:mt-24">
       <div class="inline-block w-11/12 lg:w-1/2 xl:w-1/2">
         <h1
@@ -47,13 +65,100 @@
         </h1>
         <Accordion :faqlist="faqlist" />
       </div>
-    </div>
+    </div> -->
 
-    <div class="flex-col flex-grow px-8 mt-16 mb-8">
+    <!-- Mission,Vision,Core Values section -->
+    <section class="mt-24 lg:px-48">
+      <div
+        class="ml-0 mr-auto text-left transform -translate-x-6 rounded-full circle-h-w circle1-color lg:-translate-x-40"
+      >
+        <h2
+          class="pt-4 font-semibold text-white md:pt-12 md:text-3xl lg:text-4xl"
+        >
+          Mission
+        </h2>
+        <p
+          class="pt-4 text-xs leading-6 text-white md:text-xl lg:text-2xl md:leading-9"
+        >
+          Provide a platform for individuals to express themselves freely
+          regarding mental health.
+        </p>
+      </div>
+      <div
+        class="ml-auto mr-0 text-left transform translate-x-6 rounded-full circle-vision circle-h-w circle2-color lg:translate-x-40 lg:-translate-y-56"
+      >
+        <h2
+          class="pt-4 font-semibold text-gray-800 md:pt-12 md:text-3xl lg:text-4xl"
+        >
+          Vision
+        </h2>
+        <p
+          class="pt-4 text-xs leading-6 text-gray-800 md:text-xl lg:text-2xl md:leading-9"
+        >
+          Create an environment where individuals can discuss comfortably about
+          mental health.
+        </p>
+      </div>
+      <div
+        class="ml-0 mr-auto text-left transform -translate-x-6 rounded-full circle-h-w circle3-color lg:-translate-y-64"
+      >
+        <h2
+          class="pt-4 font-semibold text-white md:pt-12 md:text-3xl lg:text-4xl"
+        >
+          Core Values
+        </h2>
+        <ul
+          class="pt-4 text-xs leading-6 text-white list-disc md:text-xl lg:text-2xl md:leading-9"
+        >
+          <li>Confidentiality</li>
+          <li>Respect</li>
+          <li>Dedication</li>
+          <li>Open Communication</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="px-10 mt-24 lg:px-24 lg:mt-0">
+      <h2 class="text-4xl font-semibold">Objective</h2>
+      <p class="mt-4 text-left sm:text-lg">
+        Our objectives are the breakdown in detail on how we are aiming to
+        achieve our mission and vision for 2020.
+      </p>
+
+      <ul class="pr-4 mt-8 text-sm text-left list-disc sm:text-lg">
+        <li class="mb-8">
+          To provide mental health support to Malaysians by giving them the best
+          recommendations and aid needed for them to improve and overcome issues
+          such as, but not limited to, stress, anxiety, burnout, depression, and
+          homesickness while keeping them anonymous.
+        </li>
+        <li class="mb-8">
+          To ensure Malaysian know that there are people who want to listen and
+          help them during these moments.
+        </li>
+        <li class="mb-8">
+          To eliminate the stigma of a suicidal topic as something that they
+          should be afraid of to share.
+        </li>
+        <li class="mb-8">
+          Allow them to have someone from the same culture, beliefs, and also
+          first language as a supporter.
+        </li>
+      </ul>
+    </section>
+
+    <section class="px-4 pt-8 pb-32 md:pt-20">
+      <h2 class="my-8 text-2xl font-semibold text-center md:text-4xl">
+        We bring SpeakToUs to you
+      </h2>
+      <RectPhotoCollage class="mt-10" />
+    </section>
+
+    <section class="flex-col flex-grow px-8 mt-16 mb-8">
       <div class="w-full">
-        <h1 class="font-serif text-4xl font-semibold tracking-wide">
+        <h2 class="font-serif text-4xl font-semibold tracking-wide">
           Contact Us
-        </h1>
+        </h2>
         <p class="">We are reachable through email:</p>
         <button class="mb-8 text-green-500" @click="isVisible = !isVisible">
           speaktousofficial@gmail.com
@@ -71,17 +176,18 @@
 
         <Email class="w-11/12" :isaboutpage="isAboutPage" />
       </div>
-    </div>
+    </section>
   </main>
 </template>
 
 <script>
 import HeaderIcon from '~/components/svg/about/HeaderIcon.vue'
-import Accordion from '~/components/Accordion.vue'
+import RectPhotoCollage from '~/components/RectPhotoCollage.vue'
+// import Accordion from '~/components/Accordion.vue'
 import Email from '~/components/Email.vue'
 
 export default {
-  components: { HeaderIcon, Accordion, Email },
+  components: { HeaderIcon, Email, RectPhotoCollage },
   data: () => ({
     isVisible: false,
     isAboutPage: true,
@@ -167,4 +273,42 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.bg-green-stu {
+  background-color: rgb(116, 183, 87);
+  /* @apply border-b border-green-200; */
+}
+
+.circle1-color {
+  background-color: #3f3d56;
+}
+
+.circle2-color {
+  background-color: #c4c4c4;
+}
+
+.circle3-color {
+  background: #006714;
+}
+
+/* Mobile screen */
+.circle-h-w {
+  @apply h-64 w-64 px-16 pt-10;
+}
+
+@screen md {
+  .circle-h-w {
+    height: 450px;
+    width: 450px;
+    @apply px-24;
+  }
+}
+
+@screen lg {
+  .circle-h-w {
+    height: 472px;
+    width: 472px;
+    @apply px-24;
+  }
+}
+</style>
