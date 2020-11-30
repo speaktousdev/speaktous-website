@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col items-center justify-center">
     <img
-      src=""
+      :src="require(`@/assets/images/selfcare/packages/${imageSrc}`)"
       :alt="`${title} image.`"
-      class="w-11/12 h-56 bg-gray-300 rounded-xl lg:w-64"
+      class="w-11/12 h-56 bg-gray-300 rounded-xl lg:w-64 transform duration-300 hover:scale-125"
     />
     <h3 class="pt-6 text-xl text-center">{{ title }}</h3>
 
@@ -29,6 +29,10 @@
 export default {
   props: {
     title: {
+      type: String,
+      required: true,
+    },
+    imageSrc: {
       type: String,
       required: true,
     },
