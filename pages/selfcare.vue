@@ -17,8 +17,8 @@
         <p class="mt-4 md:text-xl">
           Self-Care Santa is a collaboration between SpeakToUs and NAMSA. We
           offer
-          <b>self-care packages</b> and <b>note cards</b> for people to buy for
-          themselves or for their friends and loved ones.
+          <b>self-care packages</b> and <b>wishing cards</b> for people to buy
+          for themselves or for their friends and loved ones.
         </p>
         <p class="mt-12 md:text-xl">
           As other big celebrations this year, Christmas will be a bit different
@@ -33,7 +33,7 @@
         >
           <!-- This button scroll the page to the Packages section -->
           <a
-            class="flex items-center justify-center w-56 h-12 font-semibold bg-gray-400 rounded-full md:text-xl hover:bg-gray-600"
+            class="flex items-center justify-center text-white w-56 h-12 font-semibold bg-teal-400 rounded-full md:text-xl hover:bg-teal-700"
             href="#packages"
           >
             Packages
@@ -136,7 +136,7 @@
           image-src="Embroidery.jpg"
           special-item="Embroidery"
           package="A"
-          button-styles="text-gray-800 bg-gray-300 hover:bg-gray-600 hover:text-white"
+          button-styles="text-white bg-teal-400 hover:bg-teal-700 hover:text-white"
         />
         <PackageCard
           title="Package B"
@@ -159,16 +159,16 @@
       <h2
         class="mt-24 mb-2 font-serif text-2xl font-semibold text-center md:text-3xl"
       >
-        Note cards
+        Wishing card
       </h2>
       <p class="pb-8 text-sm text-center md:text-xl lg:text-base">
-        Note card only option is available too!
+        Wishing card only option is available too!
       </p>
       <div class="lg:flex lg:flex-row-reverse">
         <div class="flex flex-col items-center">
           <img
             src="~/assets/images/selfcare/packages/Notecard.png"
-            alt="Note card image."
+            alt="Wishing card image."
             class="w-11/12 h-56 bg-gray-300 rounded-xl lg:w-64 transform duration-300 hover:scale-125"
           />
         </div>
@@ -181,7 +181,8 @@
             or SpeakToUs will write it out for you!
           </p>
           <p class="pt-8 pb-6">
-            <span class="text-xl font-bold">RM2.50 / $2.50</span> per note card
+            <span class="text-xl font-bold">RM2.50 / $2.50</span> per wishing
+            card
           </p>
           <a
             href="https://forms.gle/RxrKoCb6QX1Tnij87"
@@ -253,7 +254,7 @@ export default {
     return {
       title: 'Self-Care Santa | SpeakToUs',
       description:
-        'Self-Care Santa is a campaign that offers self-care packages and curated note cards for people to buy for themselves or for their friends and loved ones.',
+        'Self-Care Santa is a campaign that offers self-care packages and curated wishing cards for people to buy for themselves or for their friends and loved ones.',
     }
   },
   head() {
