@@ -10,8 +10,8 @@
     <p class="pt-5 text-gray-700">This package contains:</p>
     <ul class="text-gray-900 list-disc list-inside">
       <li>Essential Items</li>
-      <li>Note Card</li>
-      <li>Special Item: {{ specialItem }}</li>
+      <li>Wishing Card</li>
+      <li class="font-semibold">Special Item: {{ specialItem }}</li>
     </ul>
 
     <a
