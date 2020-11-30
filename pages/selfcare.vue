@@ -133,18 +133,21 @@
       >
         <PackageCard
           title="Package A"
+          image-src="Embroidery.jpg"
           special-item="Embroidery"
           package="A"
           button-styles="text-gray-800 bg-gray-300 hover:bg-gray-600 hover:text-white"
         />
         <PackageCard
           title="Package B"
+          image-src="Puzzle.jpg"
           special-item="Puzzle"
           package="B"
           button-styles="text-white bg-green-600 hover:bg-green-400"
         />
         <PackageCard
           title="Package C"
+          image-src="Mystery.jpg"
           special-item="Mystery Gift"
           package="C"
           button-styles="text-white bg-purple-900 hover:bg-purple-600"
@@ -164,9 +167,9 @@
       <div class="lg:flex lg:flex-row-reverse">
         <div class="flex flex-col items-center">
           <img
-            src=""
+            src="~/assets/images/selfcare/packages/Notecard.png"
             alt="Note card image."
-            class="w-11/12 h-56 bg-gray-300 rounded-xl lg:w-64"
+            class="w-11/12 h-56 bg-gray-300 rounded-xl lg:w-64 transform duration-300 hover:scale-125"
           />
         </div>
         <div
