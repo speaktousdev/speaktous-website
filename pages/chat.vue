@@ -115,24 +115,6 @@ export default {
           startTime: 20,
           endTime: 22,
         },
-        {
-          id: 4,
-          day: 'Tuesday',
-          startTime: 10,
-          endTime: 12,
-        },
-        {
-          id: 5,
-          day: 'Tuesday',
-          startTime: 21,
-          endTime: 23,
-        },
-        {
-          id: 6,
-          day: 'Tuesday',
-          startTime: 9,
-          endTime: 11,
-        },
       ],
     }
   },
