@@ -72,7 +72,7 @@ export default {
         mytStartTime = this.isDstObserved
           ? schedule.startTime + 1
           : schedule.startTime + 2
-        startMeridiemString = 'PM'
+        startMeridiemString = mytStartTime === 12 ? 'AM' : 'PM'
       }
 
       let mytEndTime
