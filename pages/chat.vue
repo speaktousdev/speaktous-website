@@ -124,9 +124,6 @@ export default {
     if (this.isCurrentTimeWithinSchedule(currentTime)) {
       this.isOnline = true
     }
-    // if (d.getUTCDay() === 0 && d.getUTCHours() >= 1 && d.getUTCHours() < 3) {
-    //   this.isOnline = true
-    // }
   },
   methods: {
     openChat() {
@@ -146,20 +143,18 @@ export default {
         'saturday',
         'sunday',
       ]
-      // console.log(utcDayArray.indexOf(dayToConvert))
 
-      // TODO: check this logic
-      if (!this.isDstObserved && time.startTime + 5 >= 24) {
+      if (this.isDstObserved && time.startTime + 5 >= 24) {
         return utcDayArray.indexOf(dayToConvert) + 1
-      } else if (this.isDstObserved && time.startTime + 6 >= 24) {
+      } else if (!this.isDstObserved && time.startTime + 6 >= 24) {
         return utcDayArray.indexOf(dayToConvert) + 1
       } else return utcDayArray.indexOf(dayToConvert)
     },
     convertUtcHours(hours) {
       // utcHours = hours + 6 (Standard Time ; Non-DST)
       // utcHours = hours + 5 (DST)
-      if (!this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours
-      else return hours + 6 >= 24 ? hours - 19 : hours
+      if (this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours
+      else return hours + 6 >= 24 ? hours - 18 : hours
     },
     isCurrentTimeWithinSchedule(currentTime) {
       // DST : UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
@@ -167,7 +162,8 @@ export default {
       const flag = this.schedules.findIndex(
         (s) =>
           this.convertUtcDay(s) === currentTime.getUTCDay() &&
-          this.convertUtcHours(s.startTime) <= currentTime.getUTCHours()
+          currentTime.getUTCHours() >= this.convertUtcHours(s.startTime) &&
+          currentTime.getUTCHours() < this.convertUtcHours(s.endTime)
       )
       return flag >= 0
     },
@@ -179,8 +175,8 @@ export default {
       // https://www.w3resource.com/javascript-exercises/javascript-date-exercise-38.php
       let dst = null
       for (let i = 0; i < 12; ++i) {
-        dst = new Date(currentTime.getFullYear(), i, 1)
-        const offset = dst.getTimezoneOffset()
+        const d = new Date(currentTime.getFullYear(), i, 1)
+        const offset = d.getTimezoneOffset()
 
         if (dst === null) dst = offset
         else if (offset < dst) {
