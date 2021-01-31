@@ -1,39 +1,38 @@
 <template>
   <main class="max-w-screen-xl p-4 px-16 lg:mx-auto sm:mx-20">
-    <section class="lg:flex lg:flex-row-reverse lg:space-x-8">
-      <div class="md:flex md:items-center md:justify-center lg:w-3/8">
-        <img
-          src="~/assets/images/selfcare/logo.png"
-          alt="Self care campaign logo. Santa in a box."
-          class=""
-        />
-      </div>
+    <section
+      class="flex flex-col items-center justify-center lg:flex-row-reverse lg:space-x-8"
+    >
+      <!-- <div class="md:flex md:items-center md:justify-center"> -->
+      <img
+        src="~/assets/images/selflove/logo.png"
+        alt="Self love campaign logo. Cupid in a box."
+        class=""
+      />
       <div class="lg:w-6/8">
         <h1
           class="mt-12 font-serif text-2xl font-semibold text-center md:text-3xl lg:text-6xl lg:text-left"
         >
-          Self-Care Santa!
+          Self-Love Cupid ❤️
         </h1>
         <p class="mt-4 md:text-xl">
-          Self-Care Santa is a collaboration between SpeakToUs and NAMSA. We
-          offer
-          <b>self-care packages</b> and <b>wishing cards</b> for people to buy
-          for themselves or for their friends and loved ones.
+          Valentines isn’t just about celebrating romantic relationships, but
+          also a time for self-love. As we continue to adapt in the new normal
+          of isolation and social distancing, it’s easy to be deprived from
+          feelings of self-worthiness. Thus, SpeakToUs would like to invite you
+          to celebrate this Valentine by pampering yourself with our
+          <b>self-love packages</b>!
         </p>
-        <p class="mt-12 md:text-xl">
-          As other big celebrations this year, Christmas will be a bit different
-          for most of us. We hope we can still bring joy in the form of these
-          small gestures while also supporting your mental and physical
-          wellbeing during these unusual times.
+        <p class="mt-10 md:text-xl">
+          Check them out and be your own Valentine!
         </p>
-        <p class="mt-12 md:text-xl">Check them out and place your order now!</p>
 
         <div
           class="flex flex-col items-center justify-center mt-8 md:flex-row lg:justify-start"
         >
           <!-- This button scroll the page to the Packages section -->
           <a
-            class="flex items-center justify-center text-white w-56 h-12 font-semibold bg-teal-400 rounded-full md:text-xl hover:bg-teal-700"
+            class="flex items-center justify-center w-56 h-12 font-semibold text-white bg-pink-400 rounded-full md:text-xl hover:bg-pink-700"
             href="#packages"
           >
             Packages
@@ -43,12 +42,13 @@
             href="https://forms.gle/RxrKoCb6QX1Tnij87"
             target="_blank"
             rel="noreferrer"
-            class="flex items-center justify-center w-56 h-12 mt-4 font-semibold text-white bg-green-400 rounded-full md:ml-8 md:mt-0 md:text-xl hover:bg-green-700"
+            class="flex items-center justify-center w-56 h-12 mt-4 font-semibold text-white bg-purple-400 rounded-full md:ml-8 md:mt-0 md:text-xl hover:bg-purple-700"
             >Buy now</a
           >
         </div>
       </div>
     </section>
+
     <!-- What's in the packages & Package prices section -->
     <section class="lg:flex lg:flex-row lg:space-x-8">
       <div class="lg:w-1/2">
@@ -58,28 +58,21 @@
           What's in a package?
         </h2>
 
-        <div
-          class="flex flex-col items-center justify-center mt-8 border-gray-700 lg:border-l-4 lg:px-12"
-        >
-          <ol class="list-decimal md:text-xl">
-            <li>Essential items:</li>
-            <ul class="text-gray-800 list-disc list-inside">
-              <li>🍫 2 sachets of hot chocolate instant mix</li>
-              <li>🎭 1 face mask</li>
-              <li>🧦 1 pair of comfy socks</li>
-              <li>🕯️ 1 scented candle</li>
-              <li>🎂 1 baking mix</li>
-            </ul>
-
-            <li class="pt-8">A customizable card ✉️</li>
-            <li class="pt-8">A special item of your own choice ✨</li>
-          </ol>
+        <div class="flex flex-col items-center justify-center mt-8 lg:px-12">
+          <ul
+            class="flex flex-col space-y-4 text-gray-800 list-disc list-inside md:text-xl"
+          >
+            <li>🕯️ 🛀 Self-care essentials</li>
+            <li>🍫 Comfort snacks</li>
+            <li>🧦 Therapeutic activity kit</li>
+            <li>🕯️ Special wishing cards</li>
+          </ul>
         </div>
 
         <p
-          class="p-8 mt-8 text-lg font-semibold text-center text-gray-800 rounded-lg bg-gradient-to-r from-green-200 to-indigo-200 lg:mt-16 md:text-xl lg:text-left"
+          class="p-8 mt-8 text-lg font-semibold text-center text-gray-800 rounded-lg bg-gradient-to-r from-pink-200 to-purple-200 lg:mt-16 md:text-xl lg:text-left"
         >
-          All wrapped in a special box for you or your friend! 🎁
+          All wrapped in a special box for you! 🎁
         </p>
       </div>
       <div class="lg:w-1/2">
@@ -89,8 +82,9 @@
           Package prices
         </h2>
         <p class="mt-8 text-center md:text-xl">
-          These prices are for <b>A</b>, <b>B</b>, and
-          <b>Surprise Me!</b> packages. Prices vary according to country.
+          Prices vary according to country. <b>Agape</b> and
+          <b>Pragma</b> packages are only available in the US. <b>Philia</b> and
+          <b>Eros</b> are only available in Malaysia.
         </p>
         <div class="mt-4">
           <div class="flex items-center justify-center">
@@ -100,7 +94,7 @@
               >
                 RM 25
               </p>
-              <h2 class="text-xl text-center text-white">Malaysia</h2>
+              <h2 class="text-xl text-center text-white">Malaysia only</h2>
             </div>
           </div>
           <div class="flex items-center justify-center mt-4 md:mt-8">
@@ -108,9 +102,9 @@
               <p
                 class="pt-4 text-4xl font-semibold text-center text-gray-800 md:pt-8"
               >
-                $15
+                $17
               </p>
-              <h2 class="text-xl text-center text-gray-800">USA</h2>
+              <h2 class="text-xl text-center text-gray-800">USA only</h2>
             </div>
           </div>
           <p class="mt-4 text-center">Shipping is free!</p>
@@ -126,80 +120,54 @@
         Packages
       </h2>
       <p class="pb-8 text-sm text-center lg:pb-16 md:text-xl lg:text-base">
-        We have 3 options to choose from!
+        We have 4 color-coded packages to choose from!
+        <span class="font-semibold">Agape & Pragma</span> is US only, and
+        <span class="font-semibold">Philia & Eros</span> is Malaysia only.
       </p>
+      <!-- class="flex flex-col space-y-20 lg:space-y-0 lg:flex-row lg:justify-between lg:space-x-32" -->
       <div
-        class="flex flex-col space-y-20 lg:space-y-0 lg:flex-row lg:justify-between lg:space-x-32"
+        class="grid grid-cols-1 gap-20 xl:gap-32 lg:grid-cols-2 xl:grid-cols-4"
       >
         <PackageCard
-          title="Package A"
-          image-src="Embroidery.jpg"
-          special-item="Embroidery"
-          package="A"
+          title="Agape Package"
+          image-src="agape.png"
+          description="Includes a painting kit for you to show off your artistic side 🧑‍🎨 🎨 🖌️"
+          price="$17"
+          location="US"
           button-styles="text-white bg-teal-400 hover:bg-teal-700 hover:text-white"
         />
         <PackageCard
-          title="Package B"
-          image-src="Puzzle.jpg"
-          special-item="Puzzle"
-          package="B"
-          button-styles="text-white bg-green-600 hover:bg-green-400"
+          title="Pragma Package"
+          image-src="pragma.png"
+          description="Includes a journal to help keep track of your awesome life 📔 ✒️"
+          price="$17"
+          location="US"
+          button-styles="text-white bg-orange-500 hover:bg-orange-700"
         />
         <PackageCard
-          title="Package C"
-          image-src="Mystery.jpg"
-          special-item="Mystery Gift"
-          package="C"
-          button-styles="text-white bg-purple-900 hover:bg-purple-600"
+          title="Philia Package"
+          image-src="philia.png"
+          description="Includes baking essentials to channel your love through cooking 🧑‍🍳 🎂 🍪"
+          price="RM25"
+          location="Malaysia"
+          button-styles="text-white bg-yellow-600 hover:bg-yellow-800"
+        />
+        <PackageCard
+          title="Eros Package"
+          image-src="eros.png"
+          description="Includes an origami set to reinforce strong cognitive development 🌸 🌸"
+          price="RM25"
+          location="Malaysia"
+          button-styles="text-white bg-red-600 hover:bg-red-800"
         />
       </div>
     </section>
-    <!-- Note card section -->
-    <section class="flex flex-col items-center justify-center pb-20">
-      <h2
-        class="mt-24 mb-2 font-serif text-2xl font-semibold text-center md:text-3xl"
-      >
-        Wishing card
-      </h2>
-      <p class="pb-8 text-sm text-center md:text-xl lg:text-base">
-        Wishing card only option is available too!
-      </p>
-      <div class="lg:flex lg:flex-row-reverse">
-        <div class="flex flex-col items-center">
-          <img
-            src="~/assets/images/selfcare/packages/Notecard.png"
-            alt="Wishing card image."
-            class="w-11/12 h-56 bg-gray-300 rounded-xl lg:w-64 transform duration-300 hover:scale-125"
-          />
-        </div>
-        <div
-          class="flex flex-col items-center justify-center lg:items-start lg:justify-start lg:pr-12"
-        >
-          <p class="pt-6 text-center lg:text-left lg:text-xl">
-            Customize your card with a personal message,
-            <br class="hidden lg:block" />
-            or SpeakToUs will write it out for you!
-          </p>
-          <p class="pt-8 pb-6">
-            <span class="text-xl font-bold">RM2.50 / $2.50</span> per wishing
-            card
-          </p>
-          <a
-            href="https://forms.gle/RxrKoCb6QX1Tnij87"
-            target="_blank"
-            rel="noreferrer"
-            class="flex items-center justify-center w-56 h-12 mt-4 font-semibold text-white bg-green-600 rounded-full md:text-xl hover:bg-green-400"
-          >
-            Buy now
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="pb-6 mt-12">
+
+    <section class="pb-6 mt-32">
       <h2
         class="font-serif font-semibold text-center border-b-2 md:text-xl lg:mx-64"
       >
-        Questions on the Self-Care Santa project?
+        Questions on the Self-Love Cupid project?
       </h2>
       <div class="mt-4 text-center">
         <p>
@@ -252,9 +220,9 @@ export default {
   },
   data() {
     return {
-      title: 'Self-Care Santa | SpeakToUs',
+      title: 'Self-Love Cupid | SpeakToUs',
       description:
-        'Self-Care Santa is a campaign that offers self-care packages and curated wishing cards for people to buy for themselves or for their friends and loved ones.',
+        'Celebrate this Valentines Day by pampering yourself with our Self-Love Cupid packages for yourself or for your loved ones.',
     }
   },
   head() {
@@ -280,12 +248,12 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: 'https://www.speaktous.online/selfcare-logo.png',
+          content: 'https://www.speaktous.online/selflove-logo.png',
         },
         {
           hid: 'twitter:image:alt',
           name: 'twitter:image:alt',
-          content: 'Self Care Santa campaign logo.',
+          content: 'Self-Love Cupid campaign logo.',
         },
         // Other social media tags
         // OG i.e. Open Graph Protocol docs: https://ogp.me/
@@ -302,17 +270,17 @@ export default {
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://www.speaktous.online/selfcare',
+          content: 'https://www.speaktous.online/selflove',
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: 'https://www.speaktous.online/selfcare-logo.png',
+          content: 'https://www.speaktous.online/selflove-logo.png',
         },
         {
           hid: 'og:image:alt',
           name: 'og:image:alt',
-          content: 'Self Care Santa campaign logo.',
+          content: 'Self-Love Cupid campaign logo.',
         },
       ],
     }

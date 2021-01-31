@@ -1,18 +1,18 @@
 <template>
   <div class="flex flex-col items-center justify-center">
     <img
-      :src="require(`@/assets/images/selfcare/packages/${imageSrc}`)"
+      :src="require(`@/assets/images/selflove/packages/${imageSrc}`)"
       :alt="`${title} image.`"
-      class="w-11/12 h-56 bg-gray-300 rounded-xl lg:w-64 transform duration-300 hover:scale-125"
+      class="w-48 duration-300 transform bg-gray-300 rounded-xl lg:w-64 hover:scale-125"
     />
     <h3 class="pt-6 text-xl text-center">{{ title }}</h3>
 
-    <p class="pt-5 text-gray-700">This package contains:</p>
-    <ul class="text-gray-900 list-disc list-inside">
-      <li>Essential Items</li>
-      <li>Wishing Card</li>
-      <li class="font-semibold">Special Item: {{ specialItem }}</li>
-    </ul>
+    <p class="pt-5 text-center text-gray-700">{{ description }}</p>
+    <p class="pt-5 text-3xl font-semibold text-center text-gray-700">
+      {{ price }}
+    </p>
+
+    <p class="text-center text-gray-700">{{ location }} only</p>
 
     <a
       href="https://forms.gle/RxrKoCb6QX1Tnij87"
@@ -36,11 +36,15 @@ export default {
       type: String,
       required: true,
     },
-    specialItem: {
+    description: {
       type: String,
       required: true,
     },
-    package: {
+    price: {
+      type: String,
+      required: true,
+    },
+    location: {
       type: String,
       required: true,
     },
