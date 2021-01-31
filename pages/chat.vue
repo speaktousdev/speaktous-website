@@ -120,7 +120,6 @@ export default {
   },
   mounted() {
     const currentTime = new Date()
-
     if (this.isCurrentTimeWithinSchedule(currentTime)) {
       this.isOnline = true
     }
@@ -148,23 +147,29 @@ export default {
         return utcDayArray.indexOf(dayToConvert) + 1
       } else if (!this.isDstObserved && time.startTime + 6 >= 24) {
         return utcDayArray.indexOf(dayToConvert) + 1
-      } else return utcDayArray.indexOf(dayToConvert)
+      } else {
+        console.log('UTCDayChanged', utcDayArray.indexOf(dayToConvert))
+        return utcDayArray.indexOf(dayToConvert)
+      }
     },
     convertUtcHours(hours) {
       // utcHours = hours + 6 (Standard Time ; Non-DST)
       // utcHours = hours + 5 (DST)
-      if (this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours
-      else return hours + 6 >= 24 ? hours - 18 : hours
+
+      if (this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours + 6
+      else return hours + 6 >= 24 ? hours - 18 : hours + 6
     },
     isCurrentTimeWithinSchedule(currentTime) {
       // DST : UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
       // Standard time : UTC timezone is 6 hours ahead of Madison, WI; 8 hours behind Malaysia
+
       const flag = this.schedules.findIndex(
         (s) =>
           this.convertUtcDay(s) === currentTime.getUTCDay() &&
           currentTime.getUTCHours() >= this.convertUtcHours(s.startTime) &&
           currentTime.getUTCHours() < this.convertUtcHours(s.endTime)
       )
+
       return flag >= 0
     },
 
