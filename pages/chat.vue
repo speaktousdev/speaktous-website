@@ -155,8 +155,10 @@ export default {
     convertUtcHours(hours) {
       // utcHours = hours + 6 (Standard Time ; Non-DST)
       // utcHours = hours + 5 (DST)
+      const currentTime = new Date()
+      console.log(this.isDstObserved, currentTime.getUTCHours())
 
-      if (this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours + 6
+      if (this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours + 5
       else return hours + 6 >= 24 ? hours - 18 : hours + 6
     },
     isCurrentTimeWithinSchedule(currentTime) {
