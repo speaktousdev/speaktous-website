@@ -15,7 +15,7 @@
     <p class="text-center text-gray-700">{{ location }} only</p>
 
     <a
-      href="https://forms.gle/RxrKoCb6QX1Tnij87"
+      href="https://forms.gle/1FUVUZvhdJ1khW77A"
       target="_blank"
       rel="noreferrer"
       class="flex items-center justify-center w-56 h-12 mt-8 font-semibold rounded-full md:text-xl"

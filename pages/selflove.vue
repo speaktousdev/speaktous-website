@@ -39,7 +39,7 @@
           </a>
           <!-- This button link to the Google Form -->
           <a
-            href="https://forms.gle/RxrKoCb6QX1Tnij87"
+            href="https://forms.gle/1FUVUZvhdJ1khW77A"
             target="_blank"
             rel="noreferrer"
             class="flex items-center justify-center w-56 h-12 mt-4 font-semibold text-white bg-purple-400 rounded-full md:ml-8 md:mt-0 md:text-xl hover:bg-purple-700"
@@ -173,7 +173,7 @@
         <p>
           Email us at
           <a
-            href="mailto:speaktousofficial@gmail.com"
+            href="mailto:speaktousofficial@gmail.com?subject=Self-Love Cupid Enquiry"
             class="text-green-700 hover:underline"
             >speaktousofficial@gmail.com</a
           >
