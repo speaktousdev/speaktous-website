@@ -16,12 +16,13 @@
           Self-Love Cupid ❤️
         </h1>
         <p class="mt-4 md:text-xl">
-          Valentines isn’t just about celebrating romantic relationships, but
-          also a time for self-love. As we continue to adapt to the new normal
-          of isolation and social distancing, it may be hard to acknowledge our
-          self-worth and maintain our mental wellbeing. Therefore, SpeakToUs
-          would like to invite you to celebrate this Valentine by pampering
-          yourself or others with our
+          Valentine's Day isn’t just about celebrating romantic relationships,
+          but also a time for self-love. As we continue to adapt to the new
+          normal of isolation and social distancing, it may be easy to find
+          ourselves having negative thoughts on our self-worth and lacking
+          support for our mental well-being. Therefore, SpeakToUs would like to
+          invite you to celebrate this Valentine by pampering yourself or others
+          with our
           <b>self-love packages</b>!
         </p>
         <p class="mt-10 md:text-xl">
@@ -56,7 +57,7 @@
         <h2
           class="mt-24 font-serif text-2xl font-semibold text-center md:text-3xl"
         >
-          What's in a package?
+          What's in the package?
         </h2>
 
         <div class="flex flex-col items-center justify-center mt-8 lg:px-12">
@@ -65,7 +66,7 @@
           >
             <li>🕯️ Self-care essentials</li>
             <li>🍫 Comfort snacks</li>
-            <li>🎨 Therapeutic activity kit</li>
+            <li>🧘🏽 Therapeutic activity kit</li>
             <li>💌 Special wishing cards</li>
           </ul>
         </div>
@@ -73,7 +74,7 @@
         <p
           class="p-8 mt-8 text-lg font-semibold text-center text-gray-800 rounded-lg bg-gradient-to-r from-pink-200 to-purple-200 lg:mt-16 md:text-xl lg:text-center"
         >
-          All wrapped specially for you! 🎁
+          🎁 All wrapped specially for you! 🎁
         </p>
       </div>
       <div class="lg:w-1/2">
@@ -131,7 +132,7 @@
         <PackageCard
           title="Agape Package"
           image-src="agape.png"
-          description="Includes a painting kit for you to show off your artistic side🎨 🖌️"
+          description="Includes a painting kit to express your artistic side🎨 🖌️"
           price="$17"
           location="US"
           button-styles="text-white bg-teal-400 hover:bg-teal-700 hover:text-white"
@@ -139,7 +140,7 @@
         <PackageCard
           title="Pragma Package"
           image-src="pragma.png"
-          description="Includes a journal to help keep track of your awesome life 📔 ✒️"
+          description="Includes a journal to keep track of your personal growth 📔 ✒️"
           price="$17"
           location="US"
           button-styles="text-white bg-orange-500 hover:bg-orange-700"
@@ -155,7 +156,7 @@
         <PackageCard
           title="Eros Package"
           image-src="eros.png"
-          description="Include an origami set for you to put your love into handcraft 🌸 🌸"
+          description="Include an origami set to put your love into handcraft 🌸 🌸"
           price="RM25"
           location="Malaysia"
           button-styles="text-white bg-red-600 hover:bg-red-800"
