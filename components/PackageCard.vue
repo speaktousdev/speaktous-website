@@ -12,7 +12,7 @@
       {{ price }}
     </p>
 
-    <p class="text-center text-gray-700">{{ location }} only</p>
+    <p class="text-center font-bold text-gray-700">{{ location }} only</p>
 
     <a
       href="https://forms.gle/1FUVUZvhdJ1khW77A"

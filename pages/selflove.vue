@@ -17,10 +17,11 @@
         </h1>
         <p class="mt-4 md:text-xl">
           Valentines isn’t just about celebrating romantic relationships, but
-          also a time for self-love. As we continue to adapt in the new normal
-          of isolation and social distancing, it’s easy to be deprived from
-          feelings of self-worthiness. Thus, SpeakToUs would like to invite you
-          to celebrate this Valentine by pampering yourself with our
+          also a time for self-love. As we continue to adapt to the new normal
+          of isolation and social distancing, it may be hard to acknowledge our
+          self-worth and maintain our mental wellbeing. Therefore, SpeakToUs
+          would like to invite you to celebrate this Valentine by pampering
+          yourself or others with our
           <b>self-love packages</b>!
         </p>
         <p class="mt-10 md:text-xl">
@@ -62,17 +63,17 @@
           <ul
             class="flex flex-col space-y-4 text-gray-800 list-disc list-inside md:text-xl"
           >
-            <li>🕯️ 🛀 Self-care essentials</li>
+            <li>🕯️ Self-care essentials</li>
             <li>🍫 Comfort snacks</li>
-            <li>🧦 Therapeutic activity kit</li>
-            <li>🕯️ Special wishing cards</li>
+            <li>🎨 Therapeutic activity kit</li>
+            <li>💌 Special wishing cards</li>
           </ul>
         </div>
 
         <p
-          class="p-8 mt-8 text-lg font-semibold text-center text-gray-800 rounded-lg bg-gradient-to-r from-pink-200 to-purple-200 lg:mt-16 md:text-xl lg:text-left"
+          class="p-8 mt-8 text-lg font-semibold text-center text-gray-800 rounded-lg bg-gradient-to-r from-pink-200 to-purple-200 lg:mt-16 md:text-xl lg:text-center"
         >
-          All wrapped in a special box for you! 🎁
+          All wrapped specially for you! 🎁
         </p>
       </div>
       <div class="lg:w-1/2">
@@ -82,9 +83,7 @@
           Package prices
         </h2>
         <p class="mt-8 text-center md:text-xl">
-          Prices vary according to country. <b>Agape</b> and
-          <b>Pragma</b> packages are only available in the US. <b>Philia</b> and
-          <b>Eros</b> are only available in Malaysia.
+          Prices vary according to country.
         </p>
         <div class="mt-4">
           <div class="flex items-center justify-center">
@@ -120,9 +119,10 @@
         Packages
       </h2>
       <p class="pb-8 text-sm text-center lg:pb-16 md:text-xl lg:text-base">
-        We have 4 color-coded packages to choose from!
-        <span class="font-semibold">Agape & Pragma</span> is US only, and
-        <span class="font-semibold">Philia & Eros</span> is Malaysia only.
+        We have 4 packages to choose from!
+        <span class="font-semibold">Agape & Pragma</span> are only available in
+        the US, and <span class="font-semibold">Philia & Eros</span> are only
+        available in Malaysia.
       </p>
       <!-- class="flex flex-col space-y-20 lg:space-y-0 lg:flex-row lg:justify-between lg:space-x-32" -->
       <div
@@ -131,7 +131,7 @@
         <PackageCard
           title="Agape Package"
           image-src="agape.png"
-          description="Includes a painting kit for you to show off your artistic side 🧑‍🎨 🎨 🖌️"
+          description="Includes a painting kit for you to show off your artistic side🎨 🖌️"
           price="$17"
           location="US"
           button-styles="text-white bg-teal-400 hover:bg-teal-700 hover:text-white"
@@ -147,7 +147,7 @@
         <PackageCard
           title="Philia Package"
           image-src="philia.png"
-          description="Includes baking essentials to channel your love through cooking 🧑‍🍳 🎂 🍪"
+          description="Includes essentials to channel your love through baking  🎂 🍪"
           price="RM25"
           location="Malaysia"
           button-styles="text-white bg-yellow-600 hover:bg-yellow-800"
@@ -155,7 +155,7 @@
         <PackageCard
           title="Eros Package"
           image-src="eros.png"
-          description="Includes an origami set to reinforce strong cognitive development 🌸 🌸"
+          description="Include an origami set for you to put your love into handcraft 🌸 🌸"
           price="RM25"
           location="Malaysia"
           button-styles="text-white bg-red-600 hover:bg-red-800"
