@@ -99,15 +99,15 @@ export default {
       schedules: [
         {
           id: 1,
-          day: 'Saturday',
-          startTime: 19,
-          endTime: 21,
+          day: 'Friday',
+          startTime: 20,
+          endTime: 22,
         },
         {
           id: 2,
-          day: 'Sunday',
-          startTime: 3,
-          endTime: 5,
+          day: 'Saturday',
+          startTime: 19,
+          endTime: 21,
         },
         {
           id: 3,
@@ -148,15 +148,12 @@ export default {
       } else if (!this.isDstObserved && time.startTime + 6 >= 24) {
         return utcDayArray.indexOf(dayToConvert) + 1
       } else {
-        console.log('UTCDayChanged', utcDayArray.indexOf(dayToConvert))
         return utcDayArray.indexOf(dayToConvert)
       }
     },
     convertUtcHours(hours) {
       // utcHours = hours + 6 (Standard Time ; Non-DST)
       // utcHours = hours + 5 (DST)
-      const currentTime = new Date()
-      console.log(this.isDstObserved, currentTime.getUTCHours())
 
       if (this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours + 5
       else return hours + 6 >= 24 ? hours - 18 : hours + 6
@@ -177,21 +174,20 @@ export default {
 
     // Returns 1 if Daylight saving time is observed. https://en.wikipedia.org/wiki/Daylight_saving_time
     getDstObserved() {
-      const currentTime = new Date()
+      // Store the user's local time
+      const localTime = new Date()
 
-      // https://www.w3resource.com/javascript-exercises/javascript-date-exercise-38.php
-      let dst = null
-      for (let i = 0; i < 12; ++i) {
-        const d = new Date(currentTime.getFullYear(), i, 1)
-        const offset = d.getTimezoneOffset()
+      // Determine chicago timezone based on the user's local time
+      const chicagoTime = new Date(
+        localTime.toLocaleString('en-US', { timeZone: 'America/Chicago' })
+      )
+      // Find the Chicago's timezone offset
+      const timezoneOffset = chicagoTime.getTimezoneOffset()
 
-        if (dst === null) dst = offset
-        else if (offset < dst) {
-          dst = offset
-          break
-        } else if (offset > dst) break
-      }
-      return (currentTime.getTimezoneOffset() === dst) | 0
+      // Chicago's timezone offset equals 300(GMT+5) means DST is observed, then return 1
+      if (timezoneOffset === 300) return 1
+      // Chicago's timezone offset equals 360(GMT+6) means DST is observed, then return 0
+      else return 0
     },
     getDescriptionString() {
       return 'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.'
