@@ -15,7 +15,7 @@
           <div class="flex items-center">
             <span class="flex p-1">
               <img
-                src="~/assets/images/selfcare/giftbox-icon.png"
+                src="~/assets/images/selflove/giftbox-icon.png"
                 alt="Gift box."
                 class="w-8 h-8"
               />
@@ -29,7 +29,7 @@
           </div>
           <div class="flex items-center justify-center pb-4 sm:pb-0">
             <nuxt-link
-              to="/selfcare"
+              to="/selflove"
               class="flex items-center justify-center px-3 py-1 text-xs text-green-800 transition duration-300 ease-in-out transform bg-white border border-transparent rounded-md shadow-sm sm:text-sm hover:font-semibold hover:scale-105 hover:bg-green-100"
               @click.native="isBannerDismissed = true"
             >

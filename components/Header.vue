@@ -1,8 +1,8 @@
 <template>
   <div>
     <Banner
-      message="LIMITED! Treat yourself and friends with special Self-Care products curated by our team!"
-      short-message="LIMITED! Get these Self-Care products!"
+      message="LIMITED! Treat yourself and friends with special Self-Love packages curated by our team!"
+      short-message="LIMITED! Get these Self-Love packages!"
     />
     <header
       class="fixed z-40 w-full sm:relative bg-green-stu sm:flex sm:justify-center sm:items-end sm:py-2"
@@ -32,7 +32,7 @@
           >
             NEW !
           </h2>
-          <nuxt-link class="link-default" to="/selfcare">Self Care</nuxt-link>
+          <nuxt-link class="link-default" to="/selflove">Self Love</nuxt-link>
         </div>
       </nav>
 
@@ -80,8 +80,8 @@
             >
               NEW !
             </h2>
-            <nuxt-link class="hamburger-menu" to="/selfcare"
-              >Self Care</nuxt-link
+            <nuxt-link class="hamburger-menu" to="/selflove"
+              >Self Love</nuxt-link
             >
           </div>
         </div>
