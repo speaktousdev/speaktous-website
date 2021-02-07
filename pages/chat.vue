@@ -143,10 +143,16 @@ export default {
         'sunday',
       ]
 
+      // Check day is changed if sum > 24
+      // If index + 1 found is 7, revert to 0 (revert back to 1st Sunday on utcDayArray), else keep the index + 1 value
       if (this.isDstObserved && time.startTime + 5 >= 24) {
-        return utcDayArray.indexOf(dayToConvert) + 1
+        return utcDayArray.indexOf(dayToConvert) + 1 === 7
+          ? 0
+          : utcDayArray.indexOf(dayToConvert) + 1
       } else if (!this.isDstObserved && time.startTime + 6 >= 24) {
-        return utcDayArray.indexOf(dayToConvert) + 1
+        return utcDayArray.indexOf(dayToConvert) + 1 === 7
+          ? 0
+          : utcDayArray.indexOf(dayToConvert) + 1
       } else {
         return utcDayArray.indexOf(dayToConvert)
       }
@@ -161,14 +167,12 @@ export default {
     isCurrentTimeWithinSchedule(currentTime) {
       // DST : UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
       // Standard time : UTC timezone is 6 hours ahead of Madison, WI; 8 hours behind Malaysia
-
       const flag = this.schedules.findIndex(
         (s) =>
           this.convertUtcDay(s) === currentTime.getUTCDay() &&
           currentTime.getUTCHours() >= this.convertUtcHours(s.startTime) &&
           currentTime.getUTCHours() < this.convertUtcHours(s.endTime)
       )
-
       return flag >= 0
     },
 
