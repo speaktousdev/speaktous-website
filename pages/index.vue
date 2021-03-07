@@ -92,7 +92,7 @@
             Supported by passionate listeners who have signed<br />
             <a
               class="text-green-800 underline"
-              href="https://www.cdc.gov/aging/emergency/legal/privacy.htm"
+              href="https://www.hhs.gov/sites/default/files/hipaa-simplification-201303.pdf"
               target="_blank"
               rel="noreferrer"
               >HIPAA Confidentiality Agreement</a
