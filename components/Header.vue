@@ -1,9 +1,5 @@
 <template>
   <div>
-    <Banner
-      message="LIMITED! Treat yourself and friends with special Self-Love packages curated by our team!"
-      short-message="LIMITED! Get these Self-Love packages!"
-    />
     <header
       class="fixed z-40 w-full sm:relative bg-green-stu sm:flex sm:justify-center sm:items-end sm:py-2"
       :class="headerStyle"
@@ -26,14 +22,6 @@
         <nuxt-link class="link-default" to="/about">About</nuxt-link>
         <nuxt-link class="link-default" to="/donate">Donate</nuxt-link>
         <nuxt-link class="link-default" to="/joinus">Join us!</nuxt-link>
-        <div class="static">
-          <h2
-            class="absolute ml-4 text-xs font-semibold text-red-600 transform md:-translate-y-4"
-          >
-            NEW !
-          </h2>
-          <nuxt-link class="link-default" to="/selflove">Self Love</nuxt-link>
-        </div>
       </nav>
 
       <div v-if="showNavbar === true">
@@ -74,68 +62,18 @@
           <nuxt-link class="hamburger-menu" to="/chat">Chat</nuxt-link>
           <nuxt-link class="hamburger-menu" to="/donate">Donate</nuxt-link>
           <nuxt-link class="hamburger-menu" to="/joinus">Join Us</nuxt-link>
-          <div class="static flex flex-row">
-            <h2
-              class="absolute text-xs font-semibold text-red-600 transform -translate-y-3"
-            >
-              NEW !
-            </h2>
-            <nuxt-link class="hamburger-menu" to="/selflove"
-              >Self Love</nuxt-link
-            >
-          </div>
         </div>
       </nav>
     </header>
-
-    <!-- Mobile-screen navigation -->
-    <!-- <nav
-      class="fixed bottom-0 left-0 right-0 z-40 block px-6 pt-2 pb-1 bg-white border-t border-gray-400 sm:hidden"
-    >
-      <div class="flex justify-between">
-        <nuxt-link class="link-mobile" to="/">
-          <HomeIcon class="ml-2 nav-icon" />
-          home
-        </nuxt-link>
-        <nuxt-link class="link-mobile" to="/about">
-          <AboutIcon class="ml-2 nav-icon" />
-          about
-        </nuxt-link>
-        <nuxt-link class="link-mobile" to="/chat">
-          <ChatIcon class="ml-1 nav-icon" />
-          chat
-        </nuxt-link>
-        <nuxt-link class="link-mobile" to="/donate">
-          <DonateIcon class="ml-3 nav-icon" />
-          donate
-        </nuxt-link>
-        <nuxt-link class="link-mobile" to="/joinus">
-          <JoinusIcon class="ml-4 nav-icon" />
-          Join us!
-        </nuxt-link>
-      </div>
-    </nav> -->
   </div>
 </template>
 
 <script>
-// import HomeIcon from '~/components/svg/nav/HomeIcon.vue'
-// import AboutIcon from '~/components/svg/nav/AboutIcon.vue'
-// import ChatIcon from '~/components/svg/nav/ChatIcon.vue'
-// import DonateIcon from '~/components/svg/nav/DonateIcon.vue'
-// import JoinusIcon from '~/components/svg/nav/JoinusIcon.vue'
-import Banner from '~/components/Banner.vue'
 import HamburgerMenu from '~/components/svg/nav/HamburgerMenu.vue'
 import CloseIcon from '~/components/svg/nav/CloseIcon.vue'
 
 export default {
   components: {
-    // HomeIcon,
-    // ChatIcon,
-    // AboutIcon,
-    // DonateIcon,
-    // JoinusIcon,
-    Banner,
     HamburgerMenu,
     CloseIcon,
   },
