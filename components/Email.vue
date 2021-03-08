@@ -6,9 +6,9 @@
     <MailIcon class="self-center hidden w-40 h-40 md:block md:w-2/5" />
 
     <div class="flex flex-col md:w-3/5">
-      <label v-if="isaboutpage" for="name" class="text-left">Name:</label>
+      <label v-if="isAboutPage" for="name" class="text-left">Name:</label>
       <input
-        v-if="isaboutpage"
+        v-if="isAboutPage"
         id="name"
         v-model.lazy="$v.name.$model"
         type="text"
@@ -16,14 +16,14 @@
         class="p-2 bg-gray-100 rounded-lg shadow-xl"
       />
       <p
-        v-if="isaboutpage && $v.name.$error && !$v.name.required"
+        v-if="isAboutPage && $v.name.$error && !$v.name.required"
         class="mt-1 text-left text-red-600"
       >
         Name is required.
       </p>
       <p
         v-if="
-          isaboutpage &&
+          isAboutPage &&
           $v.name.$error &&
           $v.name.required &&
           !$v.name.$minLength
@@ -94,9 +94,9 @@ export default {
     MailIcon,
   },
   props: {
-    isaboutpage: {
+    isAboutPage: {
       type: Boolean,
-      required,
+      required: true,
     },
   },
   data() {

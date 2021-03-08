@@ -55,7 +55,7 @@
         We bring SpeakToUs to you
       </p>
     </div> -->
-    <!-- 
+    <!--
     <div class="mt-16 text-center md:mt-24">
       <div class="inline-block w-11/12 lg:w-1/2 xl:w-1/2">
         <h1
@@ -174,7 +174,7 @@
           </button>
         </div>
 
-        <Email class="w-11/12" :isaboutpage="isAboutPage" />
+        <Email class="w-11/12" :is-about-page="isAboutPage" />
       </div>
     </section>
   </main>
