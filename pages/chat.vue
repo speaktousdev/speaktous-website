@@ -30,8 +30,8 @@
             Online hours:
           </p>
           <ScheduleTable
-            :schedules="schedules"
-            :is-dst-observed="isDstObserved"
+            :us-schedules="usSchedules"
+            :my-schedules="mySchedules"
           />
         </div>
       </div>
@@ -66,17 +66,28 @@
         <h2 class="mb-6 text-lg text-gray-700 sm:text-2xl">
           SpeakToUs listeners will respond to your email as soon as possible.
         </h2>
-        <Email :isaboutpage="isAboutPage" />
+        <Email :is-about-page="false" />
       </div>
     </div>
   </main>
 </template>
 
 <script>
+import { DateTime } from 'luxon'
 import ChatMainIcon from '~/components/svg/chat/ChatMainIcon.vue'
 import FloatingDisclaimer from '~/components/FloatingDisclaimer.vue'
 import Email from '~/components/Email.vue'
 import ScheduleTable from '~/components/ScheduleTable.vue'
+
+const dayNames = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
+]
 
 export default {
   components: {
@@ -87,16 +98,12 @@ export default {
   },
   data() {
     return {
-      isOnline: false,
-      isAboutPage: false,
+      title: 'Chat With Us Online | SpeakToUs',
       chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
       isModalVisible: false,
-      title: 'Chat With Us Online | SpeakToUs',
-      description: this.getDescriptionString(),
-      isDstObserved: this.getDstObserved(),
-
+      isOnline: this.isChatOnline(),
       // Schedules in Madison time (US Central Time) 24 hrs format
-      schedules: [
+      usSchedules: [
         {
           id: 1,
           day: 'Friday',
@@ -118,83 +125,136 @@ export default {
       ],
     }
   },
-  mounted() {
-    const currentTime = new Date()
-    if (this.isCurrentTimeWithinSchedule(currentTime)) {
-      this.isOnline = true
-    }
+  computed: {
+    /**
+     * Malaysia schedule converted from US schedule
+     */
+    mySchedules() {
+      return this.convertToTimezone('Asia/Kuala_Lumpur', this.usSchedules)
+    },
+    /**
+     * Automates the creation of page description according to schedule.
+     */
+    description() {
+      const convertTo12Hour = (time) => {
+        if (time === 0) {
+          return 12
+        }
+        if (time >= 13) {
+          return time - 12
+        }
+        return time
+      }
+
+      let schedules = ''
+
+      this.usSchedules.forEach((schedule, index) => {
+        const day = schedule.day
+        const amOrPm = schedule.startTime >= 12 ? 'pm' : 'am'
+        const startTime = convertTo12Hour(schedule.startTime)
+        const endTime = convertTo12Hour(schedule.endTime)
+
+        if (index === this.usSchedules.length - 1) {
+          schedules += `and ${day} ${startTime}-${endTime}${amOrPm}`
+        } else {
+          schedules += `${day} ${startTime}-${endTime}${amOrPm}, `
+        }
+      })
+
+      const usGMT = `GMT-${DateTime.fromObject({
+        zone: 'America/Chicago',
+      })
+        .toString()
+        .substring(25, 26)}`
+
+      return `Our online chat is available on ${schedules} (US Central Time ${usGMT}). You can also email us at any time.`
+    },
   },
   methods: {
+    /**
+     * Checks if current time is chat time.
+     *
+     * @returns {boolean} true if online, false if offline
+     */
+    isChatOnline() {
+      const usTimeNow = DateTime.fromObject({
+        zone: 'America/Chicago',
+      })
+
+      for (const schedule in this.usSchedules) {
+        const usStartTime = DateTime.fromObject({
+          weekday: this.getDayNumberFromName(schedule.day),
+          hour: schedule.startTime,
+          zone: 'America/Chicago',
+        })
+        const usEndTime = DateTime.fromObject({
+          weekday: this.getDayNumberFromName(schedule.day),
+          hour: schedule.endTime,
+          zone: 'America/Chicago',
+        })
+
+        if (usTimeNow >= usStartTime && usTimeNow <= usEndTime) {
+          return true
+        }
+      }
+
+      return false
+    },
+    /**
+     * Converts from America/Chicago timezone to selected TZ timezone in params.
+     *
+     * @param {string} timezone name of timezone according to the TZ database name (see: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+     * @param {Array} usSchedules schedule according to America/Chicago timezone
+     * @returns {Array} converted array of schedules
+     */
+    convertToTimezone(timezone, usSchedules) {
+      const mySchedules = []
+
+      for (const schedule of usSchedules) {
+        const usStartTime = DateTime.fromObject({
+          weekday: this.getDayNumberFromName(schedule.day),
+          hour: schedule.startTime,
+          zone: 'America/Chicago',
+        })
+        const usEndTime = DateTime.fromObject({
+          weekday: this.getDayNumberFromName(schedule.day),
+          hour: schedule.endTime,
+          zone: 'America/Chicago',
+        })
+
+        const myStartTime = usStartTime.setZone(timezone)
+        const myEndTime = usEndTime.setZone(timezone)
+
+        mySchedules.push({
+          id: schedule.id,
+          day: this.getDayNameFromNumber(myStartTime.weekday),
+          startTime: myStartTime.hour,
+          endTime: myEndTime.hour,
+        })
+      }
+
+      return mySchedules
+    },
+    /**
+     * Converts from weekday number to day name.
+     *
+     * @param {number} dayNumber day number from 1-7 (i.e. Monday-Sunday)
+     * @returns {string} day name
+     */
+    getDayNameFromNumber(dayNumber) {
+      return dayNames[dayNumber - 1]
+    },
+    /**
+     * Converts from day name to weekday number (1-7 i.e. Monday-Sunday).
+     *
+     * @param {string} dayName day name
+     * @returns {number} day number from 1-7 (i.e. Monday-Sunday)
+     */
+    getDayNumberFromName(dayName) {
+      return dayNames.indexOf(dayName) + 1
+    },
     openChat() {
       window.open(this.chatLink, '_blank')
-    },
-
-    // Note: convertUtcDay and convertUtcHours only converts the Madison schedules using hard-coded math!
-    convertUtcDay(time) {
-      const dayToConvert = time.day.toLowerCase()
-      const utcDayArray = [
-        'sunday',
-        'monday',
-        'tuesday',
-        'wednesday',
-        'thursday',
-        'friday',
-        'saturday',
-        'sunday',
-      ]
-
-      // Check day is changed if sum > 24
-      // If index + 1 found is 7, revert to 0 (revert back to 1st Sunday on utcDayArray), else keep the index + 1 value
-      if (this.isDstObserved && time.startTime + 5 >= 24) {
-        return utcDayArray.indexOf(dayToConvert) + 1 === 7
-          ? 0
-          : utcDayArray.indexOf(dayToConvert) + 1
-      } else if (!this.isDstObserved && time.startTime + 6 >= 24) {
-        return utcDayArray.indexOf(dayToConvert) + 1 === 7
-          ? 0
-          : utcDayArray.indexOf(dayToConvert) + 1
-      } else {
-        return utcDayArray.indexOf(dayToConvert)
-      }
-    },
-    convertUtcHours(hours) {
-      // utcHours = hours + 6 (Standard Time ; Non-DST)
-      // utcHours = hours + 5 (DST)
-
-      if (this.isDstObserved) return hours + 5 >= 24 ? hours - 19 : hours + 5
-      else return hours + 6 >= 24 ? hours - 18 : hours + 6
-    },
-    isCurrentTimeWithinSchedule(currentTime) {
-      // DST : UTC timezone is 5 hours ahead of Madison, WI; 8 hours behind Malaysia
-      // Standard time : UTC timezone is 6 hours ahead of Madison, WI; 8 hours behind Malaysia
-      const flag = this.schedules.findIndex(
-        (s) =>
-          this.convertUtcDay(s) === currentTime.getUTCDay() &&
-          currentTime.getUTCHours() >= this.convertUtcHours(s.startTime) &&
-          currentTime.getUTCHours() < this.convertUtcHours(s.endTime)
-      )
-      return flag >= 0
-    },
-
-    // Returns 1 if Daylight saving time is observed. https://en.wikipedia.org/wiki/Daylight_saving_time
-    getDstObserved() {
-      // Store the user's local time
-      const localTime = new Date()
-
-      // Determine chicago timezone based on the user's local time
-      const chicagoTime = new Date(
-        localTime.toLocaleString('en-US', { timeZone: 'America/Chicago' })
-      )
-      // Find the Chicago's timezone offset
-      const timezoneOffset = chicagoTime.getTimezoneOffset()
-
-      // Chicago's timezone offset equals 300(GMT+5) means DST is observed, then return 1
-      if (timezoneOffset === 300) return 1
-      // Chicago's timezone offset equals 360(GMT+6) means DST is observed, then return 0
-      else return 0
-    },
-    getDescriptionString() {
-      return 'Our online chat is available every Saturday 7-9pm and Sunday 3-5am (US Central Time GMT-6). You can also email us at any time.'
     },
   },
   head() {
@@ -239,5 +299,3 @@ export default {
   },
 }
 </script>
-
-<style scoped></style>

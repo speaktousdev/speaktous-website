@@ -2,17 +2,14 @@
   <table class="mt-4 font-serif text-xl text-center sm:text-xl">
     <thead>
       <tr>
-        <th v-if="isDstObserved" class="w-1/2 px-2 py-2 border">
-          US Central Time <br />GMT-5
-        </th>
-        <th v-else class="w-1/2 px-2 py-2 border">
-          US Central Time <br />GMT-6
+        <th class="w-1/2 px-2 py-2 border">
+          US Central Time <br />{{ usGMT }}
         </th>
         <th class="w-1/2 px-2 py-2 border">MY Time <br />GMT+8</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="schedule in schedules" :key="schedule.id">
+      <tr v-for="(schedule, index) in usSchedules" :key="schedule.id">
         <!-- US Time -->
         <td class="px-2 py-2 border">
           {{ schedule.day }} <br />
@@ -24,12 +21,20 @@
         </td>
         <!-- Malaysia Time -->
         <td class="px-2 py-2 border">
-          {{ convertMalaysiaSchedule(schedule).day }} <br />
-          {{ convertMalaysiaSchedule(schedule).startTime }}
-          {{ convertMalaysiaSchedule(schedule).startMeridiem }}
+          {{ mySchedules[index].day }} <br />
+          {{
+            mySchedules[index].startTime % 12 === 0
+              ? 12
+              : mySchedules[index].startTime % 12
+          }}
+          {{ mySchedules[index].startTime >= 12 ? 'PM' : 'AM' }}
           -
-          {{ convertMalaysiaSchedule(schedule).endTime }}
-          {{ convertMalaysiaSchedule(schedule).endMeridiem }}
+          {{
+            mySchedules[index].endTime % 12 === 0
+              ? 12
+              : mySchedules[index].endTime % 12
+          }}
+          {{ mySchedules[index].endTime >= 12 ? 'PM' : 'AM' }}
         </td>
       </tr>
     </tbody>
@@ -37,72 +42,26 @@
 </template>
 
 <script>
+import { DateTime } from 'luxon'
+
 export default {
   props: {
-    schedules: {
+    usSchedules: {
       type: Array,
       required: true,
     },
-    isDstObserved: {
-      type: Number,
+    mySchedules: {
+      type: Array,
       required: true,
     },
   },
-  methods: {
-    convertMalaysiaSchedule(schedule) {
-      const dayArray = [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday',
-      ]
-
-      let mytStartTime
-      let startMeridiemString
-      if (schedule.startTime >= 12) {
-        mytStartTime = this.isDstObserved
-          ? schedule.startTime - 11
-          : schedule.startTime - 10
-        startMeridiemString = mytStartTime >= 12 ? 'PM' : 'AM'
-      } else {
-        mytStartTime = this.isDstObserved
-          ? schedule.startTime + 1
-          : schedule.startTime + 2
-        startMeridiemString = mytStartTime === 12 ? 'AM' : 'PM'
-      }
-
-      let mytEndTime
-      let endMeridiemString
-      if (schedule.endTime >= 12) {
-        mytEndTime = this.isDstObserved
-          ? schedule.endTime - 11
-          : schedule.endTime - 10
-        endMeridiemString = mytEndTime >= 12 ? 'PM' : 'AM'
-      } else {
-        mytEndTime = this.isDstObserved
-          ? schedule.endTime + 1
-          : schedule.endTime + 2
-        endMeridiemString = mytStartTime < 12 && mytEndTime >= 12 ? 'AM' : 'PM'
-      }
-
-      return {
-        day:
-          (this.isDstObserved && schedule.startTime <= 10) ||
-          (!this.isDstObserved && schedule.startTime <= 9)
-            ? dayArray[dayArray.indexOf(schedule.day)]
-            : dayArray[dayArray.indexOf(schedule.day) + 1],
-        startTime: mytStartTime % 12 === 0 ? 12 : mytStartTime % 12,
-        endTime: mytEndTime % 12 === 0 ? 12 : mytEndTime % 12,
-        startMeridiem: startMeridiemString,
-        endMeridiem: endMeridiemString,
-      }
+  computed: {
+    usGMT() {
+      const usTime = DateTime.fromObject({
+        zone: 'America/Chicago',
+      })
+      return `GMT-${usTime.toString().substring(25, 26)}`
     },
   },
 }
 </script>
-
-<style></style>
