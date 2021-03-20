@@ -101,7 +101,7 @@ export default {
       title: 'Chat With Us Online | SpeakToUs',
       chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
       isModalVisible: false,
-      isOnline: this.isChatOnline(),
+      // isOnline: this.isChatOnline(),
       // Schedules in Madison time (US Central Time) 24 hrs format
       usSchedules: [
         {
@@ -121,6 +121,50 @@ export default {
           day: 'Sunday',
           startTime: 20,
           endTime: 22,
+        },
+      ],
+      // Current US "America/Chicago"
+      usTimeNow: DateTime.fromObject({
+        zone: 'America/Chicago',
+      }),
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description,
+        },
+        // Twitter meta tags
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description,
+        },
+        // Other social media tags
+        // OG i.e. Open Graph Protocol docs: https://ogp.me/
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.title,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.description,
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://www.speaktous.online/chat',
         },
       ],
     }
@@ -169,28 +213,38 @@ export default {
 
       return `Our online chat is available on ${schedules} (US Central Time ${usGMT}). You can also email us at any time.`
     },
+    isOnline() {
+      // isChatOnline(timeYangKorangNak, usSchedule, timezoneUntukUsSchedule)
+
+      return this.isChatOnline(
+        this.usTimeNow,
+        this.usSchedules,
+        'America/Chicago'
+      )
+    },
   },
   methods: {
     /**
      * Checks if current time is chat time.
      *
+     * @param {DateTime} timeNow current US America/Chicago time to observe the time against
+     * @param {Array} usSchedules US schedules
+     * @param {string} usZone the US timezone name of usSchedules e.g. 'America/Chicago'
      * @returns {boolean} true if online, false if offline
      */
-    isChatOnline() {
-      const usTimeNow = DateTime.fromObject({
-        zone: 'America/Chicago',
-      })
+    isChatOnline(timeNow, usSchedules, usZone) {
+      const usTimeNow = timeNow
 
-      for (const schedule in this.usSchedules) {
+      for (const schedule in usSchedules) {
         const usStartTime = DateTime.fromObject({
           weekday: this.getDayNumberFromName(schedule.day),
           hour: schedule.startTime,
-          zone: 'America/Chicago',
+          zone: usZone,
         })
         const usEndTime = DateTime.fromObject({
           weekday: this.getDayNumberFromName(schedule.day),
           hour: schedule.endTime,
-          zone: 'America/Chicago',
+          zone: usZone,
         })
 
         if (usTimeNow >= usStartTime && usTimeNow <= usEndTime) {
@@ -256,46 +310,6 @@ export default {
     openChat() {
       window.open(this.chatLink, '_blank')
     },
-  },
-  head() {
-    return {
-      title: this.title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.description,
-        },
-        // Twitter meta tags
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: this.title,
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: this.description,
-        },
-        // Other social media tags
-        // OG i.e. Open Graph Protocol docs: https://ogp.me/
-        {
-          hid: 'og:title',
-          name: 'og:title',
-          content: this.title,
-        },
-        {
-          hid: 'og:description',
-          name: 'og:description',
-          content: this.description,
-        },
-        {
-          hid: 'og:url',
-          name: 'og:url',
-          content: 'https://www.speaktous.online/chat',
-        },
-      ],
-    }
   },
 }
 </script>
