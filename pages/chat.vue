@@ -101,7 +101,6 @@ export default {
       title: 'Chat With Us Online | SpeakToUs',
       chatLink: 'https://tawk.to/chat/5de9f162d96992700fcb04a3/default',
       isModalVisible: false,
-      // isOnline: this.isChatOnline(),
       // Schedules in Madison time (US Central Time) 24 hrs format
       usSchedules: [
         {
@@ -214,8 +213,6 @@ export default {
       return `Our online chat is available on ${schedules} (US Central Time ${usGMT}). You can also email us at any time.`
     },
     isOnline() {
-      // isChatOnline(timeYangKorangNak, usSchedule, timezoneUntukUsSchedule)
-
       return this.isChatOnline(
         this.usTimeNow,
         this.usSchedules,
@@ -233,9 +230,7 @@ export default {
      * @returns {boolean} true if online, false if offline
      */
     isChatOnline(timeNow, usSchedules, usZone) {
-      const usTimeNow = timeNow
-
-      for (const schedule in usSchedules) {
+      for (const schedule of usSchedules) {
         const usStartTime = DateTime.fromObject({
           weekday: this.getDayNumberFromName(schedule.day),
           hour: schedule.startTime,
@@ -247,7 +242,7 @@ export default {
           zone: usZone,
         })
 
-        if (usTimeNow >= usStartTime && usTimeNow <= usEndTime) {
+        if (timeNow >= usStartTime && timeNow <= usEndTime) {
           return true
         }
       }
@@ -276,8 +271,8 @@ export default {
           zone: 'America/Chicago',
         })
 
-        const myStartTime = usStartTime.setZone(timezone)
-        const myEndTime = usEndTime.setZone(timezone)
+        const myStartTime = this._convertUsTimeToTimezone(timezone, usStartTime)
+        const myEndTime = this._convertUsTimeToTimezone(timezone, usEndTime)
 
         mySchedules.push({
           id: schedule.id,
@@ -288,6 +283,16 @@ export default {
       }
 
       return mySchedules
+    },
+    /**
+     * Helper to convert America/Chicago time to time in the timezone specified.
+     *
+     * @param {string} timezone name of timezone according to the TZ database name (see: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+     * @param {DateTime} usTime time in America/Chicago
+     * @returns {DateTime} time in timezone specified
+     */
+    _convertUsTimeToTimezone(timezone, usTime) {
+      return usTime.setZone(timezone)
     },
     /**
      * Converts from weekday number to day name.
