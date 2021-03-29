@@ -60,7 +60,12 @@ export default {
       const usTime = DateTime.fromObject({
         zone: 'America/Chicago',
       })
-      return `GMT-${usTime.toString().substring(25, 26)}`
+
+      if (usTime.isInDST) {
+        return 'GMT-5'
+      } else {
+        return 'GMT-6'
+      }
     },
   },
 }
