@@ -4,7 +4,7 @@
       <img
         v-tooltip.top-center="'Shereen'"
         :data-src="require('~/assets/images/team/shereen.jpg')"
-        :data-loading="require('~/assets/images/team/shereen.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/shereen.jpg?lqip')"
         class="children"
         alt="A photo of Shereen"
       />
@@ -13,7 +13,7 @@
       <img
         v-tooltip.top-center="'Shaza'"
         :data-src="require('~/assets/images/team/shaza.jpg')"
-        :data-loading="require('~/assets/images/team/shaza.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/shaza.jpg?lqip')"
         class="children"
         alt="A photo of Shaza"
       />
@@ -22,7 +22,7 @@
       <img
         v-tooltip.top-center="'Kamal'"
         :data-src="require('~/assets/images/team/kamal.jpg')"
-        :data-loading="require('~/assets/images/team/kamal.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/kamal.jpg?lqip')"
         class="children"
         alt="A photo of Kamal"
       />
@@ -31,7 +31,7 @@
       <img
         v-tooltip.top-center="'Fayyadh'"
         :data-src="require('~/assets/images/team/fayyadh.jpg')"
-        :data-loading="require('~/assets/images/team/fayyadh.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/fayyadh.jpg?lqip')"
         class="children"
         alt="A photo of Fayyadh"
       />
@@ -40,7 +40,7 @@
       <img
         v-tooltip.top-center="'Liyana'"
         :data-src="require('~/assets/images/team/liyana.jpg')"
-        :data-loading="require('~/assets/images/team/liyana.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/liyana.jpg?lqip')"
         class="children"
         alt="A photo of Liyana"
       />
@@ -49,7 +49,7 @@
       <img
         v-tooltip.top-center="'Nadia'"
         :data-src="require('~/assets/images/team/nadia.jpg')"
-        :data-loading="require('~/assets/images/team/nadia.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/nadia.jpg?lqip')"
         class="children"
         alt="A photo of Nadia"
       />
@@ -61,7 +61,7 @@
       <img
         v-tooltip.top-center="'Effrie'"
         :data-src="require('~/assets/images/team/effrie.jpg')"
-        :data-loading="require('~/assets/images/team/effrie.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/effrie.jpg?lqip')"
         class="children"
         alt="A photo of Effrie"
       />
@@ -73,7 +73,7 @@
       <img
         v-tooltip.top-center="'Adlina'"
         :data-src="require('~/assets/images/team/adlina.jpg')"
-        :data-loading="require('~/assets/images/team/adlina.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/adlina.jpg?lqip')"
         class="children"
         alt="A photo of Adlina"
       />
@@ -85,7 +85,7 @@
       <img
         v-tooltip.top-center="'Aina'"
         :data-src="require('~/assets/images/team/aina.jpg')"
-        :data-loading="require('~/assets/images/team/aina.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/aina.jpg?lqip')"
         class="children"
         alt="A photo of Aina"
       />
@@ -97,7 +97,7 @@
       <img
         v-tooltip.top-center="'Ghee'"
         :data-src="require('~/assets/images/team/ghee.jpg')"
-        :data-loading="require('~/assets/images/team/ghee.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/ghee.jpg?lqip')"
         class="children"
         alt="A photo of Ghee"
       />
@@ -109,7 +109,7 @@
       <img
         v-tooltip.top-center="'Riza'"
         :data-src="require('~/assets/images/team/riza.jpg')"
-        :data-loading="require('~/assets/images/team/riza.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/riza.jpg?lqip')"
         class="children"
         alt="A photo of Riza"
       />
@@ -118,7 +118,7 @@
       <img
         v-tooltip.top-center="'Umi'"
         :data-src="require('~/assets/images/team/umi.jpg')"
-        :data-loading="require('~/assets/images/team/umi.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/umi.jpg?lqip')"
         class="children"
         alt="A photo of Umi"
       />
@@ -127,7 +127,7 @@
       <img
         v-tooltip.top-center="'Mujahid'"
         :data-src="require('~/assets/images/team/mujahid.jpg')"
-        :data-loading="require('~/assets/images/team/mujahid.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/mujahid.jpg?lqip')"
         class="children"
         alt="A photo of Mujahid"
       />
@@ -139,7 +139,7 @@
       <img
         v-tooltip.top-center="'Mirza'"
         :data-src="require('~/assets/images/team/mirza.jpg')"
-        :data-loading="require('~/assets/images/team/mirza.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/mirza.jpg?lqip')"
         class="children"
         alt="A photo of Mirza"
       />
@@ -151,7 +151,7 @@
       <img
         v-tooltip.top-center="'Emily'"
         :data-src="require('~/assets/images/team/emily.jpg')"
-        :data-loading="require('~/assets/images/team/emily.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/emily.jpg?lqip')"
         class="children"
         alt="A photo of Emily"
       />
@@ -163,7 +163,7 @@
       <img
         v-tooltip.top-center="'Adriana'"
         :data-src="require('~/assets/images/team/adriana.jpg')"
-        :data-loading="require('~/assets/images/team/adriana.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/adriana.jpg?lqip')"
         class="children"
         alt="A photo of Adriana"
       />
@@ -172,7 +172,7 @@
       <img
         v-tooltip.top-center="'Sheikh'"
         :data-src="require('~/assets/images/team/sheikh.jpg')"
-        :data-loading="require('~/assets/images/team/sheikh.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/sheikh.jpg?lqip')"
         class="w-32 h-16 transition duration-100 ease-in-out transform bg-gray-300 sm:h-24 sm:w-48 lg:h-32 lg:w-64 hover:scale-150 hover:z-50 hover:relative"
         alt="A photo of Sheikh"
       />
@@ -184,7 +184,7 @@
       <img
         v-tooltip.top-center="'Ayda'"
         :data-src="require('~/assets/images/team/ayda.jpg')"
-        :data-loading="require('~/assets/images/team/ayda.jpg?sqip')"
+        :data-loading="require('~/assets/images/team/ayda.jpg?lqip')"
         class="children"
         alt="A photo of Ayda"
       />
