@@ -8,8 +8,7 @@ export default ({ app }) => {
     return /*
      ** Include Google Analytics Script
      */
-  ;(importScripts('/sw-offline-google-analytics/offline-google-analytics-import.js'),
-  goog.offlineGoogleAnalytics.initialize())
+  ;
   (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r
     ;(i[r] =
@@ -51,7 +50,7 @@ export default ({ app }) => {
      */
     ga('set', 'page', to.fullPath)
     // Tracks pageview when a user is using the web offline 
-    ga('set', 'offline-pageview', navigator.onLine); 
+    ga('set', 'offline-pageview', navigator.onLine)
     ga('send', 'pageview')
   })
 
