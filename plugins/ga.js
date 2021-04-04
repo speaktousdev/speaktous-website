@@ -8,7 +8,9 @@ export default ({ app }) => {
     return /*
      ** Include Google Analytics Script
      */
-  ;(function (i, s, o, g, r, a, m) {
+  ;(importScripts('/sw-offline-google-analytics/offline-google-analytics-import.js'),
+  goog.offlineGoogleAnalytics.initialize())
+  (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r
     ;(i[r] =
       i[r] ||
@@ -29,7 +31,8 @@ export default ({ app }) => {
   )
     /* Track how many users are being asked to add our site to their home screen.
   Get the number of users installed PWA on their device */
-  (window.addEventListener('beforeinstallprompt', e => {
+  (
+    window.addEventListener('beforeinstallprompt', e => {
     e.userChoice.then(choiceResult => {
       ga('send', 'event', 'A2H', choiceResult.outcome)      
     })
