@@ -28,14 +28,6 @@ export default ({ app }) => {
     'https://www.google-analytics.com/analytics.js',
     'ga'
   )
-    /* Track how many users are being asked to add our site to their home screen.
-  Get the number of users installed PWA on their device */
-  (
-    window.addEventListener('beforeinstallprompt', e => {
-    e.userChoice.then(choiceResult => {
-      ga('send', 'event', 'A2H', choiceResult.outcome)      
-    })
-    }))
   /*
    ** Set the current page
    */
@@ -49,8 +41,6 @@ export default ({ app }) => {
      ** We tell Google Analytics to add a `pageview`
      */
     ga('set', 'page', to.fullPath)
-    // Tracks pageview when a user is using the web offline 
-    ga('set', 'offline-pageview', navigator.onLine)
     ga('send', 'pageview')
   })
 
