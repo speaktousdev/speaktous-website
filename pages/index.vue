@@ -173,7 +173,7 @@ export default {
 }
 @screen sm {
   .share-item {
-    @apply w-1/2 justify-start mb-10 flex-no-wrap;
+    @apply w-1/2 justify-start mb-10 flex-nowrap;
   }
 }
 </style>
