@@ -2,26 +2,23 @@
   <main
     class="max-w-screen-xl mx-auto text-black lg:text-gray-800 sm:px-12 md:px-20 lg:px-24"
   >
-    <div class="flex flex-wrap items-center py-6 section-1">
+    <div class="flex flex-col-reverse md:flex-row items-center py-6 section-1">
       <div class="w-full sm:pt-10 sm:w-3/5">
-        <div class="text-center sm:w-64 sm:text-left">
-          <h1
-            class="font-serif text-4xl font-extrabold text-center sm:text-left sm:text-6xl"
-          >
-            Join Us
+        <div class="text-center md:text-left">
+          <h1 class="font-serif text-3xl lg:text-4xl font-extrabold">
+            STU Student Committee 2021
           </h1>
           <svg class="inline-block object-center w-24 h-2">
             <rect class="w-24 h-2 bg-green" style="fill: green" />
           </svg>
         </div>
         <div class="text-center section-desc sm:pr-12 lg:pr-6 sm:text-left">
-          <p class="mt-2 text-lg sm:text-4xl font-body sm:mt-6">
+          <p class="mt-2 text-lg md:text-2xl font-body sm:mt-6">
             Be part of a changing community.
           </p>
-          <p class="my-2 text-lg sm:text-4xl font-body sm:my-6">
-            Be a listener.
+          <p class="my-2 text-lg md:text-2xl font-body sm:my-6">
+            Join our student committee.
           </p>
-          <p class="mt-8 text-sm sm:text-lg font-body">No experience needed.</p>
         </div>
         <div class="flex flex-wrap mx-8 mt-8 buttons sm:w-full">
           <a
@@ -45,7 +42,7 @@
           <h1
             class="font-serif text-2xl font-extrabold text-center sm:text-5xl"
           >
-            As Our Listener..
+            Benefits of joining us
           </h1>
           <svg class="inline-block object-center w-24 h-2">
             <rect class="w-24 h-2 bg-green" style="fill: green" />
@@ -54,69 +51,103 @@
       </div>
       <div class="flex flex-wrap justify-around w-full mt-8">
         <div class="w-full p-6 text-center sm:w-1/4 sm:p-0">
-          <ChatIcon class="inline-block w-56 h-auto" />
-          <h3 class="inline-block mt-4 font-body">
-            Attend and listen to our responder during online session
+          <CareerSupport class="inline-block w-56 h-auto" />
+          <h3 class="inline-block mt-4 font-body">Career Support</h3>
+        </div>
+        <div class="w-full p-6 text-center sm:w-1/4 sm:p-0">
+          <SupportGroup class="inline-block w-56 h-auto" />
+          <h3 class="inline-block mt-8 font-body">Support Group</h3>
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-around w-full mt-8">
+        <div class="w-full p-6 text-center sm:w-1/4 sm:p-0">
+          <Certificate class="inline-block w-40 h-auto" />
+          <h3 class="inline-block mt-8 font-body">
+            Certificate of Appreciation
           </h3>
         </div>
         <div class="w-full p-6 text-center sm:w-1/4 sm:p-0">
-          <FileIcon class="inline-block w-40 h-auto" />
-          <h3 class="inline-block mt-8 font-body">
-            Maintain confidentiality about student's issues
-          </h3>
+          <PeopleIcon class="inline-block w-40 h-auto" />
+          <h3 class="inline-block mt-4 font-body">Recognition on Website</h3>
         </div>
       </div>
     </div>
 
-    <div
-      class="flex flex-col-reverse flex-wrap py-6 mt-4 section-3 sm:flex-row sm:mt-10"
-    >
-      <div class="w-full text-center sm:w-1/2">
-        <PeopleIcon class="inline-block w-40 h-auto my-8 sm:my-0 sm:w-64" />
-      </div>
-      <div class="w-full px-6 text-center sm:w-1/2 sm:text-left">
-        <h1
-          class="font-serif text-2xl font-extrabold text-center sm:text-left sm:text-4xl"
-        >
-          Why Be A Listener?
-        </h1>
-        <svg class="inline-block w-24 h-2">
+    <div class="mb-24 py-6 mt-4 section-3 sm:mt-10">
+      <h1 class="font-serif text-2xl font-extrabold text-center sm:text-5xl">
+        Committee roles
+      </h1>
+      <div class="text-center">
+        <svg class="inline-block object-center w-24 h-2">
           <rect class="w-24 h-2 bg-green" style="fill: green" />
         </svg>
-        <ul class="mt-8 text-left list-disc sm:mt-0">
-          <li class="font-body">Be an active peer support.</li>
-          <li class="mt-1 font-body">
-            Get involved in mental health support training.
-          </li>
-          <li class="mt-1 font-body">
-            Gain experience in conflict management.
-          </li>
-        </ul>
+      </div>
+
+      <div class="p-6 md:flex md:flex-row justify-center text-center">
+        <ProjectPlanning class="inline-block w-56 h-auto" />
+        <div class="md:flex md:flex-col md:px-8">
+          <h2 class="font-serif font-bold py-4 text-xl md:text-2xl">
+            Project Planning and Execution
+          </h2>
+          <p class="md:px-12 lg:px-24">
+            Plan and execute projects to raise awareness regarding mental health
+          </p>
+        </div>
+      </div>
+      <div class="p-6 md:flex md:flex-row justify-center text-center">
+        <Outreach class="inline-block w-64 h-auto" />
+        <div class="md:flex md:flex-col">
+          <h2 class="font-serif font-bold py-4 text-xl md:text-2xl">
+            Universities Outreach
+          </h2>
+          <p class="md:px-12 lg:px-24">
+            Outreach to other organizations to spread awareness and encourage
+            mental health conversation
+          </p>
+        </div>
+      </div>
+      <div class="p-6 md:flex md:flex-row justify-center text-center">
+        <Continuity class="inline-block w-64 h-auto" />
+        <div class="md:flex md:flex-col">
+          <h2 class="font-serif font-bold py-4 text-xl md:text-2xl">
+            Organization Continuity
+          </h2>
+          <p class="md:px-12 lg:px-24">
+            Continuity on finding successors to ensure SpeakToUs's Mission in
+            normalizing mental health covnersation is achieved
+          </p>
+        </div>
       </div>
     </div>
   </main>
 </template>
 
 <script>
-import ChatIcon from '~/components/svg/joinus/ChatIcon.vue'
+import CareerSupport from '~/components/svg/joinus/CareerSupport.vue'
+import Certificate from '~/components/svg/joinus/Certificate.vue'
+import Continuity from '~/components/svg/joinus/Continuity.vue'
+import Outreach from '~/components/svg/joinus/Outreach.vue'
+import ProjectPlanning from '~/components/svg/joinus/ProjectPlanning.vue'
+import SupportGroup from '~/components/svg/joinus/SupportGroup.vue'
 import PeopleIcon from '~/components/svg/joinus/PeopleIcon.vue'
 import TeamIcon from '~/components/svg/joinus/TeamIcon.vue'
-import FileIcon from '~/components/svg/joinus/FileIcon.vue'
 
 export default {
   components: {
-    ChatIcon,
+    CareerSupport,
+    Certificate,
+    SupportGroup,
     PeopleIcon,
+    Continuity,
+    Outreach,
+    ProjectPlanning,
     TeamIcon,
-    FileIcon,
   },
   data() {
     return {
-      applyFormLink:
-        'https://docs.google.com/forms/d/e/1FAIpQLScHDL33O6aq-Wbh8ZvV_TOnHtcL2mKihaqDbBvuafGW3HJYWg/viewform',
+      applyFormLink: 'https://forms.gle/wEGkUzF53V8LvLFJ7',
       title: 'Join Us | SpeakToUs',
-      description:
-        'Be part of a changing community. Be a listener. No experience needed.',
+      description: 'Be part of a changing community. Be a student committee.',
     }
   },
   head() {
