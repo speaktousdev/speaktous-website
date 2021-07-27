@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen">
     <Header />
     <Banner
-      class="mt-16"
+      class="mt-16 md:mt-0"
       message="STU Student Committee 2021"
       shortMessage="STU Student Committee 2021!"
       image="/joinus/Team.svg"
