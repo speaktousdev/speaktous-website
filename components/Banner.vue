@@ -15,8 +15,8 @@
           <div class="flex items-center">
             <span class="flex p-1">
               <img
-                src="~/assets/images/selflove/giftbox-icon.png"
-                alt="Gift box."
+                :src="require('@/assets/images' + image + '')"
+                :alt="alt"
                 class="w-8 h-8"
               />
             </span>
@@ -29,7 +29,7 @@
           </div>
           <div class="flex items-center justify-center pb-4 sm:pb-0">
             <nuxt-link
-              to="/selflove"
+              :to="link"
               class="flex items-center justify-center px-3 py-1 text-xs text-green-800 transition duration-300 ease-in-out transform bg-white border border-transparent rounded-md shadow-sm sm:text-sm hover:font-semibold hover:scale-105 hover:bg-green-100"
               @click.native="isBannerDismissed = true"
             >
@@ -55,6 +55,18 @@ export default {
       required: true,
     },
     shortMessage: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    alt: {
+      type: String,
+      required: true,
+    },
+    link: {
       type: String,
       required: true,
     },
