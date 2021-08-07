@@ -167,4 +167,10 @@ export default {
      */
     extend(config, ctx) {},
   },
+  watchers: {
+    webpack: {
+      aggregateTimeout: 300,
+      poll: 1000,
+    },
+  },
 }
