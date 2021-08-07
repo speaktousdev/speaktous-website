@@ -1,3 +1,5 @@
+/** @type {import("@types/eslint").Linter.Config } */
+
 module.exports = {
   root: true,
   env: {

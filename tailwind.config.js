@@ -1,3 +1,5 @@
+/** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
+
 module.exports = {
   theme: {
     fontFamily: {
@@ -47,8 +49,4 @@ module.exports = {
     backgroundColor: ['responsive', 'active', 'hover', 'focus'],
   },
   plugins: [],
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
 }
