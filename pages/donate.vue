@@ -172,20 +172,6 @@ export default {
         'SpeakToUs is a nonprofit managed by student volunteers dedicated to provide mental health support for Malaysian students in the US. Our financial needs rely on your support.',
     }
   },
-  computed: {
-    paypalLink() {
-      return (
-        'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=' +
-        this.paypalEmail +
-        '&lc=US&item_name=Donation+to+Speak+To+Us&no_note=0&cn=&curency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted'
-      )
-    },
-  },
-  methods: {
-    openPaypalLink() {
-      window.open(this.paypalLink, '_blank')
-    },
-  },
   head() {
     return {
       title: this.title,
@@ -225,6 +211,20 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    paypalLink() {
+      return (
+        'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=' +
+        this.paypalEmail +
+        '&lc=US&item_name=Donation+to+Speak+To+Us&no_note=0&cn=&curency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted'
+      )
+    },
+  },
+  methods: {
+    openPaypalLink() {
+      window.open(this.paypalLink, '_blank')
+    },
   },
 }
 </script>
