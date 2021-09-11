@@ -115,8 +115,10 @@
         ></div>
       </div>
       <div class="p-6 md:flex md:flex-row justify-center text-center">
-        <ChatMainIcon class="inline-block h-auto w-56 md:w-72" />
-        <div class="md:flex md:flex-col md:px-8">
+        <div id="chatIcon" class="md:w-3/12">
+          <ChatMainIcon class="inline-block h-auto w-full" />
+        </div>
+        <div class="md:flex md:flex-col md:px-8 md:w-9/12">
           <h2
             class="font-serif font-bold py-4 text-xl md:text-2xl md:text-left"
           >
@@ -133,22 +135,27 @@
         </div>
       </div>
       <div class="p-6 md:flex md:flex-row justify-center text-center">
-        <img
-          class="w-40 mb-4 mx-0"
-          src="~assets/images/index/jar.jpg"
-          alt="A jar container which is surrounded by fireflies."
-        />
-        <div class="md:ml-6 md:flex md:flex-col">
+        <div id="jarImage" class="md:w-3/12">
+          <img
+            class="mb-4 mx-auto w-10/12"
+            src="~assets/images/index/jar.jpg"
+            alt="A jar container which is surrounded by fireflies."
+          />
+          <!-- <ChatMainIcon class="inline-block h-auto w-full" /> -->
+        </div>
+        <div class="md:flex md:flex-col md:px-8 md:w-9/12">
           <h2
             class="font-serif font-bold py-4 text-xl md:text-2xl md:text-left"
           >
             Confession Jar
           </h2>
-          <p class="text-center md:text-left md:pr-20">
+          <p class="text-center md:text-left">
             Do you have something to vent? Frustrations, grievances? Express
-            your unbridled feelings through our Confession Jar. Your confessions
-            are 100% anonymous, so write your worries away. Selected confessions
-            will be shared on our Instagram Story.
+            your unbridled feelings through our Confession Jar.
+          </p>
+          <p class="text-center md:text-left">
+            Your confessions are 100% anonymous, so write your worries away.
+            Selected confessions will be shared on our Instagram Story.
           </p>
           <p class="my-4 md:text-left md:pr-20">
             Our followers often relate and some provide support as we are in

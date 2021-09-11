@@ -44,7 +44,7 @@
       <PodcastIcon class="md:w-5/12" />
       <div class="md:w-7/12 text-center mt-4 md:mt-16">
         <h1 class="font-bold font-serif text-2xl lg:text-4xl">Podcast</h1>
-        <p class="mt-4 md:px-12 lg:text-left">
+        <p class="mt-4 md:px-12 lg:text-centre">
           Listen to mental health related topics <br />
           and earn tips on how to practice self love.
         </p>
