@@ -4,12 +4,28 @@
       <div class="sm:pt-10 sm:w-3/5">
         <div class="sm:w-64 lg:w-full">
           <h1
-            class="font-serif text-4xl font-extrabold text-center lg:text-6xl sm:text-left"
+            class="
+              font-serif
+              text-4xl
+              font-extrabold
+              text-center
+              lg:text-6xl
+              sm:text-left
+            "
           >
             You Share
           </h1>
           <h1
-            class="mb-6 -mt-2 font-serif text-4xl font-extrabold text-center lg:text-6xl sm:text-left sm:mb-4"
+            class="
+              mb-6
+              mt-2
+              font-serif
+              text-4xl
+              font-extrabold
+              text-center
+              lg:text-6xl
+              sm:text-left sm:mb-4
+            "
           >
             We Care
           </h1>
@@ -29,13 +45,37 @@
         <div class="flex flex-wrap w-full p-0 mt-8 buttons sm:w-full">
           <nuxt-link
             to="/chat"
-            class="justify-center w-full px-3 py-3 mr-0 font-serif font-bold text-center text-white bg-green-400 rounded-lg hover:bg-green-700 sm:w-1/3 sm:mr-2"
+            class="
+              justify-center
+              w-full
+              px-3
+              py-3
+              mr-0
+              font-serif font-bold
+              text-center text-white
+              bg-green-400
+              rounded-lg
+              hover:bg-green-700
+              sm:w-1/3 sm:mr-2
+            "
           >
             Chat Now
           </nuxt-link>
           <nuxt-link
             to="/about"
-            class="justify-center w-full px-3 py-3 mt-3 font-serif font-bold text-center text-white bg-gray-600 rounded-lg hover:bg-gray-700 sm:w-1/3 sm:mt-0"
+            class="
+              justify-center
+              w-full
+              px-3
+              py-3
+              mt-3
+              font-serif font-bold
+              text-center text-white
+              bg-gray-600
+              rounded-lg
+              hover:bg-gray-700
+              sm:w-1/3 sm:mt-0
+            "
           >
             Learn more
           </nuxt-link>
@@ -50,15 +90,174 @@
       </div>
     </div>
 
+    <div id="services-section" class="px-8 py-6 sm:px-12 sm:py-10 lg:px-24">
+      <div class="items-center text-center title-with-underline">
+        <h1
+          class="
+            font-serif
+            text-3xl
+            font-extrabold
+            tracking-wider
+            text-center
+            sm:text-left sm:text-4xl
+          "
+        >
+          Services We Provide
+        </h1>
+        <div
+          class="
+            relative
+            inline-block
+            w-1/2
+            border-b-2 border-green-500
+            sm:block sm:left-0
+          "
+        ></div>
+      </div>
+      <div class="p-6 md:flex md:flex-row justify-center text-center">
+        <div id="chatIcon" class="md:w-3/12">
+          <ChatMainIcon class="inline-block h-auto w-full" />
+        </div>
+        <div class="md:flex md:flex-col md:px-8 md:w-9/12">
+          <h2
+            class="font-serif font-bold py-4 text-xl md:text-2xl md:text-left"
+          >
+            Live Chat
+          </h2>
+          <p class="text-center md:text-left md:pr-20">
+            Are you finding a place to rant, seeking second opinion, or wanting
+            a validation? We are here for you. Let's talk and share about
+            anything.
+          </p>
+          <p class="mt-4 md:text-left md:pr-20">
+            The best part is the service is completely anonymous.
+          </p>
+        </div>
+      </div>
+      <div class="p-6 md:flex md:flex-row justify-center text-center">
+        <div id="jarImage" class="md:w-3/12">
+          <img
+            class="mb-4 mx-auto w-10/12"
+            src="~assets/images/index/jar.jpg"
+            alt="A jar container which is surrounded by fireflies."
+          />
+          <!-- <ChatMainIcon class="inline-block h-auto w-full" /> -->
+        </div>
+        <div class="md:flex md:flex-col md:px-8 md:w-9/12">
+          <h2
+            class="font-serif font-bold py-4 text-xl md:text-2xl md:text-left"
+          >
+            Confession Jar
+          </h2>
+          <p class="text-center md:text-left">
+            Do you have something to vent? Frustrations, grievances? Express
+            your unbridled feelings through our Confession Jar.
+          </p>
+          <p class="text-center md:text-left">
+            Your confessions are 100% anonymous, so write your worries away.
+            Selected confessions will be shared on our Instagram Story.
+          </p>
+          <p class="my-4 md:text-left md:pr-20">
+            Our followers often relate and some provide support as we are in
+            this together.
+          </p>
+          <a
+            class="text-green-800 underline md:text-left"
+            rel="noreferrer"
+            @click="isModalVisible = true"
+            >Confession Jar Policy</a
+          >.
+        </div>
+      </div>
+    </div>
+
+    <ConfessionDisclaimerModal
+      v-if="isModalVisible"
+      @close="isModalVisible = false"
+    />
+
+    <div class="px-8 py-6 join-us-section sm:px-12 sm:py-10 lg:px-24">
+      <div class="items-center text-center title-with-underline">
+        <h1
+          class="
+            font-serif
+            text-3xl
+            font-extrabold
+            tracking-wider
+            text-center
+            sm:text-left sm:text-4xl
+          "
+        >
+          Seasonal Projects
+        </h1>
+        <div
+          class="
+            relative
+            inline-block
+            w-1/2
+            border-b-2 border-green-500
+            sm:block sm:left-0
+          "
+        ></div>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="w-full sm:w-1/2">
+          <h2 class="mt-5 text-lg section-desc">
+            SpeakToUs creates seasonal projects to promote mental health
+            awareness. These projects happen for a limited amount of time, so
+            follow us on social media for updates on our upcoming projects this
+            year
+            <br />
+            <br />Check out our past and current projects here!
+          </h2>
+          <div class="mt-8 text-center sm:text-left">
+            <nuxt-link
+              to="/project"
+              class="
+                flex
+                justify-center
+                w-40
+                px-4
+                py-2
+                mb-2
+                font-serif font-bold
+                text-center text-white
+                bg-green-400
+                rounded
+                hover:bg-green-700
+              "
+            >
+              Learn More
+            </nuxt-link>
+          </div>
+        </div>
+        <div class="hidden sm:block sm:w-1/2">
+          <ProjectIcon class="w-1/2 ml-24 hidden md:block" />
+        </div>
+      </div>
+    </div>
+
     <div class="px-6 py-6 bg-gray-200 share-section sm:px-12 lg:px-24 sm:py-10">
       <div class="items-center text-center title-with-underline">
         <h1
-          class="font-serif text-3xl font-extrabold text-center sm:text-left sm:text-4xl"
+          class="
+            font-serif
+            text-3xl
+            font-extrabold
+            text-center
+            sm:text-left sm:text-4xl
+          "
         >
           Why Share With Us?
         </h1>
         <div
-          class="relative inline-block w-1/2 border-b-2 border-green-500 sm:block sm:left-0"
+          class="
+            relative
+            inline-block
+            w-1/2
+            border-b-2 border-green-500
+            sm:block sm:left-0
+          "
         ></div>
       </div>
       <div class="flex flex-wrap py-8">
@@ -115,12 +314,25 @@
     <div class="px-8 py-6 join-us-section sm:px-12 sm:py-10 lg:px-24">
       <div class="items-center text-center title-with-underline">
         <h1
-          class="font-serif text-3xl font-extrabold tracking-wider text-center sm:text-left sm:text-4xl"
+          class="
+            font-serif
+            text-3xl
+            font-extrabold
+            tracking-wider
+            text-center
+            sm:text-left sm:text-4xl
+          "
         >
           Be Part of SpeakToUs!
         </h1>
         <div
-          class="relative inline-block w-1/2 border-b-2 border-green-500 sm:block sm:left-0"
+          class="
+            relative
+            inline-block
+            w-1/2
+            border-b-2 border-green-500
+            sm:block sm:left-0
+          "
         ></div>
       </div>
       <div class="flex flex-wrap">
@@ -138,7 +350,19 @@
           <div class="mt-8 text-center sm:text-left">
             <nuxt-link
               to="/joinus"
-              class="flex justify-center w-40 px-4 py-2 mb-2 font-serif font-bold text-center text-white bg-green-400 rounded hover:bg-green-700"
+              class="
+                flex
+                justify-center
+                w-40
+                px-4
+                py-2
+                mb-2
+                font-serif font-bold
+                text-center text-white
+                bg-green-400
+                rounded
+                hover:bg-green-700
+              "
             >
               Join us!
             </nuxt-link>
@@ -154,8 +378,22 @@
 
 <script>
 import JoinUsIcon from '~/components/svg/index/JoinUsIcon.vue'
+import ChatMainIcon from '~/components/svg/chat/ChatMainIcon.vue'
+import ProjectIcon from '~/components/svg/project/Header.vue'
+import ConfessionDisclaimerModal from '~/components/ConfessionDisclaimerModal.vue'
+
 export default {
-  components: { JoinUsIcon },
+  components: {
+    ChatMainIcon,
+    JoinUsIcon,
+    ProjectIcon,
+    ConfessionDisclaimerModal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+    }
+  },
   head() {
     return {
       title: 'SpeakToUs',
