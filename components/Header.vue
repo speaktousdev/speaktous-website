@@ -101,7 +101,7 @@
                     @click.native="aboutMenuOpen = false"
                   />
                   <HeaderDesktopSecondaryLink
-                    to="/history"
+                    to="/committee"
                     name="Student Committee"
                     description="Get all of your questions answered in our forums or
                       contact support."
@@ -309,7 +309,7 @@
             <div class="py-6 px-5 space-y-6">
               <div class="grid grid-cols-2 gap-y-4 gap-x-8">
                 <HeaderMobileSecondaryLink
-                  to="/history"
+                  to="/committee"
                   @click.native="menuOpen = false"
                 >
                   Student Committee
