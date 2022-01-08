@@ -309,7 +309,7 @@
             <div class="py-6 px-5 space-y-6">
               <div class="grid grid-cols-2 gap-y-4 gap-x-8">
                 <HeaderMobileSecondaryLink
-                  to="/history"
+                  to="/committee"
                   @click.native="menuOpen = false"
                 >
                   Student Committee
