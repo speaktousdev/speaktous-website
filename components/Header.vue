@@ -101,7 +101,7 @@
                     @click.native="aboutMenuOpen = false"
                   />
                   <HeaderDesktopSecondaryLink
-                    to="/history"
+                    to="/committee"
                     name="Student Committee"
                     description="Get all of your questions answered in our forums or
                       contact support."

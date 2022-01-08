@@ -40,7 +40,7 @@
     <section class="my-16">
       <Achievements
         class="my-12 lg:ml-12"
-        :achievementsList="committees[0].achievementsList"
+        :achievements-list="committees[0].achievementsList"
       />
     </section>
   </main>
@@ -55,58 +55,54 @@ export default {
   components: { HeroSection, StudentsCard, Achievements },
   data: () => ({
     committees: [
-      {
-        year: '2021',
+      { year: '2021',
         studentsList: [
           {
-            name: 'Mujahid',
+            name: 'Nur Afizah',
             image:
-              'https://static.vecteezy.com/system/resources/previews/000/643/326/original/vector-group-people-icon.jpg',
+              '2021/Afizah_2021.png',
             role: 'President',
             caption:
-              'Lorem ipsum dolor sit amet, conectetur adipiscing elit, sed do smod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer ulla  ',
+              'Our next Iron Lady in SpeakToUs. Her experiences volunteering in a mental health organisations and her amazing leadership record making her the leader STU needed. She will be leading STU Comms.',
           },
           {
-            name: 'Mujahid',
-            image:
-              'https://static.vecteezy.com/system/resources/previews/000/643/326/original/vector-group-people-icon.jpg',
-            role: 'President',
+            name: 'Huzaifah',
+            image:"2021/Huzaifah_2021.jpeg",
+            role: 'Vice President and Marketing Director',
             caption:
-              'Lorem ipsum dolor sit amet, conectetur adipiscing elit, sed do smod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer ulla  ',
+              'Alongside Afizah, our marketing master. He has been honour with two positions due to his skills in marketing and his leadership experiences. Check his instagram for his book review.',
           },
           {
-            name: 'Mujahid',
+            name: 'Wei Jian',
             image:
-              'https://static.vecteezy.com/system/resources/previews/000/643/326/original/vector-group-people-icon.jpg',
-            role: 'President',
+              '2021/WeiJian_2021.png',
+            role: 'Treasurer',
             caption:
-              'Lorem ipsum dolor sit amet, conectetur adipiscing elit, sed do smod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer ulla  ',
+              'Completing the team, we bring you Wei Jian! He will be looking over the financial part of the events. Working in a non-profit organization, we need someone to keep everything balance. He is the chosen one.',
           },
+          {
+            name: 'Tian Jing',
+            image:"2021/Tj_2021.JPG",
+            role: 'Media Director ',
+            caption:
+              'Be it discord, zoom, or any new platform - we have our media queen, TJ, taking the lead on the latest media available. She will be taking over the STU Media Platform. ',
+          },
+          {
+            name: 'Nur Ain',
+            image:'2021/NurAin_2021.jpg',
+            role: 'Event Director',
+            caption:
+              'Complementing Media and Marketing, we have our event director to keep all the events organised. Introducing Ain to the team. Her PR in local universities makes her one of the kind. ',
+          },
+          
         ],
         achievementsList: [
           {
-            title: 'Mental Health Campaign SpeakToUs',
-            image:
-              'https://static.vecteezy.com/system/resources/previews/000/643/326/original/vector-group-people-icon.jpg',
-            date: 'September 2021',
+            title: 'STU Comms Establishment',
+            image: '2021/introduction.png',
+            date: 'October 2021',
             caption:
-              'Lorem ipsum dolor sit amet, conectetur adipiscing elit, sed do smod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer ulla  ',
-          },
-          {
-            title: 'Mental Health Campaign SpeakToUs 2',
-            image:
-              'https://static.vecteezy.com/system/resources/previews/000/643/326/original/vector-group-people-icon.jpg',
-            date: 'September 2021',
-            caption:
-              'Lorem ipsum dolor sit amet, conectetur adipiscing elit, sed do smod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer ulla  ',
-          },
-          {
-            title: 'Mental Health Campaign SpeakToUs 2',
-            image:
-              'https://static.vecteezy.com/system/resources/previews/000/643/326/original/vector-group-people-icon.jpg',
-            date: 'September 2021',
-            caption:
-              'Lorem ipsum dolor sit amet, conectetur adipiscing elit, sed do smod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer ulla  ',
+              'STU Committee is officially established with amazing leadership talents.',
           },
         ],
       },

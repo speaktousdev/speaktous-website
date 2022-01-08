@@ -1,16 +1,14 @@
 <template>
   <main class="lg:flex lg:flex-row">
-    <div class="text-center md:text-justify">
+    <div class="text-center md:text-justify lg:w-1/4">
       <h2 class="text-2xl font-extrabold tracking-tight sm:text-4xl">
         Achievements
       </h2>
       <p class="mt-4 md:pr-24 lg:pr-0 md:text-base lg:text-lg">
-        Lorem ipsum dolor sit amet, conectetur adipiscing elit, sed do smod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exer ulla
+        Here is a list of events, programs, and campaigns the student committee has achieved within the year.
       </p>
     </div>
-    <div class="lg:ml-20">
+    <div class="md:mt-10 lg:ml-20">
       <ul
         role="list"
         class="flex flex-col items-center md:flex-row md:flex-wrap sm:px-8"
@@ -24,7 +22,7 @@
             <div class="w-full">
               <img
                 class="object-cover shadow-lg rounded-lg w-full"
-                :src="item.image"
+                :src="require(`@/assets/images/committee/${item.image}`)"
                 :alt="`A photo of ${item.title}`">
             </div>
             <div class="sm:col-span-2 px-4">

@@ -20,9 +20,7 @@
             md:pr-24
           "
         >
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua
-          ad ad non deserunt sunt.
+          A student-led branch of SpeakToUs focusing on bridging connections with students and incorporating new and fresh ideas to spread mental health awareness.
         </p>
       </div>
       <HeaderIcon class="w-full md:w-1/2"/>
