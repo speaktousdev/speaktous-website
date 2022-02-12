@@ -1,6 +1,14 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <Header />
+    <Banner
+      class="mt-16 md:mt-0"
+      message="STU Student Committee 2021"
+      short-message="STU Student Committee 2021!"
+      image="/joinus/Team.svg"
+      alt="team"
+      link="/joinus"
+    />
     <nuxt class="flex-grow mt-20 sm:mt-0" />
     <Footer class="pb-20 sm:pb-2" />
   </div>
@@ -9,11 +17,13 @@
 <script>
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
+import Banner from '~/components/Banner.vue'
 
 export default {
   components: {
     Header,
     Footer,
+    Banner,
   },
 }
 </script>
