@@ -106,8 +106,8 @@ export default {
         {
           id: 1,
           day: 'Friday',
-          startTime: 20,
-          endTime: 22,
+          startTime: 19,
+          endTime: 21,
         },
         {
           id: 2,
@@ -118,8 +118,8 @@ export default {
         {
           id: 3,
           day: 'Sunday',
-          startTime: 20,
-          endTime: 22,
+          startTime: 19,
+          endTime: 21,
         },
       ],
       // Current US "America/Chicago"
